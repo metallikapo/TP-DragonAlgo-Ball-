@@ -1,3 +1,5 @@
+import TPGrupalDragonAlgoBall.src.modelo.personajes.Goku;
+import TPGrupalDragonAlgoBall.src.modelo.tablero.Tablero;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
