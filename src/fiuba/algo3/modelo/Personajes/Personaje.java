@@ -1,9 +1,12 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Componentes.Celda;
+
 public abstract class Personaje{
 
     protected int vida;
     protected int ki;
+    protected boolean guerreroZ;
     //protected int ataqueEspecial;
     protected Celda celda;
 
@@ -16,8 +19,19 @@ public abstract class Personaje{
                 && (this.celda.getColumna()==celda.getColumna()));
     }
 
+    public void incrementarKi(int turnos){
+        for (int i=0; i<turnos;i++){
+            ki += 5;
+        }
+    }
+
+    public void incrementarKi(){
+        ki+=5;
+    }
 
     public abstract void seMueveHaciaLaDerecha(int pasos);
+
+    public abstract boolean esGuerreroZ();
 /*
 //No es mejor pedir posiciones u ubicacion??
     public abstract void seMueveHaciaLaIzquierda(int pasos);

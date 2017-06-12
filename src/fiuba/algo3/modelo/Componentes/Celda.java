@@ -1,4 +1,4 @@
-package fiuba.algo3.modelo.Personajes;
+package fiuba.algo3.modelo.Componentes;
 
 public class Celda{
 

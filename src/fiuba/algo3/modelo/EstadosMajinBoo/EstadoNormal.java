@@ -1,15 +1,15 @@
-package fiuba.algo3.modelo.Estados;
+package fiuba.algo3.modelo.EstadosMajinBoo;
 
-import fiuba.algo3.modelo.Estados.EstadoGuerreroZ;
+import fiuba.algo3.modelo.Estados.Estado;
 
-public class EstadoNormal implements EstadoGuerreroZ {
+public class EstadoNormal implements Estado {
 
     private int poderPelea;
     private int distanciaAtaque;
     private int velocidad;
 
     public EstadoNormal(){
-        poderPelea = 20;
+        poderPelea = 30;
         distanciaAtaque = 2;
         velocidad = 2;
     }
@@ -19,9 +19,5 @@ public class EstadoNormal implements EstadoGuerreroZ {
         return velocidad;
     }
 
-    @Override
-    public void setPoderPelea(int poder){
-        poderPelea = poder;
-    }
 
 }
