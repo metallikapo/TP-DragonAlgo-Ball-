@@ -16,7 +16,7 @@ public class Piccolo extends Personaje {
 
         vida = 500;
         ki = 0;
-        guerreroZ = true;
+        
         kiNecesario = 20;
         estado = new EstadoNormal();
     }
@@ -38,6 +38,8 @@ public class Piccolo extends Personaje {
     public int getKi(){
         return ki;
     }
+    
+    /*
 
     @Override
     public void seMueveHaciaLaDerecha(int pasos){
@@ -51,4 +53,6 @@ public class Piccolo extends Personaje {
     public boolean esGuerreroZ(){
         return guerreroZ;
     }
+    
+    */
 }

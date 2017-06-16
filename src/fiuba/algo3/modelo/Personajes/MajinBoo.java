@@ -13,10 +13,11 @@ public class MajinBoo extends Personaje {
 
         vida = 300;
         ki = 0;
-        guerreroZ = false;
+        
         estado = new EstadoNormal();
     }
 
+    /*
     @Override
     public void seMueveHaciaLaDerecha(int pasos) {
         if ((estado.getVelocidad()) >= pasos) {
@@ -28,5 +29,5 @@ public class MajinBoo extends Personaje {
     public boolean esGuerreroZ() {
         return guerreroZ;
     }
-
+	*/
 }

@@ -15,7 +15,7 @@ public class Celda{
     	return this.coordenada;
     }
     
-    public void colocarPersoaneje( Personaje personaje){
+    public void colocarPersonaje( Personaje personaje){
     	this.personaje = personaje;
     }
 

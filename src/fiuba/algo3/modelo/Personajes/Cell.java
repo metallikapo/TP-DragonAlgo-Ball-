@@ -13,10 +13,11 @@ public class Cell extends Personaje{
 
         vida = 500;
         ki = 0;
-        guerreroZ = false;
+       
         estado = new EstadoNormal();
     }
 
+    /*
     @Override
     public void seMueveHaciaLaDerecha(int pasos){
         if((estado.getVelocidad()) >= pasos){
@@ -28,5 +29,5 @@ public class Cell extends Personaje{
     public boolean esGuerreroZ(){
         return guerreroZ;
     }
-
+	*/
 }

@@ -13,10 +13,10 @@ public class Freezer extends Personaje {
 
         vida = 400;
         ki = 0;
-        guerreroZ = false;
         estado = new EstadoNormal();
     }
 
+    /*
     @Override
     public void seMueveHaciaLaDerecha(int pasos) {
         if ((estado.getVelocidad()) >= pasos) {
@@ -29,4 +29,5 @@ public class Freezer extends Personaje {
         return guerreroZ;
     }
 
+	*/
 }
