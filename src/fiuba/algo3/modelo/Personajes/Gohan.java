@@ -15,7 +15,7 @@ public class Gohan extends Personaje{
         vida = 300;
         vidaCritica = 60;
         ki = 0;
-        guerreroZ = true;
+       
         estado = new EstadoNormal();
     }
 
@@ -23,15 +23,5 @@ public class Gohan extends Personaje{
         return (vida <= vidaCritica);
     }
 
-    @Override
-    public void seMueveHaciaLaDerecha(int pasos){
-        if((estado.getVelocidad()) >= pasos){
-            celda.incrementarColumna(pasos);
-        }
-    }
-
-    @Override
-    public boolean esGuerreroZ(){
-        return guerreroZ;
-    }
+    
 }

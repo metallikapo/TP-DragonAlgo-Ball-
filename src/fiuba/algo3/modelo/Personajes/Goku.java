@@ -12,11 +12,11 @@ public class Goku extends Personaje {
     public Goku(){
         vida = 500;
         ki = 0;
-        guerreroZ = true;
+        
         estado = new EstadoNormal();
 
     }
-
+    /*
     @Override
     public void seMueveHaciaLaDerecha(int pasos){
         if(estado.getVelocidad() >= pasos){
@@ -28,4 +28,6 @@ public class Goku extends Personaje {
     public boolean esGuerreroZ(){
         return guerreroZ;
     }
+    
+    */
 }
