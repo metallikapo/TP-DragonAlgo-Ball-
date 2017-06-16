@@ -56,7 +56,7 @@ public class personajeTest{
     }
 
     @Test
-    public void test01TransformarPersonajePiccolo(){
+    public void test01TransformarPersonajePiccoloEstadoFortalecido(){
         int turno = 10;
         Celda celdaNacimiento = new Celda(0,0);
         Piccolo piccolo = new Piccolo();
@@ -66,14 +66,16 @@ public class personajeTest{
         piccolo.fortalecido();
 
         // si esta en modo fortalecido su ki disminuye 20un
-        assertEquals(30,piccolo.getKi());
+        assertTrue(piccolo.esKi(30));
     }
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void test02TransformarPersonajePiccolo(){
+    public void test
+    @Test
+    public void test02TransformarPersonajePiccoloEnEstadoProtector(){
 
         Celda celdaNacimiento1 = new Celda(0,0);
         Piccolo piccolo = new Piccolo();
@@ -84,9 +86,8 @@ public class personajeTest{
         piccolo.naceEn(celdaNacimiento1);
         gohan.naceEn(celdaNacimiento2);
 
-        try{
-            piccolo.protector(gohan);
-        }catch (PiccoloNoPuedePasarEstadoProtector ignored){}
+        piccolo.protector(gohan);
+        PiccoloNoPuedePasarEstadoProtector
 
 
 
