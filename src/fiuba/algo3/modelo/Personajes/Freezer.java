@@ -7,26 +7,26 @@ import fiuba.algo3.modelo.EstadosFreezer.*;
 
 public class Freezer extends Personaje {
 
-    private EstadoNormal estado;
+    private Estado estado;
 
     public Freezer() {
 
         vida = 400;
         ki = 0;
-        guerreroZ = false;
         estado = new EstadoNormal();
     }
 
-    @Override
-    public void seMueveHaciaLaDerecha(int pasos) {
-        if ((estado.getVelocidad()) >= pasos) {
-            celda.incrementarColumna(pasos);
-        }
+
+    public void transformarse(){
+        estado = estado.transformarse(this.ki);
+        this.ki-= estado.costoDeTransformacion();
     }
 
     @Override
-    public boolean esGuerreroZ() {
-        return guerreroZ;
+    public void seMueveHaciaLaDerecha(int pasos){
+        estado.puedeMoverse(pasos);
+        celda.incrementarColumna(pasos);
+        ki+=kiPorTurno;
     }
 
 }

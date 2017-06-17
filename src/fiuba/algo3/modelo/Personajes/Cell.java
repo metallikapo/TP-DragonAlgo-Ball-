@@ -7,26 +7,25 @@ import fiuba.algo3.modelo.EstadosCell.*;
 
 public class Cell extends Personaje{
 
-    private EstadoNormal estado;
+    private Estado estado;
 
     public Cell(){
 
         vida = 500;
         ki = 0;
-        guerreroZ = false;
         estado = new EstadoNormal();
+    }
+
+    public void transformarse(){
+        estado = estado.transformarse(this.vida);
+        this.vida -= estado.costoDeTransformacion();
     }
 
     @Override
     public void seMueveHaciaLaDerecha(int pasos){
-        if((estado.getVelocidad()) >= pasos){
-            celda.incrementarColumna(pasos);
-        }
-    }
-
-    @Override
-    public boolean esGuerreroZ(){
-        return guerreroZ;
+        estado.puedeMoverse(pasos);
+        celda.incrementarColumna(pasos);
+        ki+=kiPorTurno;
     }
 
 }
