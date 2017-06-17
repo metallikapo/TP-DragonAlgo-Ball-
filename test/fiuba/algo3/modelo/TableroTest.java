@@ -13,7 +13,7 @@ import fiuba.algo3.modelo.excepciones.CeldaOcupadaException;
 
 public class TableroTest {
 	
-	
+	/*
 	@Rule
     public ExpectedException thrown = ExpectedException.none();
 	
@@ -31,6 +31,7 @@ public class TableroTest {
         tablero.colocarCeldaEnTablero(otraCelda);
           
 	}
+	*/
 	
 	@Test
 	public void nada(){

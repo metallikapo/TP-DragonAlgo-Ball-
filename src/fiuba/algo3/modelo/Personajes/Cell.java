@@ -8,13 +8,18 @@ import fiuba.algo3.modelo.EstadosCell.*;
 
 public class Cell extends Personaje{
 
-    private EstadoNormal estado;
+    private Estado estado;
 
     public Cell(){
 
         vida = 500;
         ki = 0;
-       
+        estado = new EstadoNormal();
+    }
+
+    public void transformarse(){
+        estado = estado.transformarse(this.vida);
+        this.vida -= estado.costoDeTransformacion();
         estado = new EstadoNormal();
     }
 
@@ -30,11 +35,14 @@ public class Cell extends Personaje{
         if((estado.getVelocidad()) >= pasos){
             celda.incrementarColumna(pasos);
         }
+>>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
     }
 
     @Override
-    public boolean esGuerreroZ(){
-        return guerreroZ;
+    public void seMueveHaciaLaDerecha(int pasos){
+        estado.puedeMoverse(pasos);
+        celda.incrementarColumna(pasos);
+        ki+=kiPorTurno;
     }
 	*/
 }

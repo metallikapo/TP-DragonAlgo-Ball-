@@ -1,12 +1,14 @@
 package fiuba.algo3.modelo.Personajes;
 
 import fiuba.algo3.modelo.Componentes.Celda;
+import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 
 public abstract class Personaje{
 
     protected int vida;
     protected int ki;
+    protected int kiPorTurno = 5;
     //protected int ataqueEspecial;
     protected Coordenada coordenada;
 
@@ -20,19 +22,17 @@ public abstract class Personaje{
     			this.coordenada.getCoordenadaY() == coordenada.getCoordenadaY() );
     }
 
-    /*public void incrementarKi(int turnos){
-        for (int i=0; i<turnos;i++){
-            ki += 5;
-        }
-    } */
+    //public abstract void seMueveHaciaLaDerecha(int pasos);
 
-    public void incrementarKi(){
-        ki+=5;
+    public boolean poseeKi(int ki){
+        return (this.ki==ki);
     }
 
     public void mover(Coordenada coordenada){
-    	this.coordenada = coordenada;
+        this.coordenada = coordenada;
+        this.ki += this.kiPorTurno;
     }
+
     
     //public abstract void mover(Coordenada coordenada);
    
