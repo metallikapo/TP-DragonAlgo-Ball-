@@ -16,10 +16,19 @@ public class Freezer extends Personaje {
         estado = new EstadoNormal();
     }
 
+<<<<<<< HEAD
 
     public void transformarse(){
         estado = estado.transformarse(this.ki);
         this.ki-= estado.costoDeTransformacion();
+=======
+    /*
+    @Override
+    public void seMueveHaciaLaDerecha(int pasos) {
+        if ((estado.getVelocidad()) >= pasos) {
+            celda.incrementarColumna(pasos);
+        }
+>>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
     }
 
     @Override
@@ -29,4 +38,5 @@ public class Freezer extends Personaje {
         ki+=kiPorTurno;
     }
 
+	*/
 }

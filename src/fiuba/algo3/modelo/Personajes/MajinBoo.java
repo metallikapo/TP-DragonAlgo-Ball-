@@ -13,9 +13,14 @@ public class MajinBoo extends Personaje {
 
         vida = 300;
         ki = 0;
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
         estado = new EstadoNormal();
     }
 
+    /*
     @Override
     public void seMueveHaciaLaDerecha(int pasos){
         estado.puedeMoverse(pasos);
@@ -28,5 +33,5 @@ public class MajinBoo extends Personaje {
         this.ki -= estado.costoDeTransformacion();
 
     }
-
+	*/
 }

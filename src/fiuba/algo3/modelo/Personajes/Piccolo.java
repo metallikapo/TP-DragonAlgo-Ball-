@@ -13,6 +13,11 @@ public class Piccolo extends Personaje {
 
         vida = 500;
         ki = 0;
+<<<<<<< HEAD
+=======
+        
+        kiNecesario = 20;
+>>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
         estado = new EstadoNormal();
     }
 
@@ -20,6 +25,8 @@ public class Piccolo extends Personaje {
         estado = estado.transformarse(gohan,this.ki);
         this.ki-= estado.costoDeTransformacion();
     }
+    
+    /*
 
     @Override
     public void seMueveHaciaLaDerecha(int pasos){
@@ -28,5 +35,14 @@ public class Piccolo extends Personaje {
         ki+=kiPorTurno;
     }
 
+<<<<<<< HEAD
 
+=======
+    @Override
+    public boolean esGuerreroZ(){
+        return guerreroZ;
+    }
+    
+    */
+>>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
 }

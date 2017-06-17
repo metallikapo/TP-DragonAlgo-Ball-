@@ -2,6 +2,7 @@ package fiuba.algo3.modelo;
 
 import fiuba.algo3.modelo.Personajes.*;
 import fiuba.algo3.modelo.Componentes.Celda;
+import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.excepciones.PiccoloNoPuedePasarEstadoProtector;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import org.junit.Test;
@@ -15,17 +16,41 @@ public class personajeTest{
 
     @Test
     public void test01seUbicaPersonajeGohanEnCasilleroYSeLoMueve(){
-        Celda celdaNacimiento = new Celda(0,0);
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(0,2);
 
         Gohan gohan = new Gohan();
-        gohan.naceEn(celdaNacimiento);
-        gohan.seMueveHaciaLaDerecha(2);
+        gohan.naceEn(unaCoordenada);
+        
+        assertTrue(gohan.estaUbicadoEn(unaCoordenada));
+            
+        gohan.mover(otraCoordenada);
 
-        Celda celdaNueva = new Celda(0,2);
-
-        assertTrue(gohan.estaUbicadoEn(celdaNueva));
+        assertTrue(gohan.estaUbicadoEn(otraCoordenada));
 
     }
+
+    /*
+    
+    @Test
+    public void test02seUbicaPersonajeGohanYGokuEnElMismoCasillero(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(0,2);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+        
+        Goku goku= new Gohu();
+        goku.naceEn(otraCoordenada);
+        
+        assertTrue(gohan.estaUbicadoEn(unaCoordenada));
+            
+        gohan.mover(otraCoordenada);
+
+        assertTrue(gohan.estaUbicadoEn(otraCoordenada));
+
+    }
+ 
 
     @Test
     public void test02seUbicaUnPersonajeGokuEnCasilleroYSeLoMueve(){
@@ -114,11 +139,7 @@ public class personajeTest{
             Celda celdaNueva = new Celda(0,3);
         }
 
-
-    }
-
-
-
-
+	*/
+   
 
 }

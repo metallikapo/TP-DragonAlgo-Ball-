@@ -1,24 +1,22 @@
 package fiuba.algo3.modelo.Componentes;
 
+import fiuba.algo3.modelo.Personajes.Personaje;
+
 public class Celda{
 
-    private int fila;
-    private int columna;
+	private Coordenada coordenada;
+	private Personaje personaje;
 
-    public Celda(int fila, int columna){
-        this.fila = fila;
-        this.columna = columna;
+    public Celda(Coordenada unaCoordenada){
+        this.coordenada = unaCoordenada;
+    }
+    
+    public Coordenada getCoordenada(){
+    	return this.coordenada;
+    }
+    
+    public void colocarPersonaje( Personaje personaje){
+    	this.personaje = personaje;
     }
 
-    public int getFila(){
-        return fila;
-    }
-
-    public int getColumna(){
-        return columna;
-    }
-
-    public void incrementarColumna(int cantidad){
-        this.columna += cantidad;
-    }
 }
