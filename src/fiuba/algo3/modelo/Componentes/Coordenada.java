@@ -19,4 +19,9 @@ public class Coordenada {
 	public int getCoordenadaY(){
 		return this.coordenadaY;
 	}
+	
+	public boolean esLaMismaCoordenada(Coordenada unaCoordenada){
+		return ( this.getCoordenadaX() == unaCoordenada.getCoordenadaX()  &&
+				this.getCoordenadaY() == unaCoordenada.getCoordenadaY() );
+	}
 }

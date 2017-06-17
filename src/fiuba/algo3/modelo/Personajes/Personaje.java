@@ -34,6 +34,22 @@ public abstract class Personaje{
         this.ki += this.kiPorTurno;
     }
 
+    
+    //public abstract void mover(Coordenada coordenada);
+   
+    //public abstract void seMueveHaciaLaDerecha(int pasos);
+
+    //public abstract boolean esGuerreroZ();
+/*
+//No es mejor pedir posiciones u ubicacion??
+    public abstract void seMueveHaciaLaIzquierda(int pasos);
+
+    public abstract void seMueveHaciaArriba(int pasos);
+
+    public abstract void seMueveHaciaAbajo(int pasos);
+
+    public abstract void seMueveHaciaUnaDiagonal(int pasos);
+*/
     public void recibirDanio(int ataque){
         if(vida<=0){
             throw new PersonajeEstaMuerto();

@@ -1,5 +1,9 @@
 package fiuba.algo3.modelo;
 
+<<<<<<< HEAD
+=======
+import static org.junit.Assert.*;
+>>>>>>> 575f270cd55358f88e51432d6c624654d984d540
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,8 +15,13 @@ import fiuba.algo3.modelo.Componentes.Tablero;
 import fiuba.algo3.modelo.excepciones.CeldaOcupadaException;
 
 public class TableroTest {
+<<<<<<< HEAD
 
 	
+=======
+	
+	/*
+>>>>>>> 575f270cd55358f88e51432d6c624654d984d540
 	@Rule
     public ExpectedException thrown = ExpectedException.none();
 	
@@ -28,7 +37,17 @@ public class TableroTest {
         
         thrown.expect(CeldaOcupadaException.class);
         tablero.colocarCeldaEnTablero(otraCelda);
+<<<<<<< HEAD
         
+=======
+          
+	}
+	*/
+	
+	@Test
+	public void nada(){
+		assertEquals(1,1);
+>>>>>>> 575f270cd55358f88e51432d6c624654d984d540
 	}
 	
 }
