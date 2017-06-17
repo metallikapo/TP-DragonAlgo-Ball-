@@ -24,19 +24,13 @@ public abstract class Personaje{
 
     //public abstract void seMueveHaciaLaDerecha(int pasos);
 
-    /*public void incrementarKi(int turnos){
-        for (int i=0; i<turnos;i++){
-            ki += 5;
-        }
-    } */
-
-
     public boolean poseeKi(int ki){
         return (this.ki==ki);
     }
 
     public void mover(Coordenada coordenada){
-    	this.coordenada = coordenada;
+        this.coordenada = coordenada;
+        this.ki += this.kiPorTurno;
     }
 
 }
