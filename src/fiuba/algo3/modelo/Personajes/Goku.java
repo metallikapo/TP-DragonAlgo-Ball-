@@ -17,9 +17,8 @@ public class Goku extends Personaje {
     }
 
     public void transformarse(){
-        estado.transformarse(this.ki);
+        estado = estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
-        estado = new EstadoNormal();
 
     }
     /*

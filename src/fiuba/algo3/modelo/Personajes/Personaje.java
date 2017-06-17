@@ -3,6 +3,7 @@ package fiuba.algo3.modelo.Personajes;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.excepciones.PersonajeEstaMuerto;
 
 public abstract class Personaje{
 
@@ -33,6 +34,7 @@ public abstract class Personaje{
         this.ki += this.kiPorTurno;
     }
 
+<<<<<<< HEAD
     
     //public abstract void mover(Coordenada coordenada);
    
@@ -49,4 +51,13 @@ public abstract class Personaje{
 
     public abstract void seMueveHaciaUnaDiagonal(int pasos);
 */
+=======
+    public void recibirDanio(int ataque){
+        if(vida<=0){
+            throw new PersonajeEstaMuerto();
+        }
+        this.vida -= ataque;
+    }
+
+>>>>>>> 8a897eb4a8a4792b3bc759ffa7c9cea679cc4c18
 }
