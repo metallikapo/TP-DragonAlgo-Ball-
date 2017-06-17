@@ -41,7 +41,7 @@ public class EstadoBooMalo implements Estado {
 
     @Override
     public Estado transformarse(int kiActual){
-        if (kiNecesario<kiActual){
+        if (kiNecesario>kiActual){
             throw new NoSePuedeTransformarPersonaje();
         }
         return new EstadoBooOriginal();
