@@ -27,7 +27,7 @@ public class personajeTest{
         gohan.mover(otraCoordenada);
 
         assertTrue(gohan.estaUbicadoEn(otraCoordenada));
-
+        
     }
 
     /*

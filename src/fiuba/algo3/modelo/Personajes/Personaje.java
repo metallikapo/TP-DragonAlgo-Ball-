@@ -33,6 +33,9 @@ public abstract class Personaje{
     public void mover(Coordenada coordenada){
     	this.coordenada = coordenada;
     }
+    
+    //public abstract void mover(Coordenada coordenada);
+   
     //public abstract void seMueveHaciaLaDerecha(int pasos);
 
     //public abstract boolean esGuerreroZ();
