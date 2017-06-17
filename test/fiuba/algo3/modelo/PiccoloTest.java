@@ -114,6 +114,30 @@ public class PiccoloTest{
         thrown.expect(NoSePuedeTransformarPersonaje.class);
         piccolo.transformarse(gohan);
     }
-   
+
+    @Test
+    public void testTransformarPiccoloEnEstadoProtector(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(0,2);
+        Coordenada otraCoordenada1 = new Coordenada(0,1);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(otraCoordenada);
+
+        for (int i=0; i<10; i++){
+            //va a incrementar el ki
+            piccolo.mover(otraCoordenada1);
+            gohan.recibirDanio(24);
+        }
+
+        piccolo.transformarse(gohan);
+
+        piccolo.transformarse(gohan);
+
+        assertTrue(gohan.estadoVidaCritica());
+    }
 
 }
