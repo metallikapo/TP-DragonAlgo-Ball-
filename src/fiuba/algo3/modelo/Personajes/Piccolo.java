@@ -12,12 +12,7 @@ public class Piccolo extends Personaje {
     public Piccolo(){
 
         vida = 500;
-        ki = 0;
-<<<<<<< HEAD
-=======
-        
-        kiNecesario = 20;
->>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
+        ki =0;
         estado = new EstadoNormal();
     }
 
@@ -44,5 +39,5 @@ public class Piccolo extends Personaje {
     }
     
     */
->>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
+
 }

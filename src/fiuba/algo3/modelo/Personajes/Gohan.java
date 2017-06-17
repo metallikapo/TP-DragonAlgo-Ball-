@@ -14,10 +14,6 @@ public class Gohan extends Personaje{
         vida = 300;
         vidaCritica = 60;//20% de la vida inicial
         ki = 0;
-<<<<<<< HEAD
-=======
-       
->>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
         estado = new EstadoNormal();
     }
 
@@ -25,19 +21,16 @@ public class Gohan extends Personaje{
         return (vida <= vidaCritica);
     }
 
-<<<<<<< HEAD
     public void transformarse(){
         estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
     }
-
+/*
     @Override
     public void seMueveHaciaLaDerecha(int pasos){
         estado.puedeMoverse(pasos);
         celda.incrementarColumna(pasos);
         ki+=kiPorTurno;
-    }
-=======
+    }*/
     
->>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
 }

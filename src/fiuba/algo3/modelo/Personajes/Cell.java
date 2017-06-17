@@ -13,15 +13,12 @@ public class Cell extends Personaje{
 
         vida = 500;
         ki = 0;
-<<<<<<< HEAD
         estado = new EstadoNormal();
     }
 
     public void transformarse(){
         estado = estado.transformarse(this.vida);
         this.vida -= estado.costoDeTransformacion();
-=======
-       
         estado = new EstadoNormal();
     }
 

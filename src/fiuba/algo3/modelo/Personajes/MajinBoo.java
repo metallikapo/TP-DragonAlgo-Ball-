@@ -13,10 +13,6 @@ public class MajinBoo extends Personaje {
 
         vida = 300;
         ki = 0;
-<<<<<<< HEAD
-=======
-        
->>>>>>> 4f8935d11c62d77d3c6868ae79fef16cff484a94
         estado = new EstadoNormal();
     }
 
@@ -27,11 +23,11 @@ public class MajinBoo extends Personaje {
         celda.incrementarColumna(pasos);
         ki+=kiPorTurno;
     }
-
+*/
     public void transformarse(){
         estado = estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
 
     }
-	*/
+
 }

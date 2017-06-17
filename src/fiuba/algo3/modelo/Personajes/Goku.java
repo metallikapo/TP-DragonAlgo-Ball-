@@ -12,7 +12,6 @@ public class Goku extends Personaje {
     public Goku(){
         vida = 500;
         ki = 0;
-<<<<<<< HEAD
         estado = new EstadoNormal();
 
     }
@@ -20,8 +19,6 @@ public class Goku extends Personaje {
     public void transformarse(){
         estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
-=======
-        
         estado = new EstadoNormal();
 
     }

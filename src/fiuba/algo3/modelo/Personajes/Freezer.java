@@ -16,12 +16,11 @@ public class Freezer extends Personaje {
         estado = new EstadoNormal();
     }
 
-<<<<<<< HEAD
-
-    public void transformarse(){
+    public void transformarse() {
         estado = estado.transformarse(this.ki);
-        this.ki-= estado.costoDeTransformacion();
-=======
+        this.ki -= estado.costoDeTransformacion();
+    }
+
     /*
     @Override
     public void seMueveHaciaLaDerecha(int pasos) {
