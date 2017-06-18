@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo;
 
 
+import fiuba.algo3.modelo.excepciones.CeldaNoOcupadaException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -30,6 +31,15 @@ public class TableroTest {
         tablero.colocarCeldaEnTablero(otraCelda);
         
 	}
+
+	@Test
+    public void test02LiberarCeldaNoOcupadaYRecibirExcepcion(){
+	    Coordenada unaCoordenada = new Coordenada(1, 2);
+	    Tablero tablero = new Tablero(6);
+
+	    thrown.expect(CeldaNoOcupadaException.class);
+	    tablero.liberarCeldaEnTablero(unaCoordenada);
+    }
 	
 }
 
