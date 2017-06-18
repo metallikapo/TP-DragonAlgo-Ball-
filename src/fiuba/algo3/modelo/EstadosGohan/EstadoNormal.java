@@ -1,6 +1,8 @@
 package fiuba.algo3.modelo.EstadosGohan;
 
 import fiuba.algo3.modelo.Estados.Estado;
+import fiuba.algo3.modelo.EstadosGohan.SuperSayajinFase1;
+import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
@@ -33,6 +35,13 @@ public class EstadoNormal implements Estado {
         }
         return new EstadoSuperSayajinFase1();
      */
+    @Override
+    public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
+        if(kiNecesario>ki){
+            throw new NoSePuedeTransformarPersonaje();
+        }
+        return new SuperSayajinFase1();
+    }
 
     @Override
     public Estado transformarse(int kiActual){

@@ -2,8 +2,10 @@ package fiuba.algo3.modelo.EstadosMajinBoo;
 
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
+import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
+
 
 public class EstadoNormal implements Estado {
 
@@ -43,6 +45,11 @@ public class EstadoNormal implements Estado {
             throw new NoSePuedeTransformarPersonaje();
         }
         return new EstadoBooMalo();
+    }
+
+    @Override
+    public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
+        throw new NoSePuedeTransformarPersonaje();
     }
 
 }

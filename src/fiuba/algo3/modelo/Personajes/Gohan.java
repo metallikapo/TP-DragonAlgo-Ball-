@@ -21,16 +21,10 @@ public class Gohan extends Personaje{
         return (vida <= vidaCritica);
     }
 
-    public void transformarse(){
-        estado.transformarse(this.ki);
+    public void transformarse(Personaje personaje1, Personaje personaje2){
+        estado = estado.transformarse(personaje1,personaje2,this.ki);
         this.ki -= estado.costoDeTransformacion();
     }
-/*
-    @Override
-    public void seMueveHaciaLaDerecha(int pasos){
-        estado.puedeMoverse(pasos);
-        celda.incrementarColumna(pasos);
-        ki+=kiPorTurno;
-    }*/
+
     
 }

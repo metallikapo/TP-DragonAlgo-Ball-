@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.EstadosFreezer;
 
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
+import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
@@ -43,4 +44,8 @@ public class EstadoDefinitivo implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
+    @Override
+    public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
+        throw new NoSePuedeTransformarPersonaje();
+    }
 }

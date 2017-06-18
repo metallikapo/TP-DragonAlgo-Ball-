@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.EstadosCell;
 
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
+import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 
@@ -11,14 +12,15 @@ public class EstadoSemiPerfecto implements Estado {
     private int distanciaAtaque;
     private int velocidad;
     private int vidaAbsorbida;
-    private int costo;
+    private int vidaAAbsorber;
+
 
     public EstadoSemiPerfecto(){
         poderPelea = 40;
         distanciaAtaque = 4;
         velocidad = 3;
-        vidaAbsorbida = 8;
-        costo = 4;
+        vidaAbsorbida = 0;
+        vidaAAbsorber = 8;
     }
 
     @Override
@@ -30,7 +32,7 @@ public class EstadoSemiPerfecto implements Estado {
 
     @Override
     public Estado transformarse(int vidaActual){
-        if (vidaAbsorbida > vidaActual){
+        if (vidaAbsorbida < vidaAAbsorber){
             throw new NoSePuedeTransformarPersonaje();
         }
         return new EstadoPerfecto();
@@ -38,11 +40,17 @@ public class EstadoSemiPerfecto implements Estado {
 
     @Override
     public int costoDeTransformacion(){
-        return costo;
+        return 0;
     }
 
     @Override
     public Estado transformarse(Gohan gohan, int ki){
+        throw new NoSePuedeTransformarPersonaje();
+    }
+
+
+    @Override
+    public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
         throw new NoSePuedeTransformarPersonaje();
     }
 }

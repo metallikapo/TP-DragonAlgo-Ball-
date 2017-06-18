@@ -5,7 +5,7 @@ import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.EstadosPiccolo.*;
 
-public class Piccolo extends Personaje {
+public class Piccolo extends Personaje implements PersonajeBueno {
 
     private Estado estado;
 
@@ -13,6 +13,7 @@ public class Piccolo extends Personaje {
 
         vida = 500;
         ki =0;
+        vidaCritica = 150; //30% de la vida inicial
         estado = new EstadoNormal();
     }
 
@@ -20,24 +21,6 @@ public class Piccolo extends Personaje {
         estado = estado.transformarse(gohan,this.ki);
         this.ki-= estado.costoDeTransformacion();
     }
-    
-    /*
 
-    @Override
-    public void seMueveHaciaLaDerecha(int pasos){
-        estado.puedeMoverse(pasos);
-        celda.incrementarColumna(pasos);
-        ki+=kiPorTurno;
-    }
-
-<<<<<<< HEAD
-
-=======
-    @Override
-    public boolean esGuerreroZ(){
-        return guerreroZ;
-    }
-    
-    */
 
 }

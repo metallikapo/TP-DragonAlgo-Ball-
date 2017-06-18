@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
+import fiuba.algo3.modelo.Personajes.Personaje;
 
 public class EstadoFortalecido implements Estado {
     private int poderPelea;
@@ -43,4 +44,8 @@ public class EstadoFortalecido implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
+    @Override
+    public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
+        throw new NoSePuedeTransformarPersonaje();
+    }
 }
