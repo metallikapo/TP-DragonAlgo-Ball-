@@ -1,10 +1,9 @@
 package fiuba.algo3.modelo;
 
-import static org.junit.Assert.*;
-
+import fiuba.algo3.modelo.Componentes.Coordenada;
 import org.junit.Test;
 
-import fiuba.algo3.modelo.Componentes.Coordenada;
+import static org.junit.Assert.*;
 
 public class CoordenadaTest {
 	
@@ -14,6 +13,16 @@ public class CoordenadaTest {
 		
 		assertEquals(unaCoordenada.getCoordenadaX(), 2);
 		assertEquals(unaCoordenada.getCoordenadaY(), 3);
+	}
+
+	@Test
+	public void compararDosCoordenadas(){
+		Coordenada unaCoordenada = new Coordenada(0, 0);
+		Coordenada otraCoordenada = new Coordenada(1,0);
+		Coordenada mismaCoordenada = new Coordenada(0,0);
+
+		assertFalse(unaCoordenada.esLaMismaCoordenada(otraCoordenada));
+		assertTrue(unaCoordenada.esLaMismaCoordenada(mismaCoordenada));
 	}
 
 }

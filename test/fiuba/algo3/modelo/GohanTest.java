@@ -111,7 +111,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarGokuEstadoSuperSayajin2UnCompañeroNotieneEstadoCritico() {
+    public void testNoSePuedeTransformarGokuEstadoSuperSayajin2UnCompanieroNotieneEstadoCritico() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
