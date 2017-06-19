@@ -27,6 +27,16 @@ public class Cell extends Personaje implements PersonajeMalo{
         enemigo.recibirDanio(estado.getPoderPelea());
     }
 
+    @Override
+    public void ataqueEspecial(PersonajeMalo unPersonaje) {
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno unPersonaje) {
+
+    }
+
 
     public void absorber(PersonajeBueno enemigo){
         //falta validaciones

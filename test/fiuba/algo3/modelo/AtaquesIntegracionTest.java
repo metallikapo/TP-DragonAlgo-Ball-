@@ -50,6 +50,15 @@ public class AtaquesIntegracionTest {
         Freezer freezer = new Freezer();
         freezer.naceEn(otraCoordenada);
 
+        int vidaLlenaFreezer = freezer.getVida();
+        goku.ataqueEspecial(freezer); //deberia aumentar el ki
+
+        assertTrue((vidaLlenaFreezer > freezer.getVida()));
+
+        int vidaLlenaGoku = goku.getVida();
+        freezer.ataqueEspecial(goku); //deberia aumentar el ki
+
+        assertTrue((vidaLlenaFreezer > freezer.getVida()));
         //goku ataca a freezer
         //assert freezer recibe danio
 
@@ -76,7 +85,7 @@ public class AtaquesIntegracionTest {
         gohan.naceEn(posicionInicialGohan);
 
         thrown.expect(FuegoAmigoException.class);
-        goku.ataqueBasico(gohan); //me obliga castearlo
+        goku.ataqueBasico(gohan);
     }
 
     @Test

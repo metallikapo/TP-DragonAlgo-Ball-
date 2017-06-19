@@ -25,19 +25,22 @@ public class Freezer extends Personaje implements PersonajeMalo{
     }
 
     @Override
-    public void recibirDanio(int danio){
-        this.vida -= danio;
-    }
-
-    @Override
-    public void ataqueBasico(PersonajeBueno enemigo){
-
-        enemigo.recibirDanio(estado.getPoderPelea());
-    }
-
-    @Override
-    public void ataqueBasico(PersonajeMalo companiero){
+    public void ataqueBasico(PersonajeMalo amigo) {
         throw new FuegoAmigoException();
     }
 
+    @Override
+    public void ataqueBasico(PersonajeBueno enemigo) {
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo amigo) {
+        throw new FuegoAmigoException();
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno enemigo) {
+
+    }
 }

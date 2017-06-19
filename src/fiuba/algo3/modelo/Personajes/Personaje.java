@@ -47,4 +47,7 @@ public abstract class Personaje{
         this.vida -= ataque;
     }
 
+    public int getVida() {
+        return this.vida;
+    }
 }
