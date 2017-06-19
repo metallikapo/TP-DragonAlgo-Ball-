@@ -52,4 +52,9 @@ public class EstadoBooOriginal implements Estado {
     public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
         throw new NoSePuedeTransformarPersonaje();
     }
+
+    @Override
+    public int moverPorEstado(){
+	return this.velocidad;	
+    }
 }

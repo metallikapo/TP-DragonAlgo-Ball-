@@ -58,4 +58,9 @@ public class SuperSayajinFase2 implements Estado {
         throw new EstadoDeTransformacionMaxima();
     }
 
+    @Override
+    public int moverPorEstado(){
+	return this.velocidad;	
+    }
+
 }

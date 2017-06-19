@@ -63,5 +63,8 @@ public class EstadoNormal implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
-
+    @Override
+    public int moverPorEstado(){
+	return this.velocidad;	
+    }
 }

@@ -17,4 +17,7 @@ public interface Estado {
 
     public abstract int costoDeTransformacion();
 
+    public abstract int moverPorEstado();
+
+
 }

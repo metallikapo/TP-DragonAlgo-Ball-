@@ -58,4 +58,8 @@ public class EstadoBooMalo implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
+    @Override
+    public int moverPorEstado(){
+	return this.velocidad;	
+    }
 }

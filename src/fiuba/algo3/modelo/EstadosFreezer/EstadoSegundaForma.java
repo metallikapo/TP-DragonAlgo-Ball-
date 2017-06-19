@@ -57,4 +57,8 @@ public class EstadoSegundaForma implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
+    @Override
+    public int moverPorEstado(){
+	return this.velocidad;	
+    }
 }
