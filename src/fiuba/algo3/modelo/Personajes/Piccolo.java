@@ -22,5 +22,23 @@ public class Piccolo extends Personaje implements PersonajeBueno {
         this.ki-= estado.costoDeTransformacion();
     }
 
+    public void ataqueBasico(Personaje enemigo){
+        this.ki -= 5;
+        this.atacar(enemigo, 10);
+    }
 
+    public void makankosappo(Personaje enemigo){
+        this.ki -= 10;
+        this.atacar(enemigo, 30)
+    }
+
+    @Override
+    private void  atacar(PersonajeBueno amigo, int danio){
+        throw new FuegoAmigoException();
+    }
+
+    @Override
+    private void  atacar(PersonajeMalo enemigo, int danio) {
+        enemigo.recibirDanio(danio)
+    }
 }
