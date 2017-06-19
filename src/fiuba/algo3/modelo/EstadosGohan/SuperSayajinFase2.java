@@ -59,15 +59,13 @@ public class SuperSayajinFase2 implements Estado {
     }
 
     @Override
-<<<<<<< HEAD
     public void sumarVidaAbsorbida(){
 
     }
-}
-=======
+
     public int moverPorEstado(){
 	return this.velocidad;	
     }
 
 }
->>>>>>> 77e0b9aecf6da3b59e0827b888fb059e6dd72e4b
+
