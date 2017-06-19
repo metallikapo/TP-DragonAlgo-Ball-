@@ -20,6 +20,11 @@ public class EstadoFortalecido implements Estado {
     }
 
     @Override
+    public int getPoderPelea(){
+        return poderPelea;
+    }
+
+    @Override
     public void puedeMoverse(int pasos){
         if(velocidad<pasos){
             throw new NoSePuedeMoverPersonaje();

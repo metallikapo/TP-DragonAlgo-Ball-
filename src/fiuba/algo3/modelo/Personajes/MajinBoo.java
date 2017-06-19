@@ -6,7 +6,7 @@ import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosMajinBoo.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
-public class MajinBoo extends Personaje implements PersonajeMalo{
+public class MajinBoo extends Personaje {
 
     private Estado estado;
 
@@ -17,19 +17,12 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
         estado = new EstadoNormal();
     }
 
-    /*
-    @Override
-    public void seMueveHaciaLaDerecha(int pasos){
-        estado.puedeMoverse(pasos);
-        celda.incrementarColumna(pasos);
-        ki+=kiPorTurno;
-    }
-*/
+
     public void transformarse(){
         estado = estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
     }
-
+/*
     public void  ataqueBasico(Personaje enemigo){
         //faltan validaciones
         this.ki -= 10;
@@ -51,4 +44,5 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     private void atacar(PersonajeBueno enemigo, int danio){
         enemigo.recibirDanio(danio);
     }
+*/
 }

@@ -5,7 +5,7 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosCell.*;
 
-public class Cell extends Personaje implements PersonajeMalo{
+public class Cell extends Personaje {
 
     private Estado estado;
 
@@ -20,7 +20,7 @@ public class Cell extends Personaje implements PersonajeMalo{
         estado = estado.transformarse(this.ki);
         estado = new EstadoNormal();
     }
-
+/*
     public void  ataqueBasico(Personaje enemigo){
         this.ki -= 3;
         this.atacar(enemigo, 15);
@@ -40,6 +40,6 @@ public class Cell extends Personaje implements PersonajeMalo{
 
     @Override
     private void  atacar(PersonajeBueno enemigo, int danio){
-        enemigo.recibirDanio(danio)
-    }
+        enemigo.recibirDanio(danio);
+    }*/
 }

@@ -5,7 +5,7 @@ import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.EstadosPiccolo.*;
 
-public class Piccolo extends Personaje implements PersonajeBueno {
+public class Piccolo extends Personaje {
 
     private Estado estado;
 
@@ -21,7 +21,7 @@ public class Piccolo extends Personaje implements PersonajeBueno {
         estado = estado.transformarse(gohan,this.ki);
         this.ki-= estado.costoDeTransformacion();
     }
-
+/*
     public void ataqueBasico(Personaje enemigo){
         this.ki -= 5;
         this.atacar(enemigo, 10);
@@ -29,7 +29,7 @@ public class Piccolo extends Personaje implements PersonajeBueno {
 
     public void makankosappo(Personaje enemigo){
         this.ki -= 10;
-        this.atacar(enemigo, 30)
+        this.atacar(enemigo, 30);
     }
 
     @Override
@@ -39,6 +39,7 @@ public class Piccolo extends Personaje implements PersonajeBueno {
 
     @Override
     private void  atacar(PersonajeMalo enemigo, int danio) {
-        enemigo.recibirDanio(danio)
+        enemigo.recibirDanio(danio);
     }
+*/
 }

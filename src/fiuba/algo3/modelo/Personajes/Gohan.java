@@ -6,7 +6,7 @@ import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosGohan.*;
 import fiuba.algo3.modelo.excepciones.*;
 
-public class Gohan extends Personaje implements PersonajeBueno{
+public class Gohan extends Personaje {
 
     private Estado estado;
     private int vidaCritica;
@@ -26,7 +26,7 @@ public class Gohan extends Personaje implements PersonajeBueno{
         estado = estado.transformarse(personaje1,personaje2,this.ki);
         this.ki -= estado.costoDeTransformacion();
     }
-
+/*
     public void ataqueBasico(Personaje enemigo){
         this.ki -= 10;
         this.atacar(enemigo,20);
@@ -46,4 +46,5 @@ public class Gohan extends Personaje implements PersonajeBueno{
     private void  atacar(PersonajeMalo enemigo, int danio) {
         enemigo.recibirDanio(danio);
     }
+*/
 }

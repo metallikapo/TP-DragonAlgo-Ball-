@@ -20,6 +20,10 @@ public class EstadoNormal implements Estado {
         kiNecesario = 20;
     }
 
+    public int getPoderPelea(){
+        return poderPelea;
+    }
+
     @Override
     public void puedeMoverse(int pasos){
         if(velocidad<pasos){
