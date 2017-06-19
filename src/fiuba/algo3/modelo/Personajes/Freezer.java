@@ -5,6 +5,7 @@ import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosFreezer.*;
+import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
 public class Freezer extends Personaje implements PersonajeMalo{
 
@@ -36,7 +37,7 @@ public class Freezer extends Personaje implements PersonajeMalo{
 
     @Override
     public void ataqueBasico(PersonajeMalo companiero){
-
+        throw new FuegoAmigoException();
     }
 
 }

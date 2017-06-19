@@ -2,10 +2,10 @@ package fiuba.algo3.modelo.Personajes;
 
 public interface PersonajeMalo {
 
-    public abstract void ataqueBasico(PersonajeMalo unPersonaje);
+    void ataqueBasico(PersonajeMalo unPersonaje);
 
-    public abstract void ataqueBasico(PersonajeBueno unPersonaje);
+    void ataqueBasico(PersonajeBueno unPersonaje);
 
-    public abstract void recibirDanio(int danio);
+    void recibirDanio(int danio);
 
 }

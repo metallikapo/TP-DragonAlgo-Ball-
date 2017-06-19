@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosCell.*;
+import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
 public class Cell extends Personaje implements PersonajeMalo{
 
@@ -45,9 +46,7 @@ public class Cell extends Personaje implements PersonajeMalo{
 */
     @Override
     public void ataqueBasico(PersonajeMalo amigo){
-
-        //throw new FuegoAmigoException();
-
+        throw new FuegoAmigoException();
     }
 
     /*

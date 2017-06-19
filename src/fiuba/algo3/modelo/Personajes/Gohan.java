@@ -4,8 +4,9 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosGohan.*;
+import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
-public class Gohan extends Personaje{
+public class Gohan extends Personaje implements PersonajeBueno{
 
     private Estado estado;
     private int vidaCritica;
@@ -26,5 +27,23 @@ public class Gohan extends Personaje{
         this.ki -= estado.costoDeTransformacion();
     }
 
-    
+    @Override
+    public void ataqueBasico(PersonajeMalo unPersonaje) {
+
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeBueno unPersonaje) {
+        throw new FuegoAmigoException();
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo unPersonaje) {
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno unPersonaje) {
+        throw new FuegoAmigoException();
+    }
 }

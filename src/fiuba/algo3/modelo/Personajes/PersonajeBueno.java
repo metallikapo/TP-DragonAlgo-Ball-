@@ -4,11 +4,14 @@ import fiuba.algo3.modelo.Estados.Estado;
 
 public interface PersonajeBueno{
 
+    void ataqueBasico(PersonajeMalo unPersonaje);
 
-    public abstract void ataqueBasico(PersonajeMalo unPersonaje);
+    void ataqueBasico(PersonajeBueno unPersonaje);
 
-    public abstract void ataqueBasico(PersonajeBueno unPersonaje);
+    void ataqueEspecial(PersonajeMalo unPersonaje);
 
-    public abstract void recibirDanio(int danio);
+    void ataqueEspecial(PersonajeBueno unPersonaje);
+
+    void recibirDanio(int danio);
 
 }
