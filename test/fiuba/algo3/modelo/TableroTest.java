@@ -1,10 +1,6 @@
 package fiuba.algo3.modelo;
 
-<<<<<<< HEAD
-=======
-
 import fiuba.algo3.modelo.excepciones.CeldaNoOcupadaException;
->>>>>>> 1fa895ef3fc9224f03e1d237c91c06c324a1425e
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

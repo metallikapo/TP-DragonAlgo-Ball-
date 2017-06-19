@@ -29,6 +29,27 @@ public class personajeTest{
         
     }
 
+    @Test
+    public void test02seUbicaPersonajeGokuSeLoTransformaSeLoMueveAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(0,2);
+        Coordenada otraCoordenada1 = new Coordenada(0,6);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            goku.mover(otraCoordenada);
+        }
+
+        goku.transformarse();
+
+        goku.mover(otraCoordenada1);
+
+        assertTrue(goku.estaUbicadoEn(otraCoordenada1));
+    }
+
     /*
     
     @Test

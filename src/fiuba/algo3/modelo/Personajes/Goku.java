@@ -20,7 +20,25 @@ public class Goku extends Personaje implements PersonajeBueno{
     public void transformarse(){
         estado = estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
-
     }
 
+    public void  ataqueBasico(Personaje enemigo){
+        this.ki -= 10;
+        this.atacar(enemigo, 20);
+    }
+
+    public void kamekameha(Personaje enemigo){
+        this.ki -= 20;
+        this.atacar(enemigo, 50)
+    }
+
+    @Override
+    private void  atacar(PersonajeBueno amigo, int danio){
+        throw new FuegoAmigoException();
+    }
+
+    @Override
+    private void  atacar(PersonajeMalo enemigo, int danio) {
+        enemigo.recibirDanio(danio)
+    }
 }
