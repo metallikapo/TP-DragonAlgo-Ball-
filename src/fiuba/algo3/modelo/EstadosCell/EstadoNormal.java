@@ -23,6 +23,11 @@ public class EstadoNormal implements Estado {
     }
 
     @Override
+    public void sumarVidaAbsorbida(){
+        vidaAbsorbida+=1;
+    }
+
+    @Override
     public int getPoderPelea(){
         return poderPelea;
     }

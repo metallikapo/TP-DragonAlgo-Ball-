@@ -20,6 +20,11 @@ public class EstadoPerfecto implements Estado {
     }
 
     @Override
+    public void sumarVidaAbsorbida(){
+
+    }
+
+    @Override
     public int getPoderPelea(){
         return poderPelea;
     }

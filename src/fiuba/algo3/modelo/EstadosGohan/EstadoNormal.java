@@ -63,5 +63,9 @@ public class EstadoNormal implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
+    @Override
+    public void sumarVidaAbsorbida(){
+
+    }
 
 }

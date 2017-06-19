@@ -57,4 +57,9 @@ public class EstadoSegundaForma implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
+    @Override
+    public void sumarVidaAbsorbida(){
+
+    }
+
 }

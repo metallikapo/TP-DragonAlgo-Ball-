@@ -30,7 +30,7 @@ public class Freezer extends Personaje implements PersonajeMalo{
 
     @Override
     public void ataqueBasico(PersonajeBueno enemigo){
-        
+
         enemigo.recibirDanio(estado.getPoderPelea());
     }
 

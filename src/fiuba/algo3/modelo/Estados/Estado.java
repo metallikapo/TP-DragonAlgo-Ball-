@@ -7,6 +7,8 @@ public interface Estado {
 
     public abstract void puedeMoverse(int pasos);
 
+    public abstract void sumarVidaAbsorbida();
+
     public abstract int getPoderPelea();
 
     public abstract Estado transformarse(int condicion);
