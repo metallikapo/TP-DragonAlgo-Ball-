@@ -14,7 +14,7 @@ import org.junit.rules.ExpectedException;
 public class GokuAtaqueBasico {
 
     @Test
-    public void test01SeUbicaAGokuYAFreezerSeAtacanConAtaqueBasico(){
+    public void test01SeUbicaAGokuYAFreezerSeAtacanConAtaqueBasicoSegunDistancias(){
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
@@ -35,9 +35,9 @@ public class GokuAtaqueBasico {
     }
 
 
-/*
+
     @Test
-    public void GokuEstadoNormalTieneMenosDel30%DeVidaSuDanioAumenta20%(){
+    public void GokuEstadoNormalTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -47,14 +47,18 @@ public class GokuAtaqueBasico {
         Freezer freezer = new Freezer();
         freezer.naceEn(otraCoordenada1);
 
-        goku.recibirDanio(350);
-        goku.atacar(freezer);
+        //freezer.ataqueBasico(goku); tantas veces como sea necesario para que goku tenga vida critica
+        for (int i=0; i<13; i++){
+            freezer.ataqueBasico(goku);
+        }
 
-        assertTrue(freezer.poseeVida(476));
+        goku.ataqueBasico(freezer);
+
+        assertTrue(freezer.poseeVida(376));
     }
 
     @Test
-    public void GokuEstadoKaioKenTieneMenosDel30%DeVidaSuDanioAumenta20%(){
+    public void GokuEstadoKaioKenTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Coordenada otraCoordenada2 = new Coordenada(1, 1);
@@ -72,14 +76,16 @@ public class GokuAtaqueBasico {
         Freezer freezer = new Freezer();
         freezer.naceEn(otraCoordenada2);
 
-        goku.recibirDanio(350);
-        goku.atacar(freezer);
+        for (int i=0; i<13; i++){
+            freezer.ataqueBasico(goku);
+        }
+        goku.ataqueBasico(freezer);
 
-        assertTrue(freezer.poseeVida(452));
+        assertTrue(freezer.poseeVida(352));
     }
 
     @Test
-    public void GokuEstadoSuperSayajinTieneMenosDel30%DeVidaSuDanioAumenta20%(){
+    public void GokuEstadoSuperSayajinTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Coordenada otraCoordenada2 = new Coordenada(1, 1);
@@ -104,9 +110,11 @@ public class GokuAtaqueBasico {
         Freezer freezer = new Freezer();
         freezer.naceEn(otraCoordenada1);
 
-        goku.recibirDanio(350);
-        goku.atacar(freezer);
+        for (int i=0; i<13; i++){
+            freezer.ataqueBasico(goku);
+        }
+        goku.ataqueBasico(freezer);
 
-        assertTrue(freezer.poseeVida(428));
-    }*/
+        assertTrue(freezer.poseeVida(328));
+    }
 }

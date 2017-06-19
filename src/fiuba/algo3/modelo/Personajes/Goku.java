@@ -27,7 +27,11 @@ public class Goku extends Personaje implements PersonajeBueno{
 
     @Override
     public void ataqueBasico(PersonajeMalo enemigo){
-        enemigo.recibirDanio(estado.getPoderPelea());
+        if (this.estadoVidaCritica()) {
+            enemigo.recibirDanio(estado.getPoderPelea()+ (estado.getPoderPelea()*20)/100);
+        } else{
+            enemigo.recibirDanio(estado.getPoderPelea());
+        }
     }
 
     @Override
