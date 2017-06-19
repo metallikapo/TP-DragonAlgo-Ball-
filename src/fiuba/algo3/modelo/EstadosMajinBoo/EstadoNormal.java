@@ -56,6 +56,7 @@ public class EstadoNormal implements Estado {
     public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
         throw new NoSePuedeTransformarPersonaje();
     }
+<<<<<<< HEAD
 
     @Override
     public void sumarVidaAbsorbida(){
@@ -63,3 +64,11 @@ public class EstadoNormal implements Estado {
     }
 
 }
+=======
+ 
+    @Override
+    public int moverPorEstado(){
+	return this.velocidad;	
+    }
+}
+>>>>>>> 77e0b9aecf6da3b59e0827b888fb059e6dd72e4b

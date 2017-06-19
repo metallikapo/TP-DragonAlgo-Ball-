@@ -63,8 +63,17 @@ public class SuperSayajinFase1 implements Estado {
         throw new NoSePuedeTransformarPersonaje();
     }
 
+<<<<<<< HEAD
     @Override
     public void sumarVidaAbsorbida(){
 
     }
 }
+=======
+
+    @Override
+    public int moverPorEstado(){
+	return this.velocidad;	
+    }
+}
+>>>>>>> 77e0b9aecf6da3b59e0827b888fb059e6dd72e4b
