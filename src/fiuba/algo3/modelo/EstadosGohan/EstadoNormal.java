@@ -40,6 +40,7 @@ public class EstadoNormal implements Estado {
         }
         return new EstadoSuperSayajinFase1();
      */
+
     @Override
     public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
         if(kiNecesario>ki){

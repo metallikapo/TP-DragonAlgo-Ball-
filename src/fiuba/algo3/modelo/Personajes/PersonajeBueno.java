@@ -14,4 +14,5 @@ public interface PersonajeBueno{
 
     void recibirDanio(int danio);
 
+    void convertimeEnChocolate();
 }

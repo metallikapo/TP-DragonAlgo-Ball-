@@ -50,4 +50,5 @@ public abstract class Personaje{
     public int getVida() {
         return this.vida;
     }
+
 }

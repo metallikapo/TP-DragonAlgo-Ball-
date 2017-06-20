@@ -2,6 +2,7 @@ package fiuba.algo3.modelo;
 
 import fiuba.algo3.modelo.Personajes.*;
 import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.excepciones.EsUnChocolateException;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 import org.junit.Rule;
 import org.junit.Test;
@@ -15,6 +16,7 @@ public class AtaquesIntegracionTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
+    /*
     @Test
     public void test01SeUbicaAGokuYAFreezerSeAtacanConAtaqueBasicoSegunDistancias(){
 
@@ -27,6 +29,9 @@ public class AtaquesIntegracionTest {
         Freezer freezer = new Freezer();
         freezer.naceEn(otraCoordenada);
 
+
+        goku.ataqueBasico(freezer);
+
         //goku ataca a freezer
         //assert freezer recibe danio
 
@@ -36,7 +41,7 @@ public class AtaquesIntegracionTest {
         //freezer ataca a goku
         //assert ni goku ni freezer reciben danio
 
-    }
+    }*/
 
     @Test
     public void test01SeUbicaAGokuYAFreezerSeAtacanConAtaqueEspecialesSegunDistancias(){
@@ -58,7 +63,7 @@ public class AtaquesIntegracionTest {
         int vidaLlenaGoku = goku.getVida();
         freezer.ataqueEspecial(goku); //deberia aumentar el ki
 
-        assertTrue((vidaLlenaFreezer > freezer.getVida()));
+        assertTrue((vidaLlenaGoku > goku.getVida()));
         //goku ataca a freezer
         //assert freezer recibe danio
 
@@ -102,5 +107,23 @@ public class AtaquesIntegracionTest {
 
         thrown.expect(FuegoAmigoException.class);
         cell.ataqueBasico(freezer);
+    }
+
+    @Test
+    public void majinBooConvierteEnChocolateAGokuYLoDejaInutil() {
+
+        Coordenada posicionInicialGoku = new Coordenada(0, 0);
+        Coordenada posicionInicialMajinBoo = new Coordenada(0, 2);
+
+        Goku goku = new Goku();
+        goku.naceEn(posicionInicialGoku);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(posicionInicialMajinBoo);
+
+        majinBoo.convertirEnChocolate(goku);
+
+        thrown.expect(EsUnChocolateException.class);
+        goku.ataqueBasico(majinBoo);
     }
 }

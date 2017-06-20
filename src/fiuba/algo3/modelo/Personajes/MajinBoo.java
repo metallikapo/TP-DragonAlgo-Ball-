@@ -4,8 +4,9 @@ import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosMajinBoo.*;
+import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
-public class MajinBoo extends Personaje {
+public class MajinBoo extends Personaje implements PersonajeMalo{
 
     private Estado estado;
 
@@ -30,4 +31,27 @@ public class MajinBoo extends Personaje {
 
     }
 
+    public void convertirEnChocolate(PersonajeBueno enemigo) {
+        enemigo.convertimeEnChocolate();
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeMalo amigo) {
+        throw new FuegoAmigoException();
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeBueno unPersonaje) {
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo unPersonaje) {
+        throw new FuegoAmigoException();
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno unPersonaje) {
+
+    }
 }

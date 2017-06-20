@@ -43,7 +43,7 @@ public class Goku extends Personaje implements PersonajeBueno{
     @Override
     public void ataqueEspecial(PersonajeMalo enemigo){
         if (this.estadoVidaCritica()) {
-            enemigo.recibirDanio(estado.getPoderPelea() + (estado.getPoderPelea()*20)/100);
+            enemigo.recibirDanio((estado.getPoderPelea()*120)/100);
 
             //no puedo aplicarle el 50% mas de daño porque recibirDanio no soporta un double
             //enemigo.recibirDanio((estado.getPoderPelea()*1.5) + (estado.getPoderPelea()*20)/100);
@@ -57,4 +57,8 @@ public class Goku extends Personaje implements PersonajeBueno{
         throw new FuegoAmigoException();
     }
 
+    @Override
+    public void convertimeEnChocolate() {
+        this.estado = new EstadoChocolate();
+    }
 }

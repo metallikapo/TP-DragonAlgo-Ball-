@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class VersorDireccionTest {
 
-    	@Test
+    @Test
     public void test01CrearUnVersorDireccionYObtenerUnaDireccionHaciaArriba(){
         Coordenada unaCoordenada = new Coordenada(1,2);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);

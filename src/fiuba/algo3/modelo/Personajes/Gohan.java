@@ -1,9 +1,8 @@
 package fiuba.algo3.modelo.Personajes;
 
-import fiuba.algo3.modelo.Componentes.Celda;
-import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.EstadosGohan.EstadoNormal;
+import fiuba.algo3.modelo.EstadosGohan.EstadoChocolate;
 import fiuba.algo3.modelo.Estados.Estado;
-import fiuba.algo3.modelo.EstadosGohan.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
 public class Gohan extends Personaje implements PersonajeBueno{
@@ -45,5 +44,10 @@ public class Gohan extends Personaje implements PersonajeBueno{
     @Override
     public void ataqueEspecial(PersonajeBueno unPersonaje) {
         throw new FuegoAmigoException();
+    }
+
+    @Override
+    public void convertimeEnChocolate() {
+        this.estado = new EstadoChocolate();
     }
 }
