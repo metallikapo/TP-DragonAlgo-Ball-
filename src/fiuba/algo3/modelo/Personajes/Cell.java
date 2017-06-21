@@ -31,17 +31,6 @@ public class Cell extends Personaje implements PersonajeMalo{
         estado.ataqueBasico(enemigo,this);
     }
 
-    @Override
-    public void ataqueEspecial(PersonajeMalo unPersonaje) {
-
-    }
-
-    @Override
-    public void ataqueEspecial(PersonajeBueno unPersonaje) {
-
-    }
-
-
     public void absorber(PersonajeBueno enemigo){
         if (kiNecesario>this.ki){
             throw new NoSePuedeAbsorberPersonajeException();

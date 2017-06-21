@@ -171,4 +171,6 @@ public class FreezerTest {
         assertTrue(gohan.poseeVida(270));
     }
 
+
+
 }

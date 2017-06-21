@@ -42,11 +42,6 @@ public class Goku extends Personaje implements PersonajeBueno{
         throw new FuegoAmigoException();
     }
 
-    @Override
-    public void ataqueEspecial(PersonajeMalo enemigo){
-
-
-    }
 
     public void kamehameha(PersonajeMalo enemigo){
         if(ki<kiNecesario){
@@ -54,11 +49,6 @@ public class Goku extends Personaje implements PersonajeBueno{
         }
         estado.ataqueEspecial(enemigo,this);
         this.ki -= kiNecesario;
-    }
-
-    @Override
-    public void ataqueEspecial(PersonajeBueno amigo){
-        throw new FuegoAmigoException();
     }
 
     @Override

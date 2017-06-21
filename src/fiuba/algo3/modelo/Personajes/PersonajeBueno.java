@@ -8,11 +8,7 @@ public interface PersonajeBueno{
 
     void ataqueBasico(PersonajeBueno unPersonaje);
 
-    void ataqueEspecial(PersonajeMalo unPersonaje);
-
-    void ataqueEspecial(PersonajeBueno unPersonaje);
-
-    void recibirDanio(int danio);
+    void recibirDanio(int cantidad);
 
     void convertimeEnChocolate();
 }

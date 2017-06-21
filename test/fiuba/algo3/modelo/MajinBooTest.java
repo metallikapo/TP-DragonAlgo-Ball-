@@ -2,6 +2,7 @@ package fiuba.algo3.modelo;
 
 
 import fiuba.algo3.modelo.excepciones.*;
+import fiuba.algo3.modelo.Personajes.Cell;
 import fiuba.algo3.modelo.Personajes.Freezer;
 import fiuba.algo3.modelo.Personajes.MajinBoo;
 import fiuba.algo3.modelo.Componentes.Celda;
@@ -130,7 +131,27 @@ public class MajinBooTest {
         assertTrue(majinboo.poseeKi(30));
     }
 
+    @Test
+    public void MajinbooNoPuedeAtacarAUnCompanieroEquipoNoProduceDanio(){
 
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
+        MajinBoo majinboo = new MajinBoo();
+        majinboo.naceEn(otraCoordenada1);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            majinboo.mover(otraCoordenada1);
+        }
+        thrown.expect(FuegoAmigoException.class);
+        majinboo.ataqueBasico(cell);
+
+        assertTrue(cell.poseeVida(500));
+
+    }
 
 }

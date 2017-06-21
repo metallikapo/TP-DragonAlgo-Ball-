@@ -44,16 +44,6 @@ public class Gohan extends Personaje implements PersonajeBueno{
     }
 
     @Override
-    public void ataqueEspecial(PersonajeMalo unPersonaje) {
-
-    }
-
-    @Override
-    public void ataqueEspecial(PersonajeBueno unPersonaje) {
-        throw new FuegoAmigoException();
-    }
-
-    @Override
     public void convertimeEnChocolate() {
         this.estado = new EstadoChocolate(estado);
     }

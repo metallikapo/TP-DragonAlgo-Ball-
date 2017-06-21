@@ -92,6 +92,10 @@ public class AtaquesIntegracionTest {
 
         thrown.expect(FuegoAmigoException.class);
         goku.ataqueBasico(gohan);
+
+        thrown.expect(FuegoAmigoException.class);
+        gohan.ataqueBasico(goku);
+
     }
 
     @Test

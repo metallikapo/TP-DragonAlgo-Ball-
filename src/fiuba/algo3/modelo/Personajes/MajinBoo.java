@@ -34,6 +34,10 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
         enemigo.convertimeEnChocolate();
     }
 
+    public void convertirEnChocolate(PersonajeMalo amigo){
+        throw new FuegoAmigoException();
+    }
+
     @Override
     public void ataqueBasico(PersonajeMalo amigo) {
         throw new FuegoAmigoException();
@@ -42,16 +46,6 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     @Override
     public void ataqueBasico(PersonajeBueno unPersonaje) {
         estado.ataqueBasico(unPersonaje,this);
-    }
-
-    @Override
-    public void ataqueEspecial(PersonajeMalo unPersonaje) {
-        throw new FuegoAmigoException();
-    }
-
-    @Override
-    public void ataqueEspecial(PersonajeBueno unPersonaje) {
-
     }
 
     @Override

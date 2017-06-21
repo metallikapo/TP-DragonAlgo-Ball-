@@ -29,18 +29,8 @@ public class Freezer extends Personaje implements PersonajeMalo{
     }
 
     @Override
-    public void ataqueEspecial(PersonajeMalo amigo) {
-        throw new FuegoAmigoException();
-    }
-
-    @Override
     public void ataqueBasico(PersonajeMalo amigo) {
         throw new FuegoAmigoException();
-    }
-
-    @Override
-    public void ataqueEspecial(PersonajeBueno enemigo) {
-        estado.ataqueEspecial(enemigo,this);
     }
 
     @Override
