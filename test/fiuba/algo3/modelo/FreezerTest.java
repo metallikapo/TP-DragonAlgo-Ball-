@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.excepciones.*;
 import fiuba.algo3.modelo.Personajes.Freezer;
 import fiuba.algo3.modelo.Personajes.Goku;
 import fiuba.algo3.modelo.Personajes.Gohan;
+import fiuba.algo3.modelo.Personajes.Cell;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
@@ -169,6 +170,26 @@ public class FreezerTest {
         }
         freezer.rayoMortal(gohan);
         assertTrue(gohan.poseeVida(270));
+    }
+
+    @Test
+    public void FreezerNoPuedeAtacarAsuCompañeroDeEquipoException(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        Cell cell = new Cell();
+        cell.naceEn(otraCoordenada1);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            freezer.mover(unaCoordenada);
+        }
+
+        thrown.expect(FuegoAmigoException.class);
+        freezer.rayoMortal(cell);
     }
 
 

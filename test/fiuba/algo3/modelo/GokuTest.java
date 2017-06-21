@@ -171,6 +171,27 @@ public class GokuTest {
         assertTrue(cell.poseeVida(470));
     }
 
+    @Test
+    public void GokuNoPuedeAtacarConKamehamehaAUnCompanieroDeEquipoEsteNoSufreDanio(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(otraCoordenada1);
+
+        for(int i= 0; i<10; i++){
+            goku.mover(unaCoordenada);
+        }
+
+        thrown.expect(FuegoAmigoException.class);
+        goku.kamehameha(gohan);
+
+        assertTrue(gohan.poseeVida(300));
+    }
+
 
     public void testGokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);

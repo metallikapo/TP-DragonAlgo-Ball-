@@ -51,6 +51,10 @@ public class Goku extends Personaje implements PersonajeBueno{
         this.ki -= kiNecesario;
     }
 
+    public void kamehameha(PersonajeBueno amigo){
+        throw new FuegoAmigoException();
+    }
+
     @Override
     public void convertimeEnChocolate() {
         this.estado = new EstadoChocolate(estado);
