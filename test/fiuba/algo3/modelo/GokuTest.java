@@ -7,6 +7,8 @@ import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
 import fiuba.algo3.modelo.excepciones.*;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -127,6 +129,18 @@ public class GokuTest {
         goku.transformarse();
 
         assertTrue(goku.poseeKi(30));
+    }
+
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado(){
+        Coordenada unaCoordenada = new Coordenada(5,5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverArriba().getCoordenadaY(),7);
+        assertEquals(goku.moverArriba().getCoordenadaX(),5);
+
     }
 
 }
