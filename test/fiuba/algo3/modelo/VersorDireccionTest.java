@@ -11,29 +11,29 @@ public class VersorDireccionTest {
 
     @Test
     public void test01CrearUnVersorDireccionYObtenerUnaDireccionHaciaArriba(){
-        Coordenada unaCoordenada = new Coordenada(1,2);
+        Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaArriba = unVersor.moverArriba();
-        assertEquals(coordenadaHaciaArriba.getCoordenadaX(), 0);
+        assertEquals(coordenadaHaciaArriba.getCoordenadaX(), 2);
         assertEquals(coordenadaHaciaArriba.getCoordenadaY(), 2);
 
     }
 
     @Test
     public void test02CrearUnVersorDireccionYObtenerUnaDireccionHaciaAbajo(){
-        Coordenada unaCoordenada = new Coordenada(1,2);
+        Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaAbajo = unVersor.moverAbajo();
         assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 2);
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 2);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 0);
 
     }
 
     @Test
     public void test03CrearUnVersorDireccionYObtenerUnaDireccionHaciaIzquierda(){
-        Coordenada unaCoordenada = new Coordenada(1,2);
+        Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaAbajo = unVersor.moverAIzquierda();
@@ -44,56 +44,56 @@ public class VersorDireccionTest {
 
     @Test
     public void test04CrearUnVersorDireccionYObtenerUnaDireccionHaciaDerecha(){
-        Coordenada unaCoordenada = new Coordenada(1,2);
+        Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaAbajo = unVersor.moverADerecha();
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 1);
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 3);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 3);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 1);
 
     }
 
     @Test
     public void test05CrearUnVersorDireccionYObtenerUnaDireccionHaciaSuperiorIzquierda() {
-        Coordenada unaCoordenada = new Coordenada(1, 2);
+        Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaAbajo = unVersor.moverASuperiorIzquierda();
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 0);
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 1);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 1);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 2);
 
     }
 
     @Test
     public void test06CrearUnVersorDireccionYObtenerUnaDireccionHaciaSuperiorDerecha() {
-        Coordenada unaCoordenada = new Coordenada(1, 2);
+        Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaAbajo = unVersor.moverASuperiorDerecha();
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 0);
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 3);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 3);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 2);
 
     }
 
     @Test
     public void test07CrearUnVersorDireccionYObtenerUnaDireccionHaciaInferiorIzquierda() {
-        Coordenada unaCoordenada = new Coordenada(1, 2);
+        Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaAbajo = unVersor.moverAInferiorIzquierda();
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 2);
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 1);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 1);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 0);
 
     }
 
     @Test
     public void test08CrearUnVersorDireccionYObtenerUnaDireccionHaciaInferiorDerecha() {
-        Coordenada unaCoordenada = new Coordenada(1, 2);
+        Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
         Coordenada coordenadaHaciaAbajo = unVersor.moverAInferiorDerecha();
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 2);
-        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 3);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaX(), 3);
+        assertEquals(coordenadaHaciaAbajo.getCoordenadaY(), 0);
 
     }
 
