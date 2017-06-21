@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.EstadosFreezer;
 
+import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.Personaje;
@@ -71,6 +73,7 @@ public class EstadoDefinitivo implements Estado {
 	return this.velocidad;	
     }
 
+
     @Override
     public void ataqueBasico(PersonajeMalo enemigo, Personaje personaje){
 
@@ -82,8 +85,20 @@ public class EstadoDefinitivo implements Estado {
     }
 
     @Override
-    public void ataqueEspecial(PersonajeMalo amigo, Personaje personaje){
+    public void ataqueEspecial(PersonajeMalo amigo, Personaje personaje) {
         throw new FuegoAmigoException();
+    }
+
+    public Coordenada moverArriba(VersorDireccion unVersor) {
+
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverArriba();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+
     }
 }
 

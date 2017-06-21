@@ -14,8 +14,8 @@ public class VersorDireccion {
     public Coordenada moverArriba(){
         int coordenadaX;
         int coordenadaY;
-        coordenadaX = this.coordenada.getCoordenadaX() -1;
-        coordenadaY = this.coordenada.getCoordenadaY();
+        coordenadaX = this.coordenada.getCoordenadaX();
+        coordenadaY = this.coordenada.getCoordenadaY()+1;
 
         Coordenada unaCoordenada = new Coordenada( coordenadaX,coordenadaY);
         return unaCoordenada;
@@ -24,8 +24,8 @@ public class VersorDireccion {
     public Coordenada moverAbajo(){
         int coordenadaX;
         int coordenadaY;
-        coordenadaX = this.coordenada.getCoordenadaX() +1;
-        coordenadaY = this.coordenada.getCoordenadaY();
+        coordenadaX = this.coordenada.getCoordenadaX();
+        coordenadaY = this.coordenada.getCoordenadaY()-1;
 
         Coordenada unaCoordenada = new Coordenada( coordenadaX,coordenadaY);
         return unaCoordenada;
@@ -34,8 +34,8 @@ public class VersorDireccion {
     public Coordenada moverAIzquierda(){
         int coordenadaX;
         int coordenadaY;
-        coordenadaX = this.coordenada.getCoordenadaX() ;
-        coordenadaY = this.coordenada.getCoordenadaY()-1;
+        coordenadaX = this.coordenada.getCoordenadaX() -1;
+        coordenadaY = this.coordenada.getCoordenadaY();
 
         Coordenada unaCoordenada = new Coordenada( coordenadaX,coordenadaY);
         return unaCoordenada;
@@ -44,8 +44,8 @@ public class VersorDireccion {
     public Coordenada moverADerecha(){
         int coordenadaX;
         int coordenadaY;
-        coordenadaX = this.coordenada.getCoordenadaX() ;
-        coordenadaY = this.coordenada.getCoordenadaY()+1;
+        coordenadaX = this.coordenada.getCoordenadaX()+1 ;
+        coordenadaY = this.coordenada.getCoordenadaY();
 
         Coordenada unaCoordenada = new Coordenada( coordenadaX,coordenadaY);
         return unaCoordenada;
@@ -55,7 +55,7 @@ public class VersorDireccion {
         int coordenadaX;
         int coordenadaY;
         coordenadaX = this.coordenada.getCoordenadaX()-1 ;
-        coordenadaY = this.coordenada.getCoordenadaY()-1;
+        coordenadaY = this.coordenada.getCoordenadaY()+1;
 
         Coordenada unaCoordenada = new Coordenada( coordenadaX,coordenadaY);
         return unaCoordenada;
@@ -64,7 +64,7 @@ public class VersorDireccion {
     public Coordenada moverASuperiorDerecha(){
         int coordenadaX;
         int coordenadaY;
-        coordenadaX = this.coordenada.getCoordenadaX()-1 ;
+        coordenadaX = this.coordenada.getCoordenadaX()+1 ;
         coordenadaY = this.coordenada.getCoordenadaY()+1;
 
         Coordenada unaCoordenada = new Coordenada( coordenadaX,coordenadaY);
@@ -74,7 +74,7 @@ public class VersorDireccion {
     public Coordenada moverAInferiorIzquierda() {
         int coordenadaX;
         int coordenadaY;
-        coordenadaX = this.coordenada.getCoordenadaX() + 1;
+        coordenadaX = this.coordenada.getCoordenadaX() - 1;
         coordenadaY = this.coordenada.getCoordenadaY() - 1;
 
         Coordenada unaCoordenada = new Coordenada(coordenadaX, coordenadaY);
@@ -86,7 +86,7 @@ public class VersorDireccion {
         int coordenadaX;
         int coordenadaY;
         coordenadaX = this.coordenada.getCoordenadaX() + 1;
-        coordenadaY = this.coordenada.getCoordenadaY() + 1;
+        coordenadaY = this.coordenada.getCoordenadaY() -1 ;
 
         Coordenada unaCoordenada = new Coordenada(coordenadaX, coordenadaY);
         return unaCoordenada;

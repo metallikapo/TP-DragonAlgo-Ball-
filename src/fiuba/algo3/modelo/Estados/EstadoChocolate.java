@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.Estados;
 
+import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.Personaje;
@@ -64,6 +66,7 @@ public class EstadoChocolate implements Estado {
         throw new EsUnChocolateException();
     }
 
+
     @Override
     public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
 
@@ -92,4 +95,7 @@ public class EstadoChocolate implements Estado {
     @Override
     public void ataqueEspecial(PersonajeBueno enemigo,Personaje personaje){
     }
+
+    public Coordenada moverArriba(VersorDireccion unVersor) {  throw new EsUnChocolateException();}
+
 }

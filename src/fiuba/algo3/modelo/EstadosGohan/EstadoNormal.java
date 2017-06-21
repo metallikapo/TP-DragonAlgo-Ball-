@@ -1,6 +1,9 @@
 package fiuba.algo3.modelo.EstadosGohan;
 
 import fiuba.algo3.modelo.Estados.*;
+import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
+import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosGohan.SuperSayajinFase1;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
@@ -34,14 +37,6 @@ public class EstadoNormal implements Estado {
             throw new NoSePuedeMoverPersonaje();
         }
     }
-    /*
-    vamos a necesitar otro metodo de estado tansformar que reciba a dos compañeros
-    en este caso no va a estar implementado
-    if (kiNecesario > kiActual){
-            throw new NoSePuedeTransformarPersonaje();
-        }
-        return new EstadoSuperSayajinFase1();
-     */
 
     @Override
     public Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
@@ -80,6 +75,7 @@ public class EstadoNormal implements Estado {
 	return this.velocidad;	
     }
 
+
     @Override
     public void aumentarVida(Personaje cell){
 
@@ -91,9 +87,20 @@ public class EstadoNormal implements Estado {
     }
 
     @Override
-    public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje){
+    public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje) {
 
-        enemigo.recibirDanio((poderPelea*125)/100);
+        enemigo.recibirDanio((poderPelea * 125) / 100);
+    }
+
+    public Coordenada moverArriba(VersorDireccion unVersor) {
+
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverArriba();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
     }
 }
 

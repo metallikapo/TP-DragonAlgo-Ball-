@@ -1,10 +1,12 @@
 package fiuba.algo3.modelo.Personajes;
 
-import fiuba.algo3.modelo.EstadosGohan.*;
 import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
+import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.EstadosGohan.EstadoNormal;
+import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 
@@ -62,5 +64,11 @@ public class Gohan extends Personaje implements PersonajeBueno{
         }
         this.ki -= kiNecesario;
         estado.ataqueEspecial(enemigo,this);
+    }
+
+    @Override
+    public Coordenada moverArriba() {
+        Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
+        return unaCoordenada;
     }
 }

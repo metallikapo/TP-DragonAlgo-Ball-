@@ -8,6 +8,7 @@ import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
 import fiuba.algo3.modelo.excepciones.*;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -55,7 +56,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuEstadoKaioKen() {
+    public void testTransformarPersonajeGokuEstadoKaioKenDisminuyeKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -74,7 +75,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeGokuEstadoKaioKen() {
+    public void testNoSePuedeTransformarPersonajeGokuEstadoKaioKenExcepcion() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -131,13 +132,16 @@ public class GokuTest {
     }
 
     @Test
-    public void gokuAtacaACellConKamehamehaDisminuyKIgoku(){
+    public void gokuAtacaACellConKamehamehaDisminuyKIgoku() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
+    }
+
+    public void testGokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado(){
+        Coordenada unaCoordenada = new Coordenada(5,5);
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
-
         Cell cell = new Cell();
         cell.naceEn(otraCoordenada1);
 
@@ -168,6 +172,10 @@ public class GokuTest {
 
         goku.kamehameha(cell);
         assertTrue(cell.poseeVida(470));
+
+        assertEquals(goku.moverArriba().getCoordenadaY(),7);
+        assertEquals(goku.moverArriba().getCoordenadaX(),5);
+
     }
 
 }

@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo.Personajes;
 
 import fiuba.algo3.modelo.Componentes.Celda;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.excepciones.PersonajeEstaMuerto;
@@ -12,9 +13,12 @@ public abstract class Personaje{
     protected int kiPorTurno = 5;
     protected Coordenada coordenada;
     protected int vidaCritica;
+    protected VersorDireccion versorPersonaje;
 
     public void naceEn(Coordenada coordenada){
+
         this.coordenada = coordenada;//se necesita el new??en constructor??
+        this.versorPersonaje = new VersorDireccion(this.coordenada);
     }
 
     public boolean estaUbicadoEn(Coordenada coordenada){
@@ -51,8 +55,12 @@ public abstract class Personaje{
         return this.vida;
     }
 
+
     public void aumentarVida(int cantidad){
         this.vida += cantidad;
     }
+
+    public abstract Coordenada moverArriba();
+
 
 }

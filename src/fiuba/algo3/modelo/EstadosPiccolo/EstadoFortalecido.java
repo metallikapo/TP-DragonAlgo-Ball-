@@ -1,6 +1,10 @@
 package fiuba.algo3.modelo.EstadosPiccolo;
 
+
 import fiuba.algo3.modelo.Estados.*;
+import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
+import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
@@ -81,7 +85,18 @@ public class EstadoFortalecido implements Estado {
     }
 
     @Override
-    public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje){
+    public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje) {
+    }
+
+    public Coordenada moverArriba(VersorDireccion unVersor) {
+
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverArriba();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
 
     }
 }
