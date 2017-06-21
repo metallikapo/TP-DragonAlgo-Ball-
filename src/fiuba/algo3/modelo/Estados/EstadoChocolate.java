@@ -100,5 +100,17 @@ public class EstadoChocolate implements Estado {
     public Coordenada moverArriba(VersorDireccion unVersor) {  throw new PersonajeEnEstadoChocolateExcepcion();}
     @Override
     public Coordenada moverAbajo(VersorDireccion unVersor){  throw new PersonajeEnEstadoChocolateExcepcion();}
+    @Override
+    public Coordenada moverAIzquierda(VersorDireccion unVersor){throw new PersonajeEnEstadoChocolateExcepcion();}
+    @Override
+    public Coordenada moverADerecha(VersorDireccion unVersor){throw new PersonajeEnEstadoChocolateExcepcion();}
+    @Override
+    public Coordenada moverASuperiorDerecha(VersorDireccion unVersor){throw new PersonajeEnEstadoChocolateExcepcion();}
+    @Override
+    public Coordenada moverASuperiorIzquierda(VersorDireccion unVersor){throw new PersonajeEnEstadoChocolateExcepcion();}
+    @Override
+    public Coordenada moverAInferiorDerecha(VersorDireccion unVersor){throw new PersonajeEnEstadoChocolateExcepcion();}
+    @Override
+    public Coordenada moverAInferiorIzquierda(VersorDireccion unVersor){throw new PersonajeEnEstadoChocolateExcepcion();}
 
 }

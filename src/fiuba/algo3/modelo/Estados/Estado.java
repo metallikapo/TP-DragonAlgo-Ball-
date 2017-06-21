@@ -31,9 +31,23 @@ public interface Estado {
 
     public abstract int costoDeTransformacion();
 
-    public abstract int moverPorEstado();
+    public abstract int moverPorEstado(); //BORRAR!
 
     public abstract Coordenada moverArriba(VersorDireccion unVersor);
 
     public abstract Coordenada moverAbajo(VersorDireccion unVersor);
+
+    public abstract Coordenada moverAIzquierda(VersorDireccion unVersor);
+
+    public abstract Coordenada moverADerecha(VersorDireccion unVersor);
+
+    public abstract Coordenada moverASuperiorDerecha(VersorDireccion unVersor);
+
+    public abstract Coordenada moverASuperiorIzquierda(VersorDireccion unVersor);
+
+    public abstract Coordenada moverAInferiorDerecha(VersorDireccion unVersor);
+
+    public abstract Coordenada moverAInferiorIzquierda(VersorDireccion unVersor);
+
+
 }

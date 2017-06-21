@@ -118,5 +118,72 @@ public class EstadoBooMalo implements Estado {
         return unaCoordenada;
 
     }
+
+    @Override
+    public Coordenada moverAIzquierda(VersorDireccion unVersor){
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverAIzquierda();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+    }
+
+    @Override
+    public Coordenada moverADerecha(VersorDireccion unVersor){
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverADerecha();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+    }
+
+    @Override
+    public Coordenada moverASuperiorDerecha(VersorDireccion unVersor){
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverASuperiorDerecha();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+    }
+
+    @Override
+    public Coordenada moverASuperiorIzquierda(VersorDireccion unVersor){
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverASuperiorIzquierda();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+    }
+
+    @Override
+    public Coordenada moverAInferiorDerecha(VersorDireccion unVersor){
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverAInferiorDerecha();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+    }
+
+    @Override
+    public Coordenada moverAInferiorIzquierda(VersorDireccion unVersor){
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverAInferiorIzquierda();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+    }
+
 }
 

@@ -41,7 +41,7 @@ public class Piccolo extends Personaje  {
         return unaCoordenada;
     }
     @Override
-    public Coordenada moverDerecha(){
+    public Coordenada moverADerecha(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         return unaCoordenada;
     }
