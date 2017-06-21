@@ -174,5 +174,26 @@ public class CellTest {
         assertTrue(goku.poseeKi(500));
     }
 
+    @Test
+    public void CellNoPuedeAbsorberVidaDeMajinBooNoProduceDanio(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(otraCoordenada1);
+
+        cell.mover(unaCoordenada);
+
+        try{
+            cell.absorber(majinBoo);
+        }catch (FuegoAmigoException ignored){
+
+        }
+
+        assertTrue(majinBoo.poseeVida(300));
+    }
+
 
 }
