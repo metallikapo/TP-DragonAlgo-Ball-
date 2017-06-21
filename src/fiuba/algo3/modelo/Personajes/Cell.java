@@ -46,6 +46,11 @@ public class Cell extends Personaje implements PersonajeMalo{
     }
 
     @Override
+    public void volverAlEstadoAnterior(Estado estado){
+
+    }
+
+    @Override
     public void ataqueBasico(PersonajeMalo amigo){
         throw new FuegoAmigoException();
     }

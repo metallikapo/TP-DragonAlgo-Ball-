@@ -70,18 +70,17 @@ public class EstadoChocolate implements Estado {
     @Override
     public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
 
+
     }
 
     @Override
     public void ataqueBasico(PersonajeMalo enemigo, Personaje personaje){
 
-        //ver esto no va a funcionar
-        if (this.turnosDuracion > 0) {
-            this.turnosDuracion -= 1;
+        turnosDuracion -= 1;
+        if (turnosDuracion > 0) {
             throw new PersonajeEnEstadoChocolateExcepcion();
         }
-        personaje.volverAlEstadoanterio
-
+        personaje.volverAlEstadoAnterior(estado);
     }
 
     @Override

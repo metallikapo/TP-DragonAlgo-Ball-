@@ -56,6 +56,11 @@ public class Goku extends Personaje implements PersonajeBueno{
     }
 
     @Override
+    public void volverAlEstadoAnterior(Estado estado){
+        this.estado = estado;
+    }
+
+    @Override
     public void convertimeEnChocolate() {
         this.estado = new EstadoChocolate(estado);
     }

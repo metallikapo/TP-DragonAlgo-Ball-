@@ -49,6 +49,11 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     }
 
     @Override
+    public void volverAlEstadoAnterior(Estado estado){
+
+    }
+
+    @Override
     public Coordenada moverArriba() {
         Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
         return unaCoordenada;

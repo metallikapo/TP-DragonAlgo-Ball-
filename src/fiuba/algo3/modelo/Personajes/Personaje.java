@@ -1,5 +1,6 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Personajes.Gohan;
@@ -55,6 +56,7 @@ public abstract class Personaje{
         return this.vida;
     }
 
+    public abstract void volverAlEstadoAnterior(Estado estado);
 
     public void aumentarVida(int cantidad){
         this.vida += cantidad;

@@ -45,6 +45,120 @@ public class MajinBooAtaqueEspecialTest {
     }
 
     @Test
+    public void gokuPierdeSuSegundoTurnoPOrEstarEnEstadoChocolateMajinBooNoRecibeAtaque(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 2);
+        Coordenada otraCoordenada1 = new Coordenada(0, 4);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        MajinBoo majinboo = new MajinBoo();
+        majinboo.naceEn(otraCoordenada);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            majinboo.mover(otraCoordenada1);
+        }
+
+        majinboo.convertirEnChocolate(goku);
+
+        try{
+
+            goku.ataqueBasico(majinboo);
+        }catch (PersonajeEnEstadoChocolateExcepcion e) {
+            try{
+                goku.ataqueBasico(majinboo);
+            }catch (PersonajeEnEstadoChocolateExcepcion ignored){
+
+            }
+        }
+
+        assertTrue(majinboo.poseeVida(300));
+    }
+
+    @Test
+    public void gokuPierdeSuTercerTurnoPOrEstarEnEstadoChocolateMajinBooNoRecibeAtaque(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 2);
+        Coordenada otraCoordenada1 = new Coordenada(0, 4);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        MajinBoo majinboo = new MajinBoo();
+        majinboo.naceEn(otraCoordenada);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            majinboo.mover(otraCoordenada1);
+        }
+
+        majinboo.convertirEnChocolate(goku);
+
+        try{
+
+            goku.ataqueBasico(majinboo);
+        }catch (PersonajeEnEstadoChocolateExcepcion e1) {
+            try{
+                goku.ataqueBasico(majinboo);
+            }catch (PersonajeEnEstadoChocolateExcepcion e2){
+                try {
+                    goku.ataqueBasico(majinboo);
+                }catch (PersonajeEnEstadoChocolateExcepcion e3){
+
+                }
+            }
+
+        }
+
+        assertTrue(majinboo.poseeVida(300));
+    }
+
+    @Test
+    public void gokuYapuedeAtacarAlCuartoTurnoEnEstado(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 2);
+        Coordenada otraCoordenada1 = new Coordenada(0, 4);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        MajinBoo majinboo = new MajinBoo();
+        majinboo.naceEn(otraCoordenada);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            majinboo.mover(otraCoordenada1);
+        }
+
+        for (int i = 0; i<10 ; i++){
+            goku.mover(unaCoordenada);
+        }
+
+        goku.transformarse();
+        majinboo.convertirEnChocolate(goku);
+
+        try{
+
+            goku.ataqueBasico(majinboo);
+        }catch (PersonajeEnEstadoChocolateExcepcion e1) {
+            try{
+                goku.ataqueBasico(majinboo);
+            }catch (PersonajeEnEstadoChocolateExcepcion e2){
+                try {
+                    goku.ataqueBasico(majinboo);
+                }catch (PersonajeEnEstadoChocolateExcepcion e3){
+
+                }
+            }
+
+        }
+        goku.ataqueBasico(majinboo);
+
+        assertTrue(majinboo.poseeVida(260));    }
+
+    @Test
     public void MajinBooNoPuedeConvertirEnChocolateAunCompanieroDeEquipoFuegoAmigoException(){
 
         Coordenada posicionInicialCell = new Coordenada(0, 0);
@@ -67,4 +181,6 @@ public class MajinBooAtaqueEspecialTest {
 
         assertTrue(majinBoo.poseeKi(50));
     }
+
+
 }

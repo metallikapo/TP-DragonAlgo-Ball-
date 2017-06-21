@@ -3,6 +3,7 @@ package fiuba.algo3.modelo;
 import fiuba.algo3.modelo.Personajes.Goku;
 import fiuba.algo3.modelo.Personajes.Cell;
 import fiuba.algo3.modelo.Personajes.Freezer;
+import fiuba.algo3.modelo.Personajes.MajinBoo;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
@@ -132,6 +133,22 @@ public class GokuAtaqueBasico {
         goku.ataqueBasico(cell);
         assertTrue(cell.poseeVida(480));
     }
+
+    @Test
+    public void GokuAtaqueBasicoEnEstadoNormalMajinbooRecibeDanio(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 2);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        MajinBoo majinboo = new MajinBoo();
+        majinboo.naceEn(otraCoordenada);
+
+        goku.ataqueBasico(majinboo);
+        assertTrue(majinboo.poseeVida(280));
+    }
+
 
     @Test
     public void GokuAtaqueBasicoEnEstadoKaioKenCellRecibeDanio(){
