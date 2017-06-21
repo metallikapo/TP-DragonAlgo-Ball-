@@ -92,6 +92,7 @@ public class EstadoNormal implements Estado {
         enemigo.recibirDanio((poderPelea * 125) / 100);
     }
 
+    @Override
     public Coordenada moverArriba(VersorDireccion unVersor) {
 
         int escalar = this.velocidad;
@@ -101,6 +102,19 @@ public class EstadoNormal implements Estado {
             unVersor = new VersorDireccion(unaCoordenada);
         }
         return unaCoordenada;
+    }
+
+    @Override
+    public Coordenada moverAbajo(VersorDireccion unVersor) {
+
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverAbajo();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+
     }
 }
 

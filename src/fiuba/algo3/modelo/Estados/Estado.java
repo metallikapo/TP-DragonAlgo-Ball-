@@ -34,4 +34,6 @@ public interface Estado {
     public abstract int moverPorEstado();
 
     public abstract Coordenada moverArriba(VersorDireccion unVersor);
+
+    public abstract Coordenada moverAbajo(VersorDireccion unVersor);
 }

@@ -96,6 +96,9 @@ public class EstadoChocolate implements Estado {
     public void ataqueEspecial(PersonajeBueno enemigo,Personaje personaje){
     }
 
+    @Override
     public Coordenada moverArriba(VersorDireccion unVersor) {  throw new PersonajeEnEstadoChocolateExcepcion();}
+    @Override
+    public Coordenada moverAbajo(VersorDireccion unVersor){  throw new PersonajeEnEstadoChocolateExcepcion();}
 
 }

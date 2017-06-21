@@ -90,6 +90,7 @@ public class EstadoPerfecto implements Estado {
     public void ataqueEspecial(PersonajeBueno enemigo, Personaje personaje) {
     }
 
+    @Override
     public Coordenada moverArriba(VersorDireccion unVersor) {
 
         int escalar = this.velocidad;
@@ -100,7 +101,18 @@ public class EstadoPerfecto implements Estado {
         }
         return unaCoordenada;
 
-
     }
 
+    @Override
+    public Coordenada moverAbajo(VersorDireccion unVersor) {
+
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverAbajo();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+
+    }
 }
