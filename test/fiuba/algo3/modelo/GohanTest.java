@@ -217,7 +217,27 @@ public class GohanTest {
         assertTrue(majinboo.poseeVida(282));
     }
 
+    @Test
+    public void ataqueMasenkoAunCompanieroExcepcionNoProduceDanioNiDisminuyeSuKi(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+        Coordenada otraCoordenada = new Coordenada(2,0);
 
+        Goku goku = new Goku();
+        goku.naceEn(otraCoordenada1);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        for(int i=0; i<5 ; i++){
+            gohan.mover(otraCoordenada);
+        }
+
+        thrown.expect(FuegoAmigoException.class);
+        gohan.masenko(goku);
+
+        assertTrue(gohan.poseeKi(25));
+    }
 
 
 }

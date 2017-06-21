@@ -56,6 +56,10 @@ public class Gohan extends Personaje implements PersonajeBueno{
         estado.ataqueEspecial(enemigo,this);
     }
 
+    public void masenko(PersonajeBueno amigo){
+        throw new FuegoAmigoException();
+    }
+
     @Override
     public Coordenada moverArriba() {
         Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);

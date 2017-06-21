@@ -80,6 +80,7 @@ public class EstadoChocolate implements Estado {
             this.turnosDuracion -= 1;
             throw new PersonajeEnEstadoChocolateExcepcion();
         }
+        personaje.volverAlEstadoanterio
 
     }
 
