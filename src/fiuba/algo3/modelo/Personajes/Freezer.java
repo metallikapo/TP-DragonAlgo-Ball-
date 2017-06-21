@@ -55,4 +55,42 @@ public class Freezer extends Personaje implements PersonajeMalo{
         Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
         return unaCoordenada;
     }
+
+    @Override
+    public Coordenada moverAbajo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        return unaCoordenada;
+    }
+
+    @Override
+    public Coordenada moverAIzquierda(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        return unaCoordenada;
+    }
+    @Override
+    public Coordenada moverDerecha(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        return unaCoordenada;
+    }
+    @Override
+    public Coordenada moverASuperiorIzquierda(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        return unaCoordenada;
+    }
+    @Override
+    public Coordenada moverASuperiorDerecha(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        return unaCoordenada;
+    }
+    @Override
+    public Coordenada moverAInferiorIzquierda(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        return unaCoordenada;
+    }
+    @Override
+    public Coordenada moverAIzquierdaDerecha(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        return unaCoordenada;
+    }
+
 }
