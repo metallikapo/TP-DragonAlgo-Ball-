@@ -68,7 +68,7 @@ public abstract class Personaje{
 
     public abstract Coordenada moverAIzquierda();
 
-    public abstract Coordenada moverDerecha();
+    public abstract Coordenada moverADerecha();
 
     public abstract Coordenada moverASuperiorIzquierda();
 

@@ -192,15 +192,26 @@ public class GokuTest {
         assertTrue(gohan.poseeVida(300));
     }
 
-
+    @Test
     public void testGokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
 
-        assertEquals(goku.moverArriba().getCoordenadaY(), 7);
         assertEquals(goku.moverArriba().getCoordenadaX(), 5);
+        assertEquals(goku.moverArriba().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverAbajo().getCoordenadaX(), 5);
+        assertEquals(goku.moverAbajo().getCoordenadaY(), 3);
     }
 
 

@@ -73,7 +73,7 @@ public class Cell extends Personaje implements PersonajeMalo{
         return unaCoordenada;
     }
     @Override
-    public Coordenada moverDerecha(){
+    public Coordenada moverADerecha(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         return unaCoordenada;
     }

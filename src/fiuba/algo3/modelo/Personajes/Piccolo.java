@@ -77,7 +77,7 @@ public class Piccolo extends Personaje implements PersonajeBueno {
         return unaCoordenada;
     }
     @Override
-    public Coordenada moverDerecha(){
+    public Coordenada moverADerecha(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         return unaCoordenada;
     }
