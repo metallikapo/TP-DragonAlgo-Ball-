@@ -150,7 +150,7 @@ public class GokuAtaqueBasico {
             //va a incrementar el ki
             goku.mover(otraCoordenada1);
         }
-
+        goku.transformarse();
         goku.ataqueBasico(cell);
         assertTrue(cell.poseeVida(460));
     }
