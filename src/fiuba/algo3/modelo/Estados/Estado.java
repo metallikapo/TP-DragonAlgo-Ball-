@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.Estados;
 
+import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.Personaje;
 
@@ -20,4 +22,6 @@ public interface Estado {
     public abstract int costoDeTransformacion();
 
     public abstract int moverPorEstado();
+
+    public abstract Coordenada moverArriba(VersorDireccion unVersor);
 }

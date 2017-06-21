@@ -1,5 +1,6 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.EstadosGohan.EstadoNormal;
 import fiuba.algo3.modelo.EstadosGohan.EstadoChocolate;
 import fiuba.algo3.modelo.Estados.Estado;
@@ -49,5 +50,11 @@ public class Gohan extends Personaje implements PersonajeBueno{
     @Override
     public void convertimeEnChocolate() {
         this.estado = new EstadoChocolate();
+    }
+
+    @Override
+    public Coordenada moverArriba() {
+        Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
+        return unaCoordenada;
     }
 }

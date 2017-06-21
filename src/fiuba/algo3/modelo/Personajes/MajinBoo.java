@@ -1,5 +1,6 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
@@ -53,5 +54,11 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     @Override
     public void ataqueEspecial(PersonajeBueno unPersonaje) {
 
+    }
+
+    @Override
+    public Coordenada moverArriba() {
+        Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
+        return unaCoordenada;
     }
 }

@@ -1,5 +1,6 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Componentes.Celda;
@@ -44,5 +45,11 @@ public class Freezer extends Personaje implements PersonajeMalo{
     public void ataqueBasico(PersonajeBueno enemigo) {
         //codigo minimo, esto debe hacerlo el estado
         enemigo.recibirDanio(30);
+    }
+
+    @Override
+    public Coordenada moverArriba() {
+        Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
+        return unaCoordenada;
     }
 }

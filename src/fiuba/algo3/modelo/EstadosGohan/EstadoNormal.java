@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.EstadosGohan;
 
+import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosGohan.SuperSayajinFase1;
 import fiuba.algo3.modelo.Personajes.Personaje;
@@ -69,9 +71,20 @@ public class EstadoNormal implements Estado {
 
     }
 
-
     public int moverPorEstado(){
 	return this.velocidad;	
+    }
+
+    public Coordenada moverArriba(VersorDireccion unVersor) {
+
+        int escalar = this.velocidad;
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        for (int contador =0; contador < escalar; contador++){
+            unaCoordenada = unVersor.moverArriba();
+            unVersor = new VersorDireccion(unaCoordenada);
+        }
+        return unaCoordenada;
+
     }
 }
 

@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo.Personajes;
 
 import fiuba.algo3.modelo.Componentes.Celda;
+import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
@@ -60,5 +61,12 @@ public class Goku extends Personaje implements PersonajeBueno{
     @Override
     public void convertimeEnChocolate() {
         this.estado = new EstadoChocolate();
+    }
+
+
+    @Override
+    public Coordenada moverArriba() {
+        Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
+        return unaCoordenada;
     }
 }
