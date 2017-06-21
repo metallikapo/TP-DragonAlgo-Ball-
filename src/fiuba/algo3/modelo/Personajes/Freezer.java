@@ -6,15 +6,18 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosFreezer.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 
 public class Freezer extends Personaje implements PersonajeMalo{
 
     private Estado estado;
+    private int kiNecesario;
 
     public Freezer() {
 
         vida = 400;
         ki = 0;
+        kiNecesario = 20; //para realizar el ataque especial
         estado = new EstadoNormal();
     }
 
@@ -36,13 +39,23 @@ public class Freezer extends Personaje implements PersonajeMalo{
 
     @Override
     public void ataqueEspecial(PersonajeBueno enemigo) {
-        //codigo minimo, esto debe hacerlo el estado
-        enemigo.recibirDanio(50);
+        estado.ataqueEspecial(enemigo,this);
     }
 
     @Override
     public void ataqueBasico(PersonajeBueno enemigo) {
-        //codigo minimo, esto debe hacerlo el estado
-        enemigo.recibirDanio(30);
+        estado.ataqueBasico(enemigo,this);
+    }
+
+    public void rayoMortal(PersonajeBueno enemigo){
+        if(this.ki < kiNecesario){
+            throw new NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException();
+        }
+        this.ki -= kiNecesario;
+        estado.ataqueEspecial(enemigo,this);
+    }
+
+    public void rayoMortal(PersonajeMalo amigo){
+        throw new FuegoAmigoException();
     }
 }

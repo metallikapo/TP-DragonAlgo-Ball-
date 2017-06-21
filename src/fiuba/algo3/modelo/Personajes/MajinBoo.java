@@ -5,26 +5,21 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosMajinBoo.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeConvertirAlPersonajeEnEstadoChocolateException;
 
 public class MajinBoo extends Personaje implements PersonajeMalo{
 
     private Estado estado;
+    private int kiNecesario;
 
     public MajinBoo() {
 
         vida = 300;
         ki = 0;
+        kiNecesario = 30; //para convertir en chocolate
         estado = new EstadoNormal();
     }
 
-    /*
-    @Override
-    public void seMueveHaciaLaDerecha(int pasos){
-        estado.puedeMoverse(pasos);
-        celda.incrementarColumna(pasos);
-        ki+=kiPorTurno;
-    }
-*/
     public void transformarse(){
         estado = estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
@@ -32,6 +27,9 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     }
 
     public void convertirEnChocolate(PersonajeBueno enemigo) {
+        if (this.ki<kiNecesario) {
+            throw new NoSePuedeConvertirAlPersonajeEnEstadoChocolateException();
+        }
         enemigo.convertimeEnChocolate();
     }
 
@@ -42,7 +40,7 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
 
     @Override
     public void ataqueBasico(PersonajeBueno unPersonaje) {
-
+        estado.ataqueBasico(unPersonaje,this);
     }
 
     @Override

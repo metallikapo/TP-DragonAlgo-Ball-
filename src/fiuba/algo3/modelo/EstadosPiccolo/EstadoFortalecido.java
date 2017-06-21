@@ -1,10 +1,12 @@
 package fiuba.algo3.modelo.EstadosPiccolo;
 
-import fiuba.algo3.modelo.Estados.Estado;
+import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 
 public class EstadoFortalecido implements Estado {
     private int poderPelea;
@@ -20,8 +22,8 @@ public class EstadoFortalecido implements Estado {
     }
 
     @Override
-    public int getPoderPelea(){
-        return poderPelea;
+    public void ataqueBasico(PersonajeMalo enemigo, Personaje piccolo){
+        enemigo.recibirDanio(poderPelea);
     }
 
     @Override
@@ -59,9 +61,28 @@ public class EstadoFortalecido implements Estado {
 
     }
 
-
     public int moverPorEstado(){
 	return this.velocidad;	
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void aumentarVida(Personaje cell){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno amigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje){
+
     }
 }
 

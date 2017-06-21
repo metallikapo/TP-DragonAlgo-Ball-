@@ -2,6 +2,8 @@ package fiuba.algo3.modelo.Estados;
 
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 
 public interface Estado {
 
@@ -9,7 +11,15 @@ public interface Estado {
 
     public abstract void sumarVidaAbsorbida();
 
-    public abstract int getPoderPelea();
+    public abstract void aumentarVida(Personaje cell);
+
+    public abstract void ataqueBasico(PersonajeMalo enemigo, Personaje personaje);
+
+    public abstract void ataqueBasico(PersonajeBueno enemigo, Personaje personaje);
+
+    public abstract void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje);
+
+    public abstract void ataqueEspecial(PersonajeBueno enemigo, Personaje personaje);
 
     public abstract Estado transformarse(int condicion);
 

@@ -5,16 +5,19 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosCell.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAbsorberPersonajeException;
 
 public class Cell extends Personaje implements PersonajeMalo{
 
     private Estado estado;
+    private int kiNecesario;
 
     public Cell(){
 
         vida = 500;
         ki = 0;
         estado = new EstadoNormal();
+        kiNecesario = 5;
     }
 
     public void transformarse(){
@@ -24,7 +27,7 @@ public class Cell extends Personaje implements PersonajeMalo{
 
     @Override
     public void  ataqueBasico(PersonajeBueno enemigo){
-        enemigo.recibirDanio(estado.getPoderPelea());
+        estado.ataqueBasico(enemigo,this);
     }
 
     @Override
@@ -39,30 +42,18 @@ public class Cell extends Personaje implements PersonajeMalo{
 
 
     public void absorber(PersonajeBueno enemigo){
-        //falta validaciones
+        if (kiNecesario>this.ki){
+            throw new NoSePuedeAbsorberPersonajeException();
+        }
         this.ki -= 5;
-        enemigo.recibirDanio(estado.getPoderPelea());
-        this.vida += estado.getPoderPelea();
-        estado.sumarVidaAbsorbida();
+        estado.ataqueBasico(enemigo,this);
+        estado.aumentarVida(this);
+
     }
 
-/*
-    public void absorber(Personaje enemigo){
-        //falta validaciones
-        this.ki -= 5;
-        this.atacar(enemigo, 15);
-        this.vida += 15;
-    }
-*/
     @Override
     public void ataqueBasico(PersonajeMalo amigo){
         throw new FuegoAmigoException();
     }
 
-    /*
-    @Override
-    private void  atacar(PersonajeBueno enemigo, int danio){
-        enemigo.recibirDanio(danio);
-    }
-*/
 }

@@ -130,4 +130,7 @@ public class MajinBooTest {
         assertTrue(majinboo.poseeKi(30));
     }
 
+
+
+
 }

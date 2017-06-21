@@ -51,4 +51,8 @@ public abstract class Personaje{
         return this.vida;
     }
 
+    public void aumentarVida(int cantidad){
+        this.vida += cantidad;
+    }
+
 }

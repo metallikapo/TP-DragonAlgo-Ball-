@@ -56,7 +56,7 @@ public class CellTest {
     }
 
     @Test
-    public void testTransformarPersonajeEstadoSemiPerfecto() {
+    public void TransformarPersonajeEstadoSemiPerfectoAbsorbeVidaVerificaLaAbsorcion() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -77,7 +77,7 @@ public class CellTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeSemiPerfecto() {
+    public void NoSePuedeTransformarPersonajeSemiPerfecto() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -89,7 +89,7 @@ public class CellTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeEstadoPerfecto() {
+    public void NoSePuedeTransformarPersonajeEstadoPerfectoNoSePuedeTransformarPersonaje() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -112,7 +112,7 @@ public class CellTest {
     }
 
     @Test
-    public void testTransformarEstadoPerfecto() {
+    public void TransformarEstadoPerfectoAbsorbeVidaDeGokuVerificaSiSumo() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
@@ -138,7 +138,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellAbsorbeVidaDeGoku() {
+    public void testCellAbsorbeVidaDeGokuEnEstadoNormal() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
@@ -155,6 +155,23 @@ public class CellTest {
         cell.transformarse();
 
         assertTrue(goku.poseeVida(420));
+    }
+
+    @Test
+    public void cellNoPuedeAbsorberVidaPOrFaltaDeKi(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        Goku goku = new Goku();
+        goku.naceEn(otraCoordenada1);
+
+        thrown.expect(NoSePuedeAbsorberPersonajeException.class);
+        cell.absorber(goku);
+
+        assertTrue(cell.poseeKi(0));
+        assertTrue(goku.poseeKi(500));
     }
 
 

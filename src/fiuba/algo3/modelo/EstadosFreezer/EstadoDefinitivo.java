@@ -3,6 +3,9 @@ package fiuba.algo3.modelo.EstadosFreezer;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
+import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
@@ -23,8 +26,13 @@ public class EstadoDefinitivo implements Estado {
     }
 
     @Override
-    public int getPoderPelea(){
-        return poderPelea;
+    public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
+        enemigo.recibirDanio(poderPelea);
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno enemigo, Personaje personaje){
+        enemigo.recibirDanio((poderPelea*150)/100);
     }
 
     @Override
@@ -61,6 +69,21 @@ public class EstadoDefinitivo implements Estado {
 
     public int moverPorEstado(){
 	return this.velocidad;	
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeMalo enemigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void aumentarVida(Personaje cell){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo amigo, Personaje personaje){
+        throw new FuegoAmigoException();
     }
 }
 

@@ -4,17 +4,22 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
-import fiuba.algo3.modelo.Estados.Estado;
+import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.EstadosGoku.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 
 public class Goku extends Personaje implements PersonajeBueno{
 
     private Estado estado;
+    private int kiNecesario;
+    private int porcentaje;
 
     public Goku(){
         vida = 500;
         ki = 0;
+        kiNecesario = 20; //para realizar el Kamehameha
+        porcentaje = 50; //causa un 50% mas que el ataque basico
         vidaCritica = 150;
         estado = new EstadoNormal();
 
@@ -28,11 +33,7 @@ public class Goku extends Personaje implements PersonajeBueno{
 
     @Override
     public void ataqueBasico(PersonajeMalo enemigo){
-        if (this.estadoVidaCritica()) {
-            enemigo.recibirDanio(estado.getPoderPelea()+ (estado.getPoderPelea()*20)/100);
-        } else{
-            enemigo.recibirDanio(estado.getPoderPelea());
-        }
+        estado.ataqueBasico(enemigo,this);
     }
 
     @Override
@@ -42,14 +43,16 @@ public class Goku extends Personaje implements PersonajeBueno{
 
     @Override
     public void ataqueEspecial(PersonajeMalo enemigo){
-        if (this.estadoVidaCritica()) {
-            enemigo.recibirDanio((estado.getPoderPelea()*120)/100);
 
-            //no puedo aplicarle el 50% mas de daño porque recibirDanio no soporta un double
-            //enemigo.recibirDanio((estado.getPoderPelea()*1.5) + (estado.getPoderPelea()*20)/100);
-        } else{
-            enemigo.recibirDanio(estado.getPoderPelea());
+
+    }
+
+    public void kamehameha(PersonajeMalo enemigo){
+        if(ki<kiNecesario){
+            throw new NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException();
         }
+        estado.ataqueEspecial(enemigo,this);
+        this.ki -= kiNecesario;
     }
 
     @Override
@@ -59,6 +62,6 @@ public class Goku extends Personaje implements PersonajeBueno{
 
     @Override
     public void convertimeEnChocolate() {
-        this.estado = new EstadoChocolate();
+        this.estado = new EstadoChocolate(estado);
     }
 }

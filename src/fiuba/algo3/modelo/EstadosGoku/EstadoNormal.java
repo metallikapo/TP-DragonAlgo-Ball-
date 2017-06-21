@@ -5,6 +5,8 @@ import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 
 public class EstadoNormal implements Estado {
 
@@ -20,8 +22,12 @@ public class EstadoNormal implements Estado {
         kiNecesario = 20;
     }
 
-    public int getPoderPelea(){
-        return poderPelea;
+    @Override
+    public void ataqueBasico(PersonajeMalo enemigo, Personaje goku){
+        if(goku.estadoVidaCritica()){
+            enemigo.recibirDanio((poderPelea*20)/100);
+        }
+        enemigo.recibirDanio(poderPelea);
     }
 
     @Override
@@ -61,6 +67,29 @@ public class EstadoNormal implements Estado {
 
     public int moverPorEstado(){
 	return this.velocidad;	
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void aumentarVida(Personaje cell){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno amigo, Personaje Goku){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo enemigo, Personaje goku){
+        if(goku.estadoVidaCritica()){
+            enemigo.recibirDanio((poderPelea*20)/100);
+        }
+        enemigo.recibirDanio((poderPelea*150)/100);
     }
 }
 

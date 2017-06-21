@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.Personajes.*;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.excepciones.EsUnChocolateException;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeConvertirAlPersonajeEnEstadoChocolateException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -46,7 +47,7 @@ public class AtaquesIntegracionTest {
     @Test
     public void test01SeUbicaAGokuYAFreezerSeAtacanConAtaqueEspecialesSegunDistancias(){
 
-        Coordenada unaCoordenada = new Coordenada(0, 0);
+    /*    Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
         Goku goku = new Goku();
@@ -64,7 +65,7 @@ public class AtaquesIntegracionTest {
         freezer.ataqueEspecial(goku); //deberia aumentar el ki
 
         assertTrue((vidaLlenaGoku > goku.getVida()));
-        //goku ataca a freezer
+      */  //goku ataca a freezer
         //assert freezer recibe danio
 
         //freezer ataca a goku
@@ -94,7 +95,7 @@ public class AtaquesIntegracionTest {
     }
 
     @Test
-    public void test01SeUbicaACellYAFreezerCellAtacaFreezerYSeProduceUnaExcepcion() {
+    public void test01SeUbicaACellYAFreezerCellAtacaFreezerYSeProduceUnaExcepcionYnoSufreCambiosEnVida() {
 
         Coordenada posicionInicialCell = new Coordenada(0, 0);
         Coordenada posicionInicialFreezer = new Coordenada(0, 2);
@@ -107,6 +108,8 @@ public class AtaquesIntegracionTest {
 
         thrown.expect(FuegoAmigoException.class);
         cell.ataqueBasico(freezer);
+
+        assertTrue(freezer.poseeVida(400));
     }
 
     @Test
@@ -114,6 +117,7 @@ public class AtaquesIntegracionTest {
 
         Coordenada posicionInicialGoku = new Coordenada(0, 0);
         Coordenada posicionInicialMajinBoo = new Coordenada(0, 2);
+        Coordenada otraCoordenada = new Coordenada(2,0);
 
         Goku goku = new Goku();
         goku.naceEn(posicionInicialGoku);
@@ -121,9 +125,37 @@ public class AtaquesIntegracionTest {
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(posicionInicialMajinBoo);
 
+        for (int i=0; i<10 ; i++){
+            majinBoo.mover(otraCoordenada);
+        }
+
         majinBoo.convertirEnChocolate(goku);
 
         thrown.expect(EsUnChocolateException.class);
         goku.ataqueBasico(majinBoo);
+
+        assertTrue(majinBoo.poseeVida(300));
     }
+
+    @Test
+    public void majinBooNoPuedeConvertirAGokuEnEstadoChocolatePOrqueNoPoseeKIGokuAtaca(){
+        Coordenada posicionInicialGoku = new Coordenada(0, 0);
+        Coordenada posicionInicialMajinBoo = new Coordenada(0, 2);
+        Coordenada otraCoordenada = new Coordenada(2,0);
+
+        Goku goku = new Goku();
+        goku.naceEn(posicionInicialGoku);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(posicionInicialMajinBoo);
+
+        thrown.expect(NoSePuedeConvertirAlPersonajeEnEstadoChocolateException.class);
+        majinBoo.convertirEnChocolate(goku);
+
+        goku.ataqueBasico(majinBoo);
+
+        assertTrue(majinBoo.poseeVida(280));
+    }
+
+
 }

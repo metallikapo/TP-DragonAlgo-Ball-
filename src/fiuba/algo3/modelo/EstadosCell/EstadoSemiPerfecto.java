@@ -2,9 +2,14 @@ package fiuba.algo3.modelo.EstadosCell;
 
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
+import fiuba.algo3.modelo.Personajes.Cell;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAbsorberPersonajeException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
+import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
 public class EstadoSemiPerfecto implements Estado {
 
@@ -29,8 +34,9 @@ public class EstadoSemiPerfecto implements Estado {
     }
 
     @Override
-    public int getPoderPelea(){
-        return poderPelea;
+    public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
+
+        enemigo.recibirDanio(poderPelea);
     }
 
     @Override
@@ -67,5 +73,26 @@ public class EstadoSemiPerfecto implements Estado {
     @Override
     public int moverPorEstado(){
 	return this.velocidad;	
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeMalo enemigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void aumentarVida(Personaje cell){
+        cell.aumentarVida(poderPelea);
+        this.sumarVidaAbsorbida();
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo amigo, Personaje personaje){
+        throw new FuegoAmigoException();
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno enemigo, Personaje personaje) {
+
     }
 }

@@ -1,11 +1,13 @@
 package fiuba.algo3.modelo.EstadosGoku;
 
-import fiuba.algo3.modelo.Estados.Estado;
+import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 
 public class EstadoSuperSayajin implements Estado {
 
@@ -22,8 +24,11 @@ public class EstadoSuperSayajin implements Estado {
     }
 
     @Override
-    public int getPoderPelea(){
-        return poderPelea;
+    public void ataqueBasico(PersonajeMalo enemigo, Personaje goku){
+        if(goku.estadoVidaCritica()){
+            enemigo.recibirDanio((poderPelea*20)/100);
+        }
+        enemigo.recibirDanio(poderPelea);
     }
 
     @Override
@@ -60,6 +65,29 @@ public class EstadoSuperSayajin implements Estado {
 
     public int moverPorEstado(){
 	return this.velocidad;	
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void aumentarVida(Personaje cell){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno amigo, Personaje Goku){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo enemigo, Personaje goku){
+        if(goku.estadoVidaCritica()){
+            enemigo.recibirDanio((poderPelea*50)/100);
+        }
+        enemigo.recibirDanio(poderPelea);
     }
 }
 

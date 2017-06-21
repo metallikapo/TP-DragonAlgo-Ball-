@@ -1,8 +1,10 @@
-package fiuba.algo3.modelo.EstadosPiccolo;
+package fiuba.algo3.modelo.Estados;
 
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.excepciones.EsUnChocolateException;
 
 /**
@@ -11,9 +13,11 @@ import fiuba.algo3.modelo.excepciones.EsUnChocolateException;
 public class EstadoChocolate implements Estado {
 
     private int turnosDuracion;
+    private Estado estado;
 
-    public EstadoChocolate(){
+    public EstadoChocolate(Estado estadoActual){
         this.turnosDuracion = 3;
+        estado = estadoActual;
     }
 
     public Estado decrementarDuracion(){
@@ -21,7 +25,7 @@ public class EstadoChocolate implements Estado {
             this.turnosDuracion -= 1;
             return this;
         }else{
-            return new EstadoNormal();
+            return estado;
         }
     }
 
@@ -32,11 +36,6 @@ public class EstadoChocolate implements Estado {
 
     @Override
     public void sumarVidaAbsorbida() {
-        throw new EsUnChocolateException();
-    }
-
-    @Override
-    public int getPoderPelea() {
         throw new EsUnChocolateException();
     }
 
@@ -63,5 +62,34 @@ public class EstadoChocolate implements Estado {
     @Override
     public int moverPorEstado() {
         throw new EsUnChocolateException();
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void ataqueBasico(PersonajeMalo enemigo, Personaje personaje){
+
+        //ver esto no va a funcionar
+        if (this.turnosDuracion > 0) {
+            this.turnosDuracion -= 1;
+            throw new EsUnChocolateException();
+        }
+
+    }
+
+    @Override
+    public void aumentarVida(Personaje cell){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo enemigo,Personaje personaje){
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno enemigo,Personaje personaje){
     }
 }

@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo;
 
 import fiuba.algo3.modelo.Personajes.Goku;
+import fiuba.algo3.modelo.Personajes.Cell;
 import fiuba.algo3.modelo.Personajes.Freezer;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
@@ -29,12 +30,11 @@ public class GokuAtaqueBasico {
         //freezer ataca a goku
         goku.ataqueBasico(freezer);
         freezer.ataqueBasico(goku);
+
         assertTrue(freezer.poseeVida(380));
         assertTrue(goku.poseeVida(480));
 
     }
-
-
 
     @Test
     public void GokuEstadoNormalTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
@@ -117,4 +117,72 @@ public class GokuAtaqueBasico {
 
         assertTrue(freezer.poseeVida(328));
     }
+
+    @Test
+    public void GokuAtaqueBasicoEnEstadoNormalCellRecibeDanio(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 2);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        Cell cell = new Cell();
+        cell.naceEn(otraCoordenada);
+
+        goku.ataqueBasico(cell);
+        assertTrue(cell.poseeVida(480));
+    }
+
+    @Test
+    public void GokuAtaqueBasicoEnEstadoKaioKenCellRecibeDanio(){
+
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 2);
+        Coordenada otraCoordenada1 = new Coordenada(2,0);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        Cell cell = new Cell();
+        cell.naceEn(otraCoordenada);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            goku.mover(otraCoordenada1);
+        }
+
+        goku.ataqueBasico(cell);
+        assertTrue(cell.poseeVida(460));
+    }
+
+    @Test
+    public void GokuAtaqueBasicoEnEstadoSayajinCellRecibeDanio(){
+
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 2);
+        Coordenada otraCoordenada1 = new Coordenada(2,0);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        Cell cell = new Cell();
+        cell.naceEn(otraCoordenada);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            goku.mover(otraCoordenada1);
+        }
+
+        goku.transformarse();
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            goku.mover(otraCoordenada1);
+        }
+
+        goku.transformarse();
+
+        goku.ataqueBasico(cell);
+        assertTrue(cell.poseeVida(440));
+    }
+
 }

@@ -3,12 +3,14 @@ package fiuba.algo3.modelo;
 import fiuba.algo3.modelo.Personajes.Piccolo;
 import fiuba.algo3.modelo.Personajes.Goku;
 import fiuba.algo3.modelo.Personajes.Gohan;
+import fiuba.algo3.modelo.Personajes.MajinBoo;
 import fiuba.algo3.modelo.excepciones.*;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
@@ -75,7 +77,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuEstadoSuperSayajin2() {
+    public void testTransformarPersonajeGokuEstadoSuperSayajin2DisminuyeKI() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -172,6 +174,49 @@ public class GohanTest {
         gohan.transformarse(goku,piccolo);
 
     }
+
+    @Test
+    public void ataqueMasenkoGohanDisminuye10unKi(){
+
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+        Coordenada otraCoordenada = new Coordenada(2,0);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        MajinBoo majinboo = new MajinBoo();
+        majinboo.naceEn(otraCoordenada1);
+
+        for(int i=0; i<5 ; i++){
+            gohan.mover(otraCoordenada);
+        }
+
+        gohan.masenko(majinboo);
+        assertTrue(gohan.poseeKi(15));
+    }
+
+    @Test
+    public void ataqueMasenkoGohanAtacaAMajibooDisminuyeVidaUn25porcMasQueBasico(){
+
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+        Coordenada otraCoordenada = new Coordenada(2,0);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        MajinBoo majinboo = new MajinBoo();
+        majinboo.naceEn(otraCoordenada1);
+
+        for(int i=0; i<5 ; i++){
+            gohan.mover(otraCoordenada);
+        }
+
+        gohan.masenko(majinboo);
+        assertTrue(majinboo.poseeVida(282));
+    }
+
 
 
 

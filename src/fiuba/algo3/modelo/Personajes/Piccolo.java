@@ -22,4 +22,6 @@ public class Piccolo extends Personaje  {
         this.ki-= estado.costoDeTransformacion();
     }
 
+
+
 }

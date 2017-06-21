@@ -1,8 +1,10 @@
 package fiuba.algo3.modelo.EstadosGohan;
 
-import fiuba.algo3.modelo.Estados.Estado;
+import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.EstadosGohan.SuperSayajinFase1;
 import fiuba.algo3.modelo.Personajes.Personaje;
+import fiuba.algo3.modelo.Personajes.PersonajeBueno;
+import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
@@ -22,8 +24,8 @@ public class EstadoNormal implements Estado {
     }
 
     @Override
-    public int getPoderPelea(){
-        return poderPelea;
+    public void ataqueBasico(PersonajeMalo enemigo, Personaje personaje){
+        enemigo.recibirDanio(poderPelea);
     }
 
     @Override
@@ -69,9 +71,29 @@ public class EstadoNormal implements Estado {
 
     }
 
+    @Override
+    public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
+
+    }
 
     public int moverPorEstado(){
 	return this.velocidad;	
+    }
+
+    @Override
+    public void aumentarVida(Personaje cell){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeBueno amigo, Personaje personaje){
+
+    }
+
+    @Override
+    public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje){
+
+        enemigo.recibirDanio((poderPelea*125)/100);
     }
 }
 
