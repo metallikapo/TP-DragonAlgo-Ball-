@@ -56,7 +56,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testTransformarPersonajeEstadoBooMalo() {
+    public void testTransformarPersonajeEstadoBooMaloDisminuyeKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -75,7 +75,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeEstadoBooMalo() {
+    public void testNoSePuedeTransformarPersonajeEstadoBooMaloExcepcion() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -87,7 +87,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeEstadoBooOriginal() {
+    public void testNoSePuedeTransformarPersonajeEstadoBooOriginalExcepcion() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -106,7 +106,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testTransformarEstadoBooOriginal() {
+    public void testTransformarEstadoBooOriginalDisminuyeKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 

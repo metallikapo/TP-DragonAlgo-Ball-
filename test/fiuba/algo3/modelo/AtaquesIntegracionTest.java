@@ -2,7 +2,7 @@ package fiuba.algo3.modelo;
 
 import fiuba.algo3.modelo.Personajes.*;
 import fiuba.algo3.modelo.Componentes.Coordenada;
-import fiuba.algo3.modelo.excepciones.EsUnChocolateException;
+import fiuba.algo3.modelo.excepciones.PersonajeEnEstadoChocolateExcepcion;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeConvertirAlPersonajeEnEstadoChocolateException;
 import org.junit.Rule;
@@ -131,7 +131,7 @@ public class AtaquesIntegracionTest {
 
         majinBoo.convertirEnChocolate(goku);
 
-        thrown.expect(EsUnChocolateException.class);
+        thrown.expect(PersonajeEnEstadoChocolateExcepcion.class);
         goku.ataqueBasico(majinBoo);
 
         assertTrue(majinBoo.poseeVida(300));

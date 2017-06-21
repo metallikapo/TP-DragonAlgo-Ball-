@@ -132,16 +132,13 @@ public class GokuTest {
     }
 
     @Test
-    public void gokuAtacaACellConKamehamehaDisminuyKIgoku() {
+    public void gokuAtacaACellConKamehamehaDisminuyKIgoku(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
-    }
-
-    public void testGokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado(){
-        Coordenada unaCoordenada = new Coordenada(5,5);
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+
         Cell cell = new Cell();
         cell.naceEn(otraCoordenada1);
 
@@ -172,10 +169,18 @@ public class GokuTest {
 
         goku.kamehameha(cell);
         assertTrue(cell.poseeVida(470));
-
-        assertEquals(goku.moverArriba().getCoordenadaY(),7);
-        assertEquals(goku.moverArriba().getCoordenadaX(),5);
-
     }
+
+
+    public void testGokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverArriba().getCoordenadaY(), 7);
+        assertEquals(goku.moverArriba().getCoordenadaX(), 5);
+    }
+
 
 }

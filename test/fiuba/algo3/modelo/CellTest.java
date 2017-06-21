@@ -77,7 +77,7 @@ public class CellTest {
     }
 
     @Test
-    public void NoSePuedeTransformarPersonajeSemiPerfecto() {
+    public void NoSePuedeTransformarPersonajeSemiPerfectoPorNoAbsorberVida() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -89,7 +89,7 @@ public class CellTest {
     }
 
     @Test
-    public void NoSePuedeTransformarPersonajeEstadoPerfectoNoSePuedeTransformarPersonaje() {
+    public void NoSePuedeTransformarPersonajeEstadoPerfectoExcepcion() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -112,7 +112,7 @@ public class CellTest {
     }
 
     @Test
-    public void TransformarEstadoPerfectoAbsorbeVidaDeGokuVerificaSiSumo() {
+    public void TransformarEstadoPerfectoAbsorbeVidaDeGokuVerificaSiSumoLaSuya() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
@@ -138,7 +138,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellAbsorbeVidaDeGokuEnEstadoNormal() {
+    public void testCellAbsorbeVidaDeGoku4VecesEnEstadoNormal() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
