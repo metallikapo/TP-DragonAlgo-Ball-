@@ -214,5 +214,69 @@ public class GokuTest {
         assertEquals(goku.moverAbajo().getCoordenadaY(), 3);
     }
 
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
 
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverAIzquierda().getCoordenadaX(), 3);
+        assertEquals(goku.moverAIzquierda().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverADerecha().getCoordenadaX(), 7);
+        assertEquals(goku.moverADerecha().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverASuperiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(goku.moverASuperiorIzquierda().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverASuperiorDerecha().getCoordenadaX(), 7);
+        assertEquals(goku.moverASuperiorDerecha().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverAInferiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(goku.moverAInferiorIzquierda().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testGokuNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        assertEquals(goku.moverAInferiorDerecha().getCoordenadaX(), 7);
+        assertEquals(goku.moverAInferiorDerecha().getCoordenadaY(), 3);
+    }
 }
