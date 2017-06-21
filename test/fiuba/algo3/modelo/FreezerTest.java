@@ -173,7 +173,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void FreezerNoPuedeAtacarAsuCompañeroDeEquipoException(){
+    public void FreezerNoPuedeAtacarAsuCompanieroDeEquipoException(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
