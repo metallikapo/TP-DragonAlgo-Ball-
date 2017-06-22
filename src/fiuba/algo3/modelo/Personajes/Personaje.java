@@ -38,6 +38,7 @@ public abstract class Personaje{
 
     public void mover(Coordenada coordenada){
         this.coordenada = coordenada;
+        this.versorPersonaje = new VersorDireccion(coordenada);
         this.ki += this.kiPorTurno;
     }
 

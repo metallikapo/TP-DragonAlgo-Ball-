@@ -198,9 +198,10 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverArriba();
 
-        assertEquals(goku.moverArriba().getCoordenadaX(), 5);
-        assertEquals(goku.moverArriba().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -209,9 +210,10 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverAbajo();
 
-        assertEquals(goku.moverAbajo().getCoordenadaX(), 5);
-        assertEquals(goku.moverAbajo().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -220,9 +222,10 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverAIzquierda();
 
-        assertEquals(goku.moverAIzquierda().getCoordenadaX(), 3);
-        assertEquals(goku.moverAIzquierda().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -231,9 +234,10 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverADerecha();
 
-        assertEquals(goku.moverADerecha().getCoordenadaX(), 7);
-        assertEquals(goku.moverADerecha().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -242,9 +246,10 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverASuperiorIzquierda();
 
-        assertEquals(goku.moverASuperiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(goku.moverASuperiorIzquierda().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -253,9 +258,10 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverASuperiorDerecha();
 
-        assertEquals(goku.moverASuperiorDerecha().getCoordenadaX(), 7);
-        assertEquals(goku.moverASuperiorDerecha().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -264,9 +270,10 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverAInferiorIzquierda();
 
-        assertEquals(goku.moverAInferiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(goku.moverAInferiorIzquierda().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -275,8 +282,9 @@ public class GokuTest {
 
         Goku goku = new Goku();
         goku.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = goku.moverAInferiorDerecha();
 
-        assertEquals(goku.moverAInferiorDerecha().getCoordenadaX(), 7);
-        assertEquals(goku.moverAInferiorDerecha().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 }

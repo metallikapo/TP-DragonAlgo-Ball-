@@ -162,9 +162,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverArriba();
 
-        assertEquals(majinBoo.moverArriba().getCoordenadaX(), 5);
-        assertEquals(majinBoo.moverArriba().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -173,9 +174,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo= new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverAbajo();
 
-        assertEquals(majinBoo.moverAbajo().getCoordenadaX(), 5);
-        assertEquals(majinBoo.moverAbajo().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -184,9 +186,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverAIzquierda();
 
-        assertEquals(majinBoo.moverAIzquierda().getCoordenadaX(), 3);
-        assertEquals(majinBoo.moverAIzquierda().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -195,9 +198,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverADerecha();
 
-        assertEquals(majinBoo.moverADerecha().getCoordenadaX(), 7);
-        assertEquals(majinBoo.moverADerecha().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -206,9 +210,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverASuperiorIzquierda();
 
-        assertEquals(majinBoo.moverASuperiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(majinBoo.moverASuperiorIzquierda().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -217,9 +222,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverASuperiorDerecha();
 
-        assertEquals(majinBoo.moverASuperiorDerecha().getCoordenadaX(), 7);
-        assertEquals(majinBoo.moverASuperiorDerecha().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -228,9 +234,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverAInferiorIzquierda();
 
-        assertEquals(majinBoo.moverAInferiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(majinBoo.moverAInferiorIzquierda().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -239,9 +246,10 @@ public class MajinBooTest {
 
         MajinBoo majinBoo = new MajinBoo();
         majinBoo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = majinBoo.moverAInferiorDerecha();
 
-        assertEquals(majinBoo.moverAInferiorDerecha().getCoordenadaX(), 7);
-        assertEquals(majinBoo.moverAInferiorDerecha().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
 }

@@ -146,9 +146,10 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverArriba();
 
-        assertEquals(piccolo.moverArriba().getCoordenadaX(), 5);
-        assertEquals(piccolo.moverArriba().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -157,9 +158,10 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverAbajo();
 
-        assertEquals(piccolo.moverAbajo().getCoordenadaX(), 5);
-        assertEquals(piccolo.moverAbajo().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -168,9 +170,10 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverAIzquierda();
 
-        assertEquals(piccolo.moverAIzquierda().getCoordenadaX(), 3);
-        assertEquals(piccolo.moverAIzquierda().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -179,9 +182,11 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverADerecha();
 
-        assertEquals(piccolo.moverADerecha().getCoordenadaX(), 7);
-        assertEquals(piccolo.moverADerecha().getCoordenadaY(), 5);
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -190,9 +195,10 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverASuperiorIzquierda();
 
-        assertEquals(piccolo.moverASuperiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(piccolo.moverASuperiorIzquierda().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -201,9 +207,10 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverASuperiorDerecha();
 
-        assertEquals(piccolo.moverASuperiorDerecha().getCoordenadaX(), 7);
-        assertEquals(piccolo.moverASuperiorDerecha().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -212,9 +219,10 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverAInferiorIzquierda();
 
-        assertEquals(piccolo.moverAInferiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(piccolo.moverAInferiorIzquierda().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -223,9 +231,34 @@ public class PiccoloTest{
 
         Piccolo piccolo = new Piccolo();
         piccolo.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = piccolo.moverAInferiorDerecha();
 
-        assertEquals(piccolo.moverAInferiorDerecha().getCoordenadaX(), 7);
-        assertEquals(piccolo.moverAInferiorDerecha().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
+    /*
+    @Test
+    public void testTransformarPersonajePiccoloEstadoFortalecidoYMoverArribaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(7,9);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(otraCoordenada);
+
+        for (int i=0; i<10; i++){
+            //va a incrementar el ki
+            piccolo.moverArriba();
+        }
+
+        piccolo.transformarse(gohan);
+
+        assertEquals(piccolo.moverArriba().getCoordenadaX(), 0);
+        assertEquals(piccolo.moverArriba().getCoordenadaY(), 22);
+    }
+
+    */
 }
