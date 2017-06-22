@@ -80,32 +80,32 @@ public class Goku extends Personaje implements PersonajeBueno{
 
     @Override
     public Coordenada moverAIzquierda(){
-        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada unaCoordenada = this.estado.moverAIzquierda(this.versorPersonaje);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverADerecha(){
-        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada unaCoordenada = this.estado.moverADerecha(this.versorPersonaje);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverASuperiorIzquierda(){
-        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada unaCoordenada = this.estado.moverASuperiorIzquierda(this.versorPersonaje);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverASuperiorDerecha(){
-        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada unaCoordenada = this.estado.moverASuperiorDerecha(this.versorPersonaje);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverAInferiorIzquierda(){
-        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada unaCoordenada = this.estado.moverAInferiorIzquierda(this.versorPersonaje);
         return unaCoordenada;
     }
     @Override
-    public Coordenada moverAIzquierdaDerecha(){
-        Coordenada unaCoordenada = new Coordenada(0,0);
+    public Coordenada moverAInferiorDerecha(){
+        Coordenada unaCoordenada = this.estado.moverAInferiorDerecha(this.versorPersonaje);
         return unaCoordenada;
     }
 

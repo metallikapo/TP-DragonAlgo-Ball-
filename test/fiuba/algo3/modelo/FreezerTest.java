@@ -9,6 +9,8 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -190,6 +192,94 @@ public class FreezerTest {
 
         thrown.expect(FuegoAmigoException.class);
         freezer.rayoMortal(cell);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverArriba().getCoordenadaX(), 5);
+        assertEquals(freezer.moverArriba().getCoordenadaY(), 9);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverAbajo().getCoordenadaX(), 5);
+        assertEquals(freezer.moverAbajo().getCoordenadaY(), 1);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverAIzquierda().getCoordenadaX(), 1);
+        assertEquals(freezer.moverAIzquierda().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverADerecha().getCoordenadaX(), 9);
+        assertEquals(freezer.moverADerecha().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverASuperiorIzquierda().getCoordenadaX(), 1);
+        assertEquals(freezer.moverASuperiorIzquierda().getCoordenadaY(), 9);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverASuperiorDerecha().getCoordenadaX(), 9);
+        assertEquals(freezer.moverASuperiorDerecha().getCoordenadaY(), 9);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverAInferiorIzquierda().getCoordenadaX(), 1);
+        assertEquals(freezer.moverAInferiorIzquierda().getCoordenadaY(), 1);
+    }
+
+    @Test
+    public void testFreezerNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        assertEquals(freezer.moverAInferiorDerecha().getCoordenadaX(), 9);
+        assertEquals(freezer.moverAInferiorDerecha().getCoordenadaY(), 1);
     }
 
 

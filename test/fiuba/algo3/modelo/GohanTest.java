@@ -1,9 +1,6 @@
 package fiuba.algo3.modelo;
 
-import fiuba.algo3.modelo.Personajes.Piccolo;
-import fiuba.algo3.modelo.Personajes.Goku;
-import fiuba.algo3.modelo.Personajes.Gohan;
-import fiuba.algo3.modelo.Personajes.MajinBoo;
+import fiuba.algo3.modelo.Personajes.*;
 import fiuba.algo3.modelo.excepciones.*;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
@@ -218,13 +215,50 @@ public class GohanTest {
     }
 
     @Test
-    public void ataqueMasenkoAunCompanieroExcepcionNoProduceDanioNiDisminuyeSuKi(){
+    public void ataqueMasenkoAunCompanieroExcepcionNoProduceDanioNiDisminuyeSuKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
-        Coordenada otraCoordenada = new Coordenada(2,0);
+        Coordenada otraCoordenada = new Coordenada(2, 0);
 
         Goku goku = new Goku();
         goku.naceEn(otraCoordenada1);
+    }
+
+    public void testGohanNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        assertEquals(gohan.moverArriba().getCoordenadaX(), 5);
+        assertEquals(gohan.moverArriba().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testGohanNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        assertEquals(gohan.moverAbajo().getCoordenadaX(), 5);
+        assertEquals(gohan.moverAbajo().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testGohanNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        assertEquals(gohan.moverAIzquierda().getCoordenadaX(), 3);
+        assertEquals(gohan.moverAIzquierda().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testGohanNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
@@ -237,6 +271,53 @@ public class GohanTest {
         gohan.masenko(goku);
 
         assertTrue(gohan.poseeKi(25));
+        assertEquals(gohan.moverADerecha().getCoordenadaX(), 7);
+        assertEquals(gohan.moverADerecha().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testGohanNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        assertEquals(gohan.moverASuperiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(gohan.moverASuperiorIzquierda().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testGohanNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        assertEquals(gohan.moverASuperiorDerecha().getCoordenadaX(), 7);
+        assertEquals(gohan.moverASuperiorDerecha().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testGohanNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        assertEquals(gohan.moverAInferiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(gohan.moverAInferiorIzquierda().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testGohanNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        assertEquals(gohan.moverAInferiorDerecha().getCoordenadaX(), 7);
+        assertEquals(gohan.moverAInferiorDerecha().getCoordenadaY(), 3);
+
     }
 
 

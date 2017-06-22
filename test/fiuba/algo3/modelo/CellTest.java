@@ -8,6 +8,8 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -193,6 +195,94 @@ public class CellTest {
         }
 
         assertTrue(majinBoo.poseeVida(300));
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverArriba().getCoordenadaX(), 5);
+        assertEquals(cell.moverArriba().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverAbajo().getCoordenadaX(), 5);
+        assertEquals(cell.moverAbajo().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverAIzquierda().getCoordenadaX(), 3);
+        assertEquals(cell.moverAIzquierda().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverADerecha().getCoordenadaX(), 7);
+        assertEquals(cell.moverADerecha().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverASuperiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(cell.moverASuperiorIzquierda().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverASuperiorDerecha().getCoordenadaX(), 7);
+        assertEquals(cell.moverASuperiorDerecha().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverAInferiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(cell.moverAInferiorIzquierda().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testCellNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        assertEquals(cell.moverAInferiorDerecha().getCoordenadaX(), 7);
+        assertEquals(cell.moverAInferiorDerecha().getCoordenadaY(), 3);
     }
 
 
