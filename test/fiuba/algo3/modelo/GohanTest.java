@@ -241,9 +241,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverArriba();
 
-        assertEquals(gohan.moverArriba().getCoordenadaX(), 5);
-        assertEquals(gohan.moverArriba().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -252,9 +253,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverAbajo();
 
-        assertEquals(gohan.moverAbajo().getCoordenadaX(), 5);
-        assertEquals(gohan.moverAbajo().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -263,9 +265,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverAIzquierda();
 
-        assertEquals(gohan.moverAIzquierda().getCoordenadaX(), 3);
-        assertEquals(gohan.moverAIzquierda().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -274,9 +277,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverADerecha();
 
-        assertEquals(gohan.moverADerecha().getCoordenadaX(), 7);
-        assertEquals(gohan.moverADerecha().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -285,9 +289,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverASuperiorIzquierda();
 
-        assertEquals(gohan.moverASuperiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(gohan.moverASuperiorIzquierda().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -296,9 +301,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverASuperiorDerecha();
 
-        assertEquals(gohan.moverASuperiorDerecha().getCoordenadaX(), 7);
-        assertEquals(gohan.moverASuperiorDerecha().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -307,9 +313,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverAInferiorIzquierda();
 
-        assertEquals(gohan.moverAInferiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(gohan.moverAInferiorIzquierda().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -318,9 +325,10 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = gohan.moverAInferiorDerecha();
 
-        assertEquals(gohan.moverAInferiorDerecha().getCoordenadaX(), 7);
-        assertEquals(gohan.moverAInferiorDerecha().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
 
     }
 
