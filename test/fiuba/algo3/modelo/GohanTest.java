@@ -222,7 +222,7 @@ public class GohanTest {
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
-        
+
         Goku goku = new Goku();
         goku.naceEn(otraCoordenada1);
 
