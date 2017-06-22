@@ -9,6 +9,8 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -152,6 +154,94 @@ public class MajinBooTest {
 
         assertTrue(cell.poseeVida(500));
 
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverArriba().getCoordenadaX(), 5);
+        assertEquals(majinBoo.moverArriba().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo= new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverAbajo().getCoordenadaX(), 5);
+        assertEquals(majinBoo.moverAbajo().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverAIzquierda().getCoordenadaX(), 3);
+        assertEquals(majinBoo.moverAIzquierda().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverADerecha().getCoordenadaX(), 7);
+        assertEquals(majinBoo.moverADerecha().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverASuperiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(majinBoo.moverASuperiorIzquierda().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverASuperiorDerecha().getCoordenadaX(), 7);
+        assertEquals(majinBoo.moverASuperiorDerecha().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverAInferiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(majinBoo.moverAInferiorIzquierda().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testMajinBooNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        assertEquals(majinBoo.moverAInferiorDerecha().getCoordenadaX(), 7);
+        assertEquals(majinBoo.moverAInferiorDerecha().getCoordenadaY(), 3);
     }
 
 }
