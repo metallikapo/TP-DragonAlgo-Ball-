@@ -237,7 +237,7 @@ public class PiccoloTest{
         assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
-    /*
+
     @Test
     public void testTransformarPersonajePiccoloEstadoFortalecidoYMoverArribaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
@@ -249,16 +249,16 @@ public class PiccoloTest{
         Gohan gohan = new Gohan();
         gohan.naceEn(otraCoordenada);
 
-        for (int i=0; i<10; i++){
+        for (int i=0; i<4; i++){
             //va a incrementar el ki
             piccolo.moverArriba();
         }
 
         piccolo.transformarse(gohan);
+        Coordenada nuevaCoordenada = piccolo.moverArriba();
 
-        assertEquals(piccolo.moverArriba().getCoordenadaX(), 0);
-        assertEquals(piccolo.moverArriba().getCoordenadaY(), 22);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 0);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 11);
     }
 
-    */
 }
