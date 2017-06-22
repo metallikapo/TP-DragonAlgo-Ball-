@@ -140,4 +140,92 @@ public class PiccoloTest{
         assertTrue(gohan.estadoVidaCritica());
     }
 
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverArriba().getCoordenadaX(), 5);
+        assertEquals(piccolo.moverArriba().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverAbajo().getCoordenadaX(), 5);
+        assertEquals(piccolo.moverAbajo().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverAIzquierda().getCoordenadaX(), 3);
+        assertEquals(piccolo.moverAIzquierda().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverADerecha().getCoordenadaX(), 7);
+        assertEquals(piccolo.moverADerecha().getCoordenadaY(), 5);
+    }
+
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverASuperiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(piccolo.moverASuperiorIzquierda().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverASuperiorDerecha().getCoordenadaX(), 7);
+        assertEquals(piccolo.moverASuperiorDerecha().getCoordenadaY(), 7);
+    }
+
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverAInferiorIzquierda().getCoordenadaX(), 3);
+        assertEquals(piccolo.moverAInferiorIzquierda().getCoordenadaY(), 3);
+    }
+
+    @Test
+    public void testPiccoloNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+        Coordenada unaCoordenada = new Coordenada(5, 5);
+
+        Piccolo piccolo = new Piccolo();
+        piccolo.naceEn(unaCoordenada);
+
+        assertEquals(piccolo.moverAInferiorDerecha().getCoordenadaX(), 7);
+        assertEquals(piccolo.moverAInferiorDerecha().getCoordenadaY(), 3);
+    }
+
 }
