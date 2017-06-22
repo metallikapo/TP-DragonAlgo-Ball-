@@ -290,6 +290,43 @@ public class FreezerTest {
         assertEquals(nuevaCoordenada.getCoordenadaY(), 1);
     }
 
+    @Test
+    public void testTransformarPersonajeFreezerAEstadoSegundaFormaYMoverArribaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
 
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        for (int i=0; i<4; i++){
+            //va a incrementar el ki
+            freezer.moverArriba();
+        }
+
+        freezer.transformarse();
+        Coordenada nuevaCoordenada = freezer.moverArriba();
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 0);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 20);
+    }
+
+    @Test
+    public void testTransformarPersonajeFreezerAEstadoDefinitivoYMoverArribaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        for (int i=0; i<16; i++){
+            //va a incrementar el ki
+            freezer.moverArriba();
+        }
+
+        freezer.transformarse();
+        freezer.transformarse();
+        Coordenada nuevaCoordenada = freezer.moverArriba();
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 0);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 70);
+    }
 
 }
