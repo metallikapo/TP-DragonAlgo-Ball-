@@ -203,9 +203,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverArriba();
 
-        assertEquals(cell.moverArriba().getCoordenadaX(), 5);
-        assertEquals(cell.moverArriba().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -214,9 +215,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverAbajo();
 
-        assertEquals(cell.moverAbajo().getCoordenadaX(), 5);
-        assertEquals(cell.moverAbajo().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -225,9 +227,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverAIzquierda();
 
-        assertEquals(cell.moverAIzquierda().getCoordenadaX(), 3);
-        assertEquals(cell.moverAIzquierda().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -236,9 +239,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverADerecha();
 
-        assertEquals(cell.moverADerecha().getCoordenadaX(), 7);
-        assertEquals(cell.moverADerecha().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -247,9 +251,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverASuperiorIzquierda();
 
-        assertEquals(cell.moverASuperiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(cell.moverASuperiorIzquierda().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -258,9 +263,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverASuperiorDerecha();
 
-        assertEquals(cell.moverASuperiorDerecha().getCoordenadaX(), 7);
-        assertEquals(cell.moverASuperiorDerecha().getCoordenadaY(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 7);
     }
 
     @Test
@@ -269,9 +275,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverAInferiorIzquierda();
 
-        assertEquals(cell.moverAInferiorIzquierda().getCoordenadaX(), 3);
-        assertEquals(cell.moverAInferiorIzquierda().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
     @Test
@@ -280,9 +287,10 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = cell.moverAInferiorDerecha();
 
-        assertEquals(cell.moverAInferiorDerecha().getCoordenadaX(), 7);
-        assertEquals(cell.moverAInferiorDerecha().getCoordenadaY(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
 

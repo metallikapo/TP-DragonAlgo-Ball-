@@ -200,9 +200,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverArriba();
 
-        assertEquals(freezer.moverArriba().getCoordenadaX(), 5);
-        assertEquals(freezer.moverArriba().getCoordenadaY(), 9);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 9);
     }
 
     @Test
@@ -211,9 +212,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverAbajo();
 
-        assertEquals(freezer.moverAbajo().getCoordenadaX(), 5);
-        assertEquals(freezer.moverAbajo().getCoordenadaY(), 1);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 1);
     }
 
     @Test
@@ -222,9 +224,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverAIzquierda();
 
-        assertEquals(freezer.moverAIzquierda().getCoordenadaX(), 1);
-        assertEquals(freezer.moverAIzquierda().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 1);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -233,9 +236,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverADerecha();
 
-        assertEquals(freezer.moverADerecha().getCoordenadaX(), 9);
-        assertEquals(freezer.moverADerecha().getCoordenadaY(), 5);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 9);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 5);
     }
 
     @Test
@@ -244,9 +248,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverASuperiorIzquierda();
 
-        assertEquals(freezer.moverASuperiorIzquierda().getCoordenadaX(), 1);
-        assertEquals(freezer.moverASuperiorIzquierda().getCoordenadaY(), 9);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 1);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 9);
     }
 
     @Test
@@ -255,9 +260,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverASuperiorDerecha();
 
-        assertEquals(freezer.moverASuperiorDerecha().getCoordenadaX(), 9);
-        assertEquals(freezer.moverASuperiorDerecha().getCoordenadaY(), 9);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 9);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 9);
     }
 
     @Test
@@ -266,9 +272,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverAInferiorIzquierda();
 
-        assertEquals(freezer.moverAInferiorIzquierda().getCoordenadaX(), 1);
-        assertEquals(freezer.moverAInferiorIzquierda().getCoordenadaY(), 1);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 1);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 1);
     }
 
     @Test
@@ -277,9 +284,10 @@ public class FreezerTest {
 
         Freezer freezer = new Freezer();
         freezer.naceEn(unaCoordenada);
+        Coordenada nuevaCoordenada = freezer.moverAInferiorDerecha();
 
-        assertEquals(freezer.moverAInferiorDerecha().getCoordenadaX(), 9);
-        assertEquals(freezer.moverAInferiorDerecha().getCoordenadaY(), 1);
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 9);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 1);
     }
 
 
