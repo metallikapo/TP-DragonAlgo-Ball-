@@ -56,43 +56,51 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     @Override
     public Coordenada moverArriba() {
         Coordenada unaCoordenada = this.estado.moverArriba(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
 
     @Override
     public Coordenada moverAbajo(){
         Coordenada unaCoordenada = this.estado.moverAbajo(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
 
     @Override
     public Coordenada moverAIzquierda(){
         Coordenada unaCoordenada = this.estado.moverAIzquierda(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverADerecha(){
         Coordenada unaCoordenada = this.estado.moverADerecha(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverASuperiorIzquierda(){
         Coordenada unaCoordenada = this.estado.moverASuperiorIzquierda(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverASuperiorDerecha(){
         Coordenada unaCoordenada = this.estado.moverASuperiorDerecha(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverAInferiorIzquierda(){
         Coordenada unaCoordenada = this.estado.moverAInferiorIzquierda(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
     @Override
     public Coordenada moverAInferiorDerecha(){
         Coordenada unaCoordenada = this.estado.moverAInferiorDerecha(this.versorPersonaje);
+        this.mover(unaCoordenada);
         return unaCoordenada;
     }
 }
