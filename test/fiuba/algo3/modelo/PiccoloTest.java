@@ -5,12 +5,12 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.Tablero;
 import fiuba.algo3.modelo.excepciones.*;
-import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import org.junit.Rule;
-import org.junit.rules.ExpectedException;
 
 public class PiccoloTest{
 
@@ -116,7 +116,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testTransformarPiccoloEnEstadoProtector(){
+    public void testTransformarPiccoloEnEstadoProtectorGohanPoseeVidaCritica(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
         Coordenada otraCoordenada1 = new Coordenada(0,1);

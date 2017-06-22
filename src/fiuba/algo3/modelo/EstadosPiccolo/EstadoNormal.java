@@ -87,7 +87,7 @@ public class EstadoNormal implements Estado {
 
     @Override
     public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje) {
-
+        enemigo.recibirDanio((poderPelea*125)/100);
     }
 
     @Override

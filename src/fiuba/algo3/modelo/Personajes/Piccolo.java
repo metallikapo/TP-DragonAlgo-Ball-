@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.EstadosPiccolo.*;
 
@@ -36,7 +37,7 @@ public class Piccolo extends Personaje implements PersonajeBueno {
         throw new FuegoAmigoException();
     }
 
-    public void Makankosappo(PersonajeMalo enemigo){
+    public void makankosappo(PersonajeMalo enemigo){
 
         if (ki < kiNecesario){
             throw new NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException();
@@ -45,7 +46,7 @@ public class Piccolo extends Personaje implements PersonajeBueno {
         estado.ataqueEspecial(enemigo,this);
     }
 
-    public void Makankosappo(PersonajeBueno amigo){
+    public void makankosappo(PersonajeBueno amigo){
         throw new FuegoAmigoException();
     }
 
