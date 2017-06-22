@@ -220,8 +220,20 @@ public class GohanTest {
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Coordenada otraCoordenada = new Coordenada(2, 0);
 
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+        
         Goku goku = new Goku();
         goku.naceEn(otraCoordenada1);
+
+        for(int i=0; i<5 ; i++){
+            gohan.mover(unaCoordenada);
+        }
+
+        thrown.expect(FuegoAmigoException.class);
+        gohan.masenko(goku);
+
+        assertTrue(gohan.poseeKi(25));
     }
 
     public void testGohanNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
@@ -263,14 +275,6 @@ public class GohanTest {
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
 
-        for(int i=0; i<5 ; i++){
-            gohan.mover(otraCoordenada);
-        }
-
-        thrown.expect(FuegoAmigoException.class);
-        gohan.masenko(goku);
-
-        assertTrue(gohan.poseeKi(25));
         assertEquals(gohan.moverADerecha().getCoordenadaX(), 7);
         assertEquals(gohan.moverADerecha().getCoordenadaY(), 5);
     }
