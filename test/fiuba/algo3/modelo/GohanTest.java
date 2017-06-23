@@ -331,6 +331,26 @@ public class GohanTest {
         assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
 
     }
+    /*
+    @Test
+    public void testTransformarPersonajeGohanEstadoSuperSayajin1YMoverArribaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(7,9);
 
+        Gohan gohan = new Gohan();
+        gohan.naceEn(unaCoordenada);
+
+        for (int i=0; i<2; i++){
+            //va a incrementar el ki
+            gohan.mover(unaCoordenada);
+        }
+
+        gohan.transformarse();
+        Coordenada nuevaCoordenada = gohan.moverArriba();
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 0);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 2);
+    }
+    */
 
 }

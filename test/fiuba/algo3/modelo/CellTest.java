@@ -293,5 +293,25 @@ public class CellTest {
         assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
 
+    @Test
+    public void testTransformarPersonajeMajinBooEstadoBooMaloYMoverArribaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(7,9);
+
+        MajinBoo majinBoo = new MajinBoo();
+        majinBoo.naceEn(unaCoordenada);
+
+        for (int i=0; i<4; i++){
+            //va a incrementar el ki
+            majinBoo.mover(unaCoordenada);
+        }
+
+        majinBoo.transformarse();
+        Coordenada nuevaCoordenada = majinBoo.moverArriba();
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 0);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
+    }
+
 
 }
