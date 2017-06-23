@@ -287,4 +287,43 @@ public class GokuTest {
         assertEquals(nuevaCoordenada.getCoordenadaX(), 7);
         assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
     }
+
+    @Test
+    public void testTransformarPersonajeGokuAEstadoKaioKenYMoverArribaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        for (int i=0; i<4; i++){
+            //va a incrementar el ki
+            goku.moverArriba();
+        }
+
+        goku.transformarse();
+        Coordenada nuevaCoordenada = goku.moverArriba();
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 0);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 11);
+    }
+
+    @Test
+    public void testTransformarPersonajeGokuAEstadoSuperSayayinYMoverArribaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        for (int i=0; i<14; i++){
+            //va a incrementar el ki
+            goku.moverArriba();
+        }
+
+        goku.transformarse();
+        goku.transformarse();
+        Coordenada nuevaCoordenada = goku.moverArriba();
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 0);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 33);
+    }
 }
