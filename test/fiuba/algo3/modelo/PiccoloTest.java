@@ -251,13 +251,15 @@ public class PiccoloTest{
 
         for (int i=0; i<10; i++){
             //va a incrementar el ki
-            piccolo.moverArriba();
+            piccolo.mover(unaCordenada)
         }
 
         piccolo.transformarse(gohan);
 
+        piccolo.moverArriba();
+
         assertEquals(piccolo.moverArriba().getCoordenadaX(), 0);
-        assertEquals(piccolo.moverArriba().getCoordenadaY(), 22);
+        assertEquals(piccolo.moverArriba().getCoordenadaY(), 4);
     }
 
     */
