@@ -20,7 +20,7 @@ public class GokuTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void test01seUbicaPersonajeGokuEnCasilleroYSeLoMueve() {
+    public void seUbicaPersonajeGokuEnCasilleroYSeLoMueve() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
@@ -34,7 +34,7 @@ public class GokuTest {
     }
 
     @Test
-    public void test02NoSePuedeUbicarGokuYGohanEnElMismoCasillero() {
+    public void noSePuedeUbicarGokuYGohanEnElMismoCasillero() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
         Celda celdaNacimiento = new Celda(unaCoordenada);
@@ -56,7 +56,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuEstadoKaioKenDisminuyeKi() {
+    public void transformarPersonajeGokuEstadoKaioKenDisminuyeKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -75,7 +75,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeGokuEstadoKaioKenExcepcion() {
+    public void noSePuedeTransformarPersonajeGokuEstadoKaioKenExcepcion() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -87,7 +87,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeGokuEstadoSuperSayajinExcepcion() {
+    public void noSePuedeTransformarPersonajeGokuEstadoSuperSayajinExcepcion() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -107,7 +107,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarGokuEstadoSuperSayajinDisminuyeKi() {
+    public void transformarGokuEstadoSuperSayajinDisminuyeKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -172,7 +172,7 @@ public class GokuTest {
     }
 
     @Test
-    public void GokuNoPuedeAtacarConKamehamehaAUnCompanieroDeEquipoEsteNoSufreDanio(){
+    public void gokuNoPuedeAtacarConKamehamehaAUnCompanieroDeEquipoEsteNoSufreDanio(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -193,7 +193,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -205,7 +205,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -217,7 +217,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -229,7 +229,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -241,7 +241,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -253,7 +253,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -265,7 +265,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -277,7 +277,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testGokuNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+    public void gokuNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Goku goku = new Goku();
@@ -289,7 +289,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoKaioKenYMoverArribaAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoKaioKenYMoverArribaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -308,7 +308,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoSuperSayayinYMoverArribaAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoSuperSayayinYMoverArribaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -328,7 +328,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoKaioKenYMoverAbajoAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoKaioKenYMoverAbajoAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -347,7 +347,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoSuperSayayinYMoverAbajoAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoSuperSayayinYMoverAbajoAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -367,7 +367,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoKaioKenYMoverAIzquierdaAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoKaioKenYMoverAIzquierdaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -386,7 +386,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoSuperSayayinYMoverAIzquierdaAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoSuperSayayinYMoverAIzquierdaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -406,7 +406,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoKaioKenYMoverADerechaAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoKaioKenYMoverADerechaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -425,7 +425,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoSuperSayayinYMoverADerechaAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoSuperSayayinYMoverADerechaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();
@@ -445,7 +445,7 @@ public class GokuTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuAEstadoKaioKenYMoverASuperiorDerechaAcordeASuModo(){
+    public void transformarPersonajeGokuAEstadoKaioKenYMoverASuperiorDerechaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Goku goku = new Goku();

@@ -17,7 +17,7 @@ public class MajinBooAtaqueEspecialTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void GokuNoPuedeAtacarSiRecibeAtaqueEspecialDeMajinBooEstadoNormal(){
+    public void gokuNoPuedeAtacarSiRecibeAtaqueEspecialDeMajinBooEstadoNormal(){
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
@@ -161,7 +161,7 @@ public class MajinBooAtaqueEspecialTest {
         assertTrue(majinboo.poseeVida(260));    }
 
     @Test
-    public void MajinBooNoPuedeConvertirEnChocolateAunCompanieroDeEquipoFuegoAmigoException(){
+    public void majinBooNoPuedeConvertirEnChocolateAunCompanieroDeEquipoFuegoAmigoException(){
 
         Coordenada posicionInicialCell = new Coordenada(0, 0);
         Coordenada posicionInicialMajinBoo = new Coordenada(0, 2);

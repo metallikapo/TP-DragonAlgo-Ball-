@@ -34,7 +34,7 @@ public class CellTest {
     }
 
     @Test
-    public void test02NoSePuedeUbicarMajinBooYCellEnElMismoCasillero() {
+    public void noSePuedeUbicarMajinBooYCellEnElMismoCasillero() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
         Celda celdaNacimiento = new Celda(unaCoordenada);
@@ -58,7 +58,7 @@ public class CellTest {
     }
 
     @Test
-    public void TransformarPersonajeEstadoSemiPerfectoAbsorbeVidaVerificaLaAbsorcion() {
+    public void transformarPersonajeEstadoSemiPerfectoAbsorbeVidaVerificaLaAbsorcion() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -80,7 +80,7 @@ public class CellTest {
     }
 
     @Test
-    public void NoSePuedeTransformarPersonajeSemiPerfectoPorNoAbsorberVida() {
+    public void noSePuedeTransformarPersonajeSemiPerfectoPorNoAbsorberVida() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -92,7 +92,7 @@ public class CellTest {
     }
 
     @Test
-    public void NoSePuedeTransformarPersonajeEstadoPerfectoExcepcion() {
+    public void noSePuedeTransformarPersonajeEstadoPerfectoExcepcion() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -132,7 +132,7 @@ public class CellTest {
     }
 
     @Test
-    public void TransformarEstadoPerfectoAbsorbeVidaDeGokuVerificaSiSumoLaSuya() {
+    public void transformarEstadoPerfectoAbsorbeVidaDeGokuVerificaSiSumoLaSuya() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
@@ -162,7 +162,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellAbsorbeVidaDeGoku4VecesEnEstadoNormal() {
+    public void cellAbsorbeVidaDeGoku4VecesEnEstadoNormal() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
@@ -217,11 +217,11 @@ public class CellTest {
         cell.absorber(goku);
 
         assertTrue(cell.poseeKi(0));
-        assertTrue(goku.poseeKi(500));
+        assertTrue(goku.poseeKi(0));
     }
 
     @Test
-    public void CellNoPuedeAbsorberVidaDeMajinBooNoProduceDanio(){
+    public void cellNoPuedeAbsorberVidaDeMajinBooNoProduceDanio(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
@@ -242,7 +242,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();
@@ -254,7 +254,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();
@@ -266,7 +266,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();
@@ -278,7 +278,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();
@@ -290,7 +290,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();
@@ -302,7 +302,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();
@@ -314,7 +314,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();
@@ -326,7 +326,7 @@ public class CellTest {
     }
 
     @Test
-    public void testCellNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+    public void cellNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Cell cell = new Cell();

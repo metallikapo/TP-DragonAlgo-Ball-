@@ -21,7 +21,7 @@ public class FreezerTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void test01seUbicaPersonajeFreezerEnCasilleroYSeLoMueve() {
+    public void seUbicaPersonajeFreezerEnCasilleroYSeLoMueve() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
@@ -35,7 +35,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void test02NoSePuedeUbicarGokuYFreezerEnElMismoCasillero() {
+    public void noSePuedeUbicarGokuYFreezerEnElMismoCasillero() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
         Celda celdaNacimiento = new Celda(unaCoordenada);
@@ -58,7 +58,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testTransformarPersonajeFreezerEstadoSegundaForma() {
+    public void transformarPersonajeFreezerEstadoSegundaForma() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -77,7 +77,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeFreezerEstadoSegundaForma() {
+    public void noSePuedeTransformarPersonajeFreezerEstadoSegundaForma() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -91,7 +91,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void NoSePuedeTransformarPersonajeFreezerEnEstadoDefinitivo() {
+    public void noSePuedeTransformarPersonajeFreezerEnEstadoDefinitivo() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -113,7 +113,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void TransformarFreezerEstadoDefinitivoKiDisminuye() {
+    public void transformarFreezerEstadoDefinitivoKiDisminuye() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -137,7 +137,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void AtaqueRayoMortalDeFrizzerAGohanCuesta20deKi(){
+    public void ataqueRayoMortalDeFrizzerAGohanCuesta20deKi(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -156,7 +156,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void AtaqueRayoMortalDeFrizzerAGohanDisminuyeVida50porcMasQueElBasico(){
+    public void ataqueRayoMortalDeFrizzerAGohanDisminuyeVida50porcMasQueElBasico(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -205,7 +205,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void FreezerNoPuedeAtacarAsuCompanieroDeEquipoException(){
+    public void freezerNoPuedeAtacarAsuCompanieroDeEquipoException(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -225,7 +225,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -237,7 +237,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -249,7 +249,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -261,7 +261,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -273,7 +273,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -285,7 +285,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -297,7 +297,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -309,7 +309,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testFreezerNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+    public void freezerNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Freezer freezer = new Freezer();
@@ -321,7 +321,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testTransformarPersonajeFreezerAEstadoSegundaFormaYMoverArribaAcordeASuModo(){
+    public void transformarPersonajeFreezerAEstadoSegundaFormaYMoverArribaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Freezer freezer = new Freezer();
@@ -340,7 +340,7 @@ public class FreezerTest {
     }
 
     @Test
-    public void testTransformarPersonajeFreezerAEstadoDefinitivoYMoverArribaAcordeASuModo(){
+    public void transformarPersonajeFreezerAEstadoDefinitivoYMoverArribaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
 
         Freezer freezer = new Freezer();

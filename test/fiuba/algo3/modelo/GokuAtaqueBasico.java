@@ -16,7 +16,7 @@ import org.junit.rules.ExpectedException;
 public class GokuAtaqueBasico {
 
     @Test
-    public void test01SeUbicaAGokuYAFreezerSeAtacanConAtaqueBasicoSegunDistancias(){
+    public void seUbicaAGokuYAFreezerSeAtacanConAtaqueBasicoSegunDistancias(){
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
@@ -36,7 +36,7 @@ public class GokuAtaqueBasico {
     }
 
     @Test
-    public void testSeUbicaAGokuYAFreezerSeAtacanConAtaqueBasicoSegunDistanciasNoRecibenDanio(){
+    public void seUbicaAGokuYAFreezerSeAtacanConAtaqueBasicoSegunDistanciasNoRecibenDanio(){
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 4);
@@ -56,7 +56,7 @@ public class GokuAtaqueBasico {
     }
 
     @Test
-    public void GokuEstadoNormalTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
+    public void gokuEstadoNormalTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -77,7 +77,7 @@ public class GokuAtaqueBasico {
     }
 
     @Test
-    public void GokuEstadoKaioKenTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
+    public void gokuEstadoKaioKenTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Coordenada otraCoordenada2 = new Coordenada(1, 1);
@@ -104,7 +104,7 @@ public class GokuAtaqueBasico {
     }
 
     @Test
-    public void GokuEstadoSuperSayajinTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
+    public void gokuEstadoSuperSayajinTieneMenosDel30porcDeVidaSuDanioAumenta20porc(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Coordenada otraCoordenada2 = new Coordenada(1, 1);
@@ -138,7 +138,7 @@ public class GokuAtaqueBasico {
     }
 
     @Test
-    public void GokuAtaqueBasicoEnEstadoNormalCellRecibeDanio(){
+    public void gokuAtaqueBasicoEnEstadoNormalCellRecibeDanio(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
@@ -153,7 +153,7 @@ public class GokuAtaqueBasico {
     }
 
     @Test
-    public void GokuAtaqueBasicoEnEstadoNormalMajinbooRecibeDanio(){
+    public void gokuAtaqueBasicoEnEstadoNormalMajinbooRecibeDanio(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
@@ -169,7 +169,7 @@ public class GokuAtaqueBasico {
 
 
     @Test
-    public void GokuAtaqueBasicoEnEstadoKaioKenCellRecibeDanio(){
+    public void gokuAtaqueBasicoEnEstadoKaioKenCellRecibeDanio(){
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
@@ -191,7 +191,7 @@ public class GokuAtaqueBasico {
     }
 
     @Test
-    public void GokuAtaqueBasicoEnEstadoSayajinCellRecibeDanio(){
+    public void gokuAtaqueBasicoEnEstadoSayajinCellRecibeDanio(){
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);

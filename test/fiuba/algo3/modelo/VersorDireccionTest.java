@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class VersorDireccionTest {
 
     @Test
-    public void test01CrearUnVersorDireccionYObtenerUnaDireccionHaciaArriba(){
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaArriba(){
         Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
@@ -21,7 +21,7 @@ public class VersorDireccionTest {
     }
 
     @Test
-    public void test02CrearUnVersorDireccionYObtenerUnaDireccionHaciaAbajo(){
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaAbajo(){
         Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
@@ -32,7 +32,7 @@ public class VersorDireccionTest {
     }
 
     @Test
-    public void test03CrearUnVersorDireccionYObtenerUnaDireccionHaciaIzquierda(){
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaIzquierda(){
         Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
@@ -43,7 +43,7 @@ public class VersorDireccionTest {
     }
 
     @Test
-    public void test04CrearUnVersorDireccionYObtenerUnaDireccionHaciaDerecha(){
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaDerecha(){
         Coordenada unaCoordenada = new Coordenada(2,1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
@@ -54,7 +54,7 @@ public class VersorDireccionTest {
     }
 
     @Test
-    public void test05CrearUnVersorDireccionYObtenerUnaDireccionHaciaSuperiorIzquierda() {
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaSuperiorIzquierda() {
         Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
@@ -65,7 +65,7 @@ public class VersorDireccionTest {
     }
 
     @Test
-    public void test06CrearUnVersorDireccionYObtenerUnaDireccionHaciaSuperiorDerecha() {
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaSuperiorDerecha() {
         Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
@@ -76,7 +76,7 @@ public class VersorDireccionTest {
     }
 
     @Test
-    public void test07CrearUnVersorDireccionYObtenerUnaDireccionHaciaInferiorIzquierda() {
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaInferiorIzquierda() {
         Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 
@@ -87,7 +87,7 @@ public class VersorDireccionTest {
     }
 
     @Test
-    public void test08CrearUnVersorDireccionYObtenerUnaDireccionHaciaInferiorDerecha() {
+    public void crearUnVersorDireccionYObtenerUnaDireccionHaciaInferiorDerecha() {
         Coordenada unaCoordenada = new Coordenada(2, 1);
         VersorDireccion unVersor = new VersorDireccion(unaCoordenada);
 

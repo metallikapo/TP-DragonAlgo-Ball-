@@ -57,7 +57,7 @@ public class CoordenadaTest {
     public ExpectedException thrown = ExpectedException.none();
 
 	@Test
-	public void NosePuedeCalcularDistanciasEntreDosCoordenadasPorNoEstarEnUnaUbicacionValida(){
+	public void nosePuedeCalcularDistanciasEntreDosCoordenadasPorNoEstarEnUnaUbicacionValida(){
 		Coordenada unaCoordenada = new Coordenada(0,2);
 		Coordenada otraCoordenada = new Coordenada(1,0);
 

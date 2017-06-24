@@ -21,7 +21,7 @@ public class MajinBooTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void test01seUbicaPersonajeMajinBooEnCasilleroYSeLoMueve() {
+    public void seUbicaPersonajeMajinBooEnCasilleroYSeLoMueve() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
@@ -35,7 +35,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void test02NoSePuedeUbicarMajinBooYFreezerEnElMismoCasillero() {
+    public void noSePuedeUbicarMajinBooYFreezerEnElMismoCasillero() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
         Celda celdaNacimiento = new Celda(unaCoordenada);
@@ -59,7 +59,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testTransformarPersonajeEstadoBooMaloDisminuyeKi() {
+    public void transformarPersonajeEstadoBooMaloDisminuyeKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -78,7 +78,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeEstadoBooMaloExcepcion() {
+    public void noSePuedeTransformarPersonajeEstadoBooMaloExcepcion() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -90,7 +90,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeEstadoBooOriginalExcepcion() {
+    public void noSePuedeTransformarPersonajeEstadoBooOriginalExcepcion() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -109,7 +109,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testTransformarEstadoBooOriginalDisminuyeKi() {
+    public void transformarEstadoBooOriginalDisminuyeKi() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -134,7 +134,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void MajinbooNoPuedeAtacarAUnCompanieroEquipoNoProduceDanio(){
+    public void majinbooNoPuedeAtacarAUnCompanieroEquipoNoProduceDanio(){
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -157,7 +157,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo = new MajinBoo();
@@ -169,7 +169,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo= new MajinBoo();
@@ -181,7 +181,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo = new MajinBoo();
@@ -193,7 +193,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo = new MajinBoo();
@@ -205,7 +205,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo = new MajinBoo();
@@ -217,7 +217,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo = new MajinBoo();
@@ -229,7 +229,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo = new MajinBoo();
@@ -241,7 +241,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testMajinBooNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+    public void majinBooNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         MajinBoo majinBoo = new MajinBoo();
@@ -253,7 +253,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testTransformarPersonajeMajinBooEstadoBooMaloYMoverArribaAcordeASuModo(){
+    public void transformarPersonajeMajinBooEstadoBooMaloYMoverArribaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(7,9);
 
@@ -273,7 +273,7 @@ public class MajinBooTest {
     }
 
     @Test
-    public void testTransformarPersonajeMajinBooEstadoBooOriginalYMoverArribaAcordeASuModo(){
+    public void transformarPersonajeMajinBooEstadoBooOriginalYMoverArribaAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(7,9);
 

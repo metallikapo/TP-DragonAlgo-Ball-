@@ -14,7 +14,7 @@ import org.junit.rules.ExpectedException;
 public class personajeTest{
 
     @Test
-    public void test01seUbicaPersonajeGohanEnCasilleroYSeLoMueve(){
+    public void seUbicaPersonajeGohanEnCasilleroYSeLoMueve(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
 
@@ -30,7 +30,7 @@ public class personajeTest{
     }
 
     @Test
-    public void test02seUbicaPersonajeGokuSeLoTransformaSeLoMueveAcordeASuModo(){
+    public void seUbicaPersonajeGokuSeLoTransformaSeLoMueveAcordeASuModo(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
         Coordenada otraCoordenada1 = new Coordenada(0,6);

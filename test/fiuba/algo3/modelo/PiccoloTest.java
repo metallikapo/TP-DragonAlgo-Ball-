@@ -18,7 +18,7 @@ public class PiccoloTest{
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void test01seUbicaPersonajePiccoloEnCasilleroYSeLoMueve(){
+    public void seUbicaPersonajePiccoloEnCasilleroYSeLoMueve(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
 
@@ -32,7 +32,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void test02NoSePuedeUbicarPiccoloYGohanEnElMismoCasillero(){
+    public void noSePuedeUbicarPiccoloYGohanEnElMismoCasillero(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
         Celda celdaNacimiento = new Celda(unaCoordenada);
@@ -54,7 +54,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testTransformarPersonajePiccoloEstadoFortalecido(){
+    public void transformarPersonajePiccoloEstadoFortalecido(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
         Coordenada otraCoordenada1 = new Coordenada(0,1);
@@ -77,7 +77,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajePiccoloEstadoFortalecido(){
+    public void noSePuedeTransformarPersonajePiccoloEstadoFortalecido(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
 
@@ -92,7 +92,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajePiccoloEnEstadoProtector(){
+    public void noSePuedeTransformarPersonajePiccoloEnEstadoProtector(){
 
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
@@ -116,7 +116,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testTransformarPiccoloEnEstadoProtectorGohanPoseeVidaCritica(){
+    public void transformarPiccoloEnEstadoProtectorGohanPoseeVidaCritica(){
         Coordenada unaCoordenada = new Coordenada(0,0);
         Coordenada otraCoordenada = new Coordenada(0,2);
         Coordenada otraCoordenada1 = new Coordenada(0,1);
@@ -141,7 +141,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();
@@ -153,7 +153,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();
@@ -165,7 +165,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();
@@ -177,7 +177,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();
@@ -190,7 +190,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();
@@ -202,7 +202,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();
@@ -214,7 +214,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();
@@ -226,7 +226,7 @@ public class PiccoloTest{
     }
 
     @Test
-    public void testPiccoloNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+    public void piccoloNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Piccolo piccolo = new Piccolo();

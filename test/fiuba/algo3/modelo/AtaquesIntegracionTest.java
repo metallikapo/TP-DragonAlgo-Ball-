@@ -45,7 +45,7 @@ public class AtaquesIntegracionTest {
     }*/
 
     @Test
-    public void test01SeUbicaAGokuYAFreezerSeAtacanConAtaqueEspecialesSegunDistancias(){
+    public void seUbicaAGokuYAFreezerSeAtacanConAtaqueEspecialesSegunDistancias(){
 
     /*    Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
@@ -79,7 +79,7 @@ public class AtaquesIntegracionTest {
     //habria que hacer las pruebas de ataque con los personajes transformados
 
     @Test
-    public void test01SeUbicaAGokuYAGohanGokuAtacaGohanYSeProduceUnaExcepcion() {
+    public void seUbicaAGokuYAGohanGokuAtacaGohanYSeProduceUnaExcepcion() {
 
         Coordenada posicionInicialGoku = new Coordenada(0, 0);
         Coordenada posicionInicialGohan = new Coordenada(0, 2);
@@ -99,7 +99,7 @@ public class AtaquesIntegracionTest {
     }
 
     @Test
-    public void test01SeUbicaACellYAFreezerCellAtacaFreezerYSeProduceUnaExcepcionYnoSufreCambiosEnVida() {
+    public void seUbicaACellYAFreezerCellAtacaFreezerYSeProduceUnaExcepcionYnoSufreCambiosEnVida() {
 
         Coordenada posicionInicialCell = new Coordenada(0, 0);
         Coordenada posicionInicialFreezer = new Coordenada(0, 2);

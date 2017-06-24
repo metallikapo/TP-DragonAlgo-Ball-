@@ -17,7 +17,7 @@ public class GohanTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void test01seUbicaPersonajeGohanEnCasilleroYSeLoMueve() {
+    public void seUbicaPersonajeGohanEnCasilleroYSeLoMueve() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
@@ -31,7 +31,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testTransformarPersonajeGohanEstadoSuperSayajinFase1() {
+    public void transformarPersonajeGohanEstadoSuperSayajinFase1() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -56,7 +56,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarPersonajeGohanEstadoSuperSayajinFase1() {
+    public void noSePuedeTransformarPersonajeGohanEstadoSuperSayajinFase1() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -74,7 +74,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testTransformarPersonajeGokuEstadoSuperSayajin2DisminuyeKI() {
+    public void transformarPersonajeGokuEstadoSuperSayajin2DisminuyeKI() {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
@@ -110,7 +110,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarGokuEstadoSuperSayajin2UnCompanieroNotieneEstadoCritico() {
+    public void noSePuedeTransformarGokuEstadoSuperSayajin2UnCompanieroNotieneEstadoCritico() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -143,7 +143,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testNoSePuedeTransformarGokuEstadoSuperSayajin2NoPoseeKiSuficiente(){
+    public void noSePuedeTransformarGokuEstadoSuperSayajin2NoPoseeKiSuficiente(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
 
@@ -237,7 +237,8 @@ public class GohanTest {
         assertTrue(gohan.poseeKi(25));
     }
 
-    public void testGohanNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
+    @Test
+    public void gohanNaceEnUnaCeldaYseMueveArribaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
@@ -249,7 +250,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testGohanNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
+    public void gohanNaceEnUnaCeldaYseMueveAbajoAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
@@ -261,7 +262,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testGohanNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
+    public void gohanNaceEnUnaCeldaYseMueveAAIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
@@ -273,7 +274,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testGohanNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
+    public void gohanNaceEnUnaCeldaYseMueveADerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
@@ -285,7 +286,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testGohanNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
+    public void gohanNaceEnUnaCeldaYseMueveASuperiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
@@ -297,7 +298,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testGohanNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
+    public void gohanNaceEnUnaCeldaYseMueveASuperiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
@@ -309,7 +310,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testGohanNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
+    public void gohanNaceEnUnaCeldaYseMueveAInferiorIzquierdaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
@@ -321,7 +322,7 @@ public class GohanTest {
     }
 
     @Test
-    public void testGohanNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
+    public void gohanNaceEnUnaCeldaYseMueveAInferiorDerechaAcordeAsuEstado() {
         Coordenada unaCoordenada = new Coordenada(5, 5);
 
         Gohan gohan = new Gohan();
