@@ -443,4 +443,23 @@ public class GokuTest {
         assertEquals(nuevaCoordenada.getCoordenadaX(), 5);
         assertEquals(nuevaCoordenada.getCoordenadaY(), 0);
     }
+
+    @Test
+    public void testTransformarPersonajeGokuAEstadoKaioKenYMoverASuperiorDerechaAcordeASuModo(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        for (int i=0; i<4; i++){
+            //va a incrementar el ki
+            goku.mover(unaCoordenada);
+        }
+
+        goku.transformarse();
+        Coordenada nuevaCoordenada = goku.moverASuperiorDerecha();
+
+        assertEquals(nuevaCoordenada.getCoordenadaX(), 3);
+        assertEquals(nuevaCoordenada.getCoordenadaY(), 3);
+    }
 }
