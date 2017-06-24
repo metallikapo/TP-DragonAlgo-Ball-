@@ -6,6 +6,7 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosMajinBoo.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeConvertirAlPersonajeEnEstadoChocolateException;
 
 public class MajinBoo extends Personaje implements PersonajeMalo{
@@ -21,6 +22,11 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
         estado = new EstadoNormal();
     }
 
+    @Override
+    public int calcularDistanciaDesde(Coordenada otraCoordenada){
+        return this.coordenada.obtenerDistancia(otraCoordenada);
+    }
+
     public void transformarse(){
         estado = estado.transformarse(this.ki);
         this.ki -= estado.costoDeTransformacion();
@@ -28,6 +34,10 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     }
 
     public void convertirEnChocolate(PersonajeBueno enemigo) {
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         if (this.ki<kiNecesario) {
             throw new NoSePuedeConvertirAlPersonajeEnEstadoChocolateException();
         }
@@ -45,6 +55,10 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
 
     @Override
     public void ataqueBasico(PersonajeBueno unPersonaje) {
+        int distancia = unPersonaje.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         estado.ataqueBasico(unPersonaje,this);
     }
 

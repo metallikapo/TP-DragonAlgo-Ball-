@@ -15,6 +15,8 @@ public interface Estado {
 
     public abstract void aumentarVida(Personaje cell);
 
+    public abstract boolean distanciaPermitida(int distancia);
+
     public abstract void ataqueBasico(PersonajeMalo enemigo, Personaje personaje);
 
     public abstract void ataqueBasico(PersonajeBueno enemigo, Personaje personaje);

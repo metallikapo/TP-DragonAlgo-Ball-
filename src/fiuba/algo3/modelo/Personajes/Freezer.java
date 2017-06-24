@@ -7,6 +7,7 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.EstadosFreezer.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 
 public class Freezer extends Personaje implements PersonajeMalo{
@@ -22,6 +23,11 @@ public class Freezer extends Personaje implements PersonajeMalo{
         estado = new EstadoNormal();
     }
 
+    @Override
+    public int calcularDistanciaDesde(Coordenada otraCoordenada){
+        return this.coordenada.obtenerDistancia(otraCoordenada);
+    }
+
 
     public void transformarse() {
         estado = estado.transformarse(this.ki);
@@ -35,10 +41,18 @@ public class Freezer extends Personaje implements PersonajeMalo{
 
     @Override
     public void ataqueBasico(PersonajeBueno enemigo) {
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         estado.ataqueBasico(enemigo,this);
     }
 
     public void rayoMortal(PersonajeBueno enemigo){
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         if(this.ki < kiNecesario){
             throw new NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException();
         }

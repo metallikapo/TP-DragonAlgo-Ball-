@@ -31,7 +31,7 @@ public class MajinBooAtaqueEspecialTest {
 
         for (int i = 0; i < 10; i++) {
             //va a incrementar el ki
-            majinboo.mover(otraCoordenada1);
+            majinboo.mover(otraCoordenada);
         }
 
         majinboo.convertirEnChocolate(goku);
@@ -58,7 +58,7 @@ public class MajinBooAtaqueEspecialTest {
 
         for (int i = 0; i < 10; i++) {
             //va a incrementar el ki
-            majinboo.mover(otraCoordenada1);
+            majinboo.mover(otraCoordenada);
         }
 
         majinboo.convertirEnChocolate(goku);
@@ -91,7 +91,7 @@ public class MajinBooAtaqueEspecialTest {
 
         for (int i = 0; i < 10; i++) {
             //va a incrementar el ki
-            majinboo.mover(otraCoordenada1);
+            majinboo.mover(otraCoordenada);
         }
 
         majinboo.convertirEnChocolate(goku);
@@ -116,7 +116,7 @@ public class MajinBooAtaqueEspecialTest {
     }
 
     @Test
-    public void gokuYapuedeAtacarAlCuartoTurnoEnEstado(){
+    public void gokuYapuedeAtacarAlCuartoTurnoEnEstadoKaioKen(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
         Coordenada otraCoordenada1 = new Coordenada(0, 4);
@@ -133,7 +133,7 @@ public class MajinBooAtaqueEspecialTest {
         }
 
         for (int i = 0; i<10 ; i++){
-            goku.mover(unaCoordenada);
+            goku.mover(otraCoordenada);
         }
 
         goku.transformarse();
@@ -154,6 +154,8 @@ public class MajinBooAtaqueEspecialTest {
             }
 
         }
+        //verifica que goku puede atacar en una distancia de ataque 4
+        goku.mover(unaCoordenada);
         goku.ataqueBasico(majinboo);
 
         assertTrue(majinboo.poseeVida(260));    }

@@ -97,6 +97,11 @@ public class EstadoChocolate implements Estado {
     }
 
     @Override
+    public boolean distanciaPermitida(int distancia){
+        return estado.distanciaPermitida(distancia);
+    }
+
+    @Override
     public Coordenada moverArriba(VersorDireccion unVersor) {  throw new PersonajeEnEstadoChocolateExcepcion();}
     @Override
     public Coordenada moverAbajo(VersorDireccion unVersor){  throw new PersonajeEnEstadoChocolateExcepcion();}

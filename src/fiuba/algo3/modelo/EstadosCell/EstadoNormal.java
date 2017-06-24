@@ -31,6 +31,11 @@ public class EstadoNormal implements Estado {
     }
 
     @Override
+    public boolean distanciaPermitida(int distancia){
+        return (distanciaAtaque >= distancia);
+    }
+
+    @Override
     public void sumarVidaAbsorbida(){
         vidaAbsorbida+=1;
     }

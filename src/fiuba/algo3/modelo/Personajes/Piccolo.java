@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.EstadosPiccolo.*;
@@ -27,9 +28,18 @@ public class Piccolo extends Personaje implements PersonajeBueno {
         this.ki-= estado.costoDeTransformacion();
     }
 
+    @Override
+    public int calcularDistanciaDesde(Coordenada otraCoordenada){
+        return this.coordenada.obtenerDistancia(otraCoordenada);
+    }
+
 
     @Override
     public void ataqueBasico(PersonajeMalo enemigo){
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         estado.ataqueBasico(enemigo,this);
     }
 
@@ -40,6 +50,10 @@ public class Piccolo extends Personaje implements PersonajeBueno {
 
     public void makankosappo(PersonajeMalo enemigo){
 
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         if (ki < kiNecesario){
             throw new NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException();
         }
