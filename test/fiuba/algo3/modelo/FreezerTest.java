@@ -175,6 +175,36 @@ public class FreezerTest {
     }
 
     @Test
+    public void freezerAtaqueBasicoAGokuEnEstadoSuperSayajinDanioDisminuye20porc(){
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(unaCoordenada);
+
+        Goku goku = new Goku();
+        goku.naceEn(otraCoordenada1);
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            goku.mover(otraCoordenada1);
+        }
+
+        goku.transformarse();
+
+        for (int i = 0; i < 10; i++) {
+            //va a incrementar el ki
+            goku.mover(otraCoordenada1);
+        }
+
+        goku.transformarse();
+
+        freezer.ataqueBasico(goku);
+
+        assertTrue(goku.poseeVida(484));
+    }
+
+    @Test
     public void FreezerNoPuedeAtacarAsuCompanieroDeEquipoException(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);

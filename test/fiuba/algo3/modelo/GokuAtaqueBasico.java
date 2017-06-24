@@ -27,13 +27,31 @@ public class GokuAtaqueBasico {
         Freezer freezer = new Freezer();
         freezer.naceEn(otraCoordenada);
 
-        //goku ataca a freezer
-        //freezer ataca a goku
         goku.ataqueBasico(freezer);
         freezer.ataqueBasico(goku);
 
         assertTrue(freezer.poseeVida(380));
         assertTrue(goku.poseeVida(480));
+
+    }
+
+    @Test
+    public void testSeUbicaAGokuYAFreezerSeAtacanConAtaqueBasicoSegunDistanciasNoRecibenDanio(){
+
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada = new Coordenada(0, 4);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        Freezer freezer = new Freezer();
+        freezer.naceEn(otraCoordenada);
+
+        goku.ataqueBasico(freezer);
+        freezer.ataqueBasico(goku);
+
+        assertTrue(freezer.poseeVida(400));
+        assertTrue(goku.poseeVida(500));
 
     }
 
