@@ -1,5 +1,6 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Componentes.Consumible;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.VersorDireccion;
@@ -40,6 +41,10 @@ public abstract class Personaje{
         this.coordenada = coordenada;
         this.versorPersonaje = new VersorDireccion(coordenada);
         this.ki += this.kiPorTurno;
+    }
+
+    public void consumir(Consumible consumible){
+        this.vida += consumible.aumentarVida();
     }
 
     public boolean estadoVidaCritica(){
