@@ -1,12 +1,11 @@
 package fiuba.algo3.modelo.EstadosGoku;
 
-import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
-import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
+import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaximaException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
@@ -58,7 +57,7 @@ public class EstadoSuperSayajin implements Estado {
 
     @Override
     public Estado transformarse(int kiActual){
-        throw new EstadoDeTransformacionMaxima();
+        throw new EstadoDeTransformacionMaximaException();
     }
 
     @Override

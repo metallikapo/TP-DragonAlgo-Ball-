@@ -1,6 +1,5 @@
 package fiuba.algo3.modelo.EstadosPiccolo;
 
-import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 import fiuba.algo3.modelo.Componentes.Coordenada;
@@ -8,7 +7,7 @@ import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.Personaje;
-import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
+import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaximaException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 
@@ -55,7 +54,7 @@ public class EstadoProtector implements Estado {
     @Override
     public Estado transformarse(Gohan gohan,int Ki){
 
-        throw new EstadoDeTransformacionMaxima();
+        throw new EstadoDeTransformacionMaximaException();
     }
 
     @Override

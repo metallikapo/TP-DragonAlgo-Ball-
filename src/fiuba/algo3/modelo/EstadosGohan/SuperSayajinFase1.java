@@ -7,10 +7,8 @@ import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Personajes.Personaje;
-import fiuba.algo3.modelo.EstadosGohan.SuperSayajinFase2;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
-import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
 
 public class SuperSayajinFase1 implements Estado {
 

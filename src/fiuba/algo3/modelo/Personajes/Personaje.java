@@ -2,11 +2,9 @@ package fiuba.algo3.modelo.Personajes;
 
 import fiuba.algo3.modelo.Componentes.Consumible;
 import fiuba.algo3.modelo.Estados.Estado;
-import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.VersorDireccion;
-import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Componentes.Coordenada;
-import fiuba.algo3.modelo.excepciones.PersonajeEstaMuerto;
+import fiuba.algo3.modelo.excepciones.PersonajeEstaMuertoException;
 
 public abstract class Personaje{
     protected int maxVida;
@@ -53,7 +51,7 @@ public abstract class Personaje{
 
     public void recibirDanio(int ataque){
         if(vida<=0){
-            throw new PersonajeEstaMuerto();
+            throw new PersonajeEstaMuertoException();
         }
         this.vida -= ataque;
     }
