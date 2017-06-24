@@ -6,6 +6,8 @@ public interface PersonajeMalo {
 
     int calcularDistanciaDesde(Coordenada otraCoordenada);
 
+    boolean poseeMayorPoderPelea(int poderPelea);
+
     void ataqueBasico(PersonajeMalo unPersonaje);
 
     void ataqueBasico(PersonajeBueno unPersonaje);

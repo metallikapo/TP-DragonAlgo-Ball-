@@ -30,6 +30,11 @@ public class Gohan extends Personaje implements PersonajeBueno{
         return this.coordenada.obtenerDistancia(otraCoordenada);
     }
 
+    @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return estado.poseeMayorPoderPelea(poderPelea);
+    }
+
     public boolean estadoVidaCritica(){
         return (vida <= vidaCritica);
     }

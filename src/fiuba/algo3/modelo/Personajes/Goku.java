@@ -34,6 +34,11 @@ public class Goku extends Personaje implements PersonajeBueno{
     }
 
     @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return estado.poseeMayorPoderPelea(poderPelea);
+    }
+
+    @Override
     public int calcularDistanciaDesde(Coordenada otraCoordenada){
         return this.coordenada.obtenerDistancia(otraCoordenada);
     }

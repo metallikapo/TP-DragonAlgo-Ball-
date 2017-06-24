@@ -11,6 +11,8 @@ public interface PersonajeBueno{
 
     void ataqueBasico(PersonajeBueno unPersonaje);
 
+    boolean poseeMayorPoderPelea(int poderPelea);
+
     void recibirDanio(int cantidad);
 
     void convertimeEnChocolate();

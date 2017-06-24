@@ -30,8 +30,18 @@ public class EstadoProtector implements Estado {
     }
 
     @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return (this.poderPelea > poderPelea);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeMalo enemigo, Personaje piccolo){
-        enemigo.recibirDanio(poderPelea);
+
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*80/100);
+        }else{
+            enemigo.recibirDanio(poderPelea);
+        }
     }
 
 
@@ -90,7 +100,11 @@ public class EstadoProtector implements Estado {
 
     @Override
     public void ataqueEspecial(PersonajeMalo enemigo, Personaje personaje) {
-        enemigo.recibirDanio((poderPelea*125)/100);
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*105/100);
+        }else{
+            enemigo.recibirDanio((poderPelea * 125) / 100);
+        }
     }
 
     @Override

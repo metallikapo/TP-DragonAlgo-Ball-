@@ -32,13 +32,26 @@ public class EstadoSegundaForma implements Estado {
         return (distanciaAtaque >= distancia);
     }
 
+    @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return (this.poderPelea > poderPelea);
+    }
+
     public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
-        enemigo.recibirDanio(poderPelea);
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*80/100);
+        }else{
+            enemigo.recibirDanio(poderPelea);
+        }
     }
 
     @Override
     public void ataqueEspecial(PersonajeBueno enemigo, Personaje personaje){
-        enemigo.recibirDanio((poderPelea*150)/100);
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*130/100);
+        }else{
+            enemigo.recibirDanio((poderPelea*150)/100);
+        }
     }
 
     @Override

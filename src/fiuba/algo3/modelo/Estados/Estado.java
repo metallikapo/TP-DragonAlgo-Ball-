@@ -17,6 +17,8 @@ public interface Estado {
 
     public abstract boolean distanciaPermitida(int distancia);
 
+    public abstract boolean poseeMayorPoderPelea(int poderPelea);
+
     public abstract void ataqueBasico(PersonajeMalo enemigo, Personaje personaje);
 
     public abstract void ataqueBasico(PersonajeBueno enemigo, Personaje personaje);

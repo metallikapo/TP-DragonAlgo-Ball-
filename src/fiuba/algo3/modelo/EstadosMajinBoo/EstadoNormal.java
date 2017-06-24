@@ -32,8 +32,18 @@ public class EstadoNormal implements Estado {
     }
 
     @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return (this.poderPelea > poderPelea);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
-        enemigo.recibirDanio(poderPelea);
+
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*80/100);
+        }else{
+            enemigo.recibirDanio(poderPelea);
+        }
     }
 
     @Override

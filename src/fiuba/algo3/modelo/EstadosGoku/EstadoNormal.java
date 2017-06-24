@@ -30,11 +30,21 @@ public class EstadoNormal implements Estado {
     }
 
     @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return (this.poderPelea > poderPelea);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeMalo enemigo, Personaje goku){
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*80/100);
+        }else{
+            enemigo.recibirDanio(poderPelea);
+        }
         if(goku.estadoVidaCritica()){
             enemigo.recibirDanio((poderPelea*20)/100);
         }
-        enemigo.recibirDanio(poderPelea);
+
     }
 
     @Override
@@ -94,10 +104,15 @@ public class EstadoNormal implements Estado {
 
     @Override
     public void ataqueEspecial(PersonajeMalo enemigo, Personaje goku) {
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*130/100);
+        }else{
+            enemigo.recibirDanio((poderPelea * 150) / 100);
+        }
+
         if (goku.estadoVidaCritica()) {
             enemigo.recibirDanio((poderPelea * 20) / 100);
         }
-        enemigo.recibirDanio((poderPelea * 150) / 100);
     }
 
     @Override

@@ -27,6 +27,11 @@ public class Cell extends Personaje implements PersonajeMalo{
         return this.coordenada.obtenerDistancia(otraCoordenada);
     }
 
+    @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return estado.poseeMayorPoderPelea(poderPelea);
+    }
+
     public void transformarse(){
         estado = estado.transformarse(this.ki);
         estado = new EstadoNormal();

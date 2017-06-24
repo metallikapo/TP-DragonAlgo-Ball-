@@ -211,7 +211,8 @@ public class GohanTest {
         }
 
         gohan.masenko(majinboo);
-        assertTrue(majinboo.poseeVida(282));
+        //como majinboo tiene mayor poder de pelea el ataque de gohan disminuye un 20%
+        assertTrue(majinboo.poseeVida(285));
     }
 
     @Test

@@ -33,6 +33,11 @@ public class EstadoKaioKen implements Estado {
     }
 
     @Override
+    public boolean poseeMayorPoderPelea(int poderPelea){
+        return (this.poderPelea > poderPelea);
+    }
+
+    @Override
     public void puedeMoverse(int pasos){
         if(velocidad<pasos){
             throw new NoSePuedeMoverPersonaje();
@@ -73,10 +78,14 @@ public class EstadoKaioKen implements Estado {
 
 
     public void ataqueBasico(PersonajeMalo enemigo, Personaje goku){
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*80/100);
+        }else{
+            enemigo.recibirDanio(poderPelea);
+        }
         if(goku.estadoVidaCritica()){
             enemigo.recibirDanio((poderPelea*20)/100);
         }
-        enemigo.recibirDanio(poderPelea);
     }
 
     @Override
@@ -96,10 +105,15 @@ public class EstadoKaioKen implements Estado {
 
     @Override
     public void ataqueEspecial(PersonajeMalo enemigo, Personaje goku){
-        if(goku.estadoVidaCritica()){
-            enemigo.recibirDanio((poderPelea*50)/100);
+        if(enemigo.poseeMayorPoderPelea(poderPelea)){
+            enemigo.recibirDanio(poderPelea*130/100);
+        }else{
+            enemigo.recibirDanio((poderPelea * 150) / 100);
         }
-        enemigo.recibirDanio(poderPelea);
+
+        if (goku.estadoVidaCritica()) {
+            enemigo.recibirDanio((poderPelea * 20) / 100);
+        }
     }
 
     @Override

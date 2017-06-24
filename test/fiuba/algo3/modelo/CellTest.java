@@ -160,6 +160,28 @@ public class CellTest {
     }
 
     @Test
+    public void absorberVidaAGokuEstadoKaioKenProduce20porcMenosDeDanio(){
+        Coordenada unaCoordenada = new Coordenada(0,0);
+        Coordenada otraCoordenada = new Coordenada(0,3);
+
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        Goku goku = new Goku();
+        goku.naceEn(otraCoordenada);
+
+        for(int i=0; i<10;i++){
+            cell.mover(otraCoordenada);
+            goku.mover(unaCoordenada);
+        }
+        goku.transformarse();
+        cell.absorber(goku);
+
+        assertTrue(goku.poseeVida(484));
+
+    }
+
+    @Test
     public void cellNoPuedeAbsorberVidaPOrFaltaDeKi(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
