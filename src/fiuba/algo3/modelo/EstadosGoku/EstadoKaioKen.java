@@ -28,6 +28,11 @@ public class EstadoKaioKen implements Estado {
     }
 
     @Override
+    public boolean distanciaPermitida(int distancia){
+        return (distanciaAtaque >= distancia);
+    }
+
+    @Override
     public void puedeMoverse(int pasos){
         if(velocidad<pasos){
             throw new NoSePuedeMoverPersonaje();

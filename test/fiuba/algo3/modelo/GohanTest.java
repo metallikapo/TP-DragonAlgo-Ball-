@@ -177,7 +177,7 @@ public class GohanTest {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
-        Coordenada otraCoordenada = new Coordenada(2,0);
+        Coordenada otraCoordenada = new Coordenada(1,1);
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);
@@ -198,7 +198,7 @@ public class GohanTest {
 
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
-        Coordenada otraCoordenada = new Coordenada(2,0);
+        Coordenada otraCoordenada = new Coordenada(1,1);
 
         Gohan gohan = new Gohan();
         gohan.naceEn(unaCoordenada);

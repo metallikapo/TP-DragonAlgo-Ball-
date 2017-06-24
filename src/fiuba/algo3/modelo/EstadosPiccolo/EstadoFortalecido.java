@@ -26,6 +26,11 @@ public class EstadoFortalecido implements Estado {
     }
 
     @Override
+    public boolean distanciaPermitida(int distancia){
+        return (distanciaAtaque >= distancia);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeMalo enemigo, Personaje piccolo){
         enemigo.recibirDanio(poderPelea);
     }

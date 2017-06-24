@@ -25,6 +25,11 @@ public class EstadoNormal implements Estado {
     }
 
     @Override
+    public boolean distanciaPermitida(int distancia){
+        return (distanciaAtaque >= distancia);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeMalo enemigo, Personaje goku){
         if(goku.estadoVidaCritica()){
             enemigo.recibirDanio((poderPelea*20)/100);

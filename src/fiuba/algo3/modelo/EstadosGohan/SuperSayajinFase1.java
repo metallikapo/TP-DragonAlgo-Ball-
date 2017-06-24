@@ -29,6 +29,11 @@ public class SuperSayajinFase1 implements Estado {
     }
 
     @Override
+    public boolean distanciaPermitida(int distancia){
+        return (distanciaAtaque >= distancia);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeMalo enemigo, Personaje personaje){
         enemigo.recibirDanio(poderPelea);
     }

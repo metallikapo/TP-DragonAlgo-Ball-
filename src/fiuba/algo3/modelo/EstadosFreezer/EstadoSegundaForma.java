@@ -27,6 +27,11 @@ public class EstadoSegundaForma implements Estado {
         costo = 20;
     }
 
+    @Override
+    public boolean distanciaPermitida(int distancia){
+        return (distanciaAtaque >= distancia);
+    }
+
     public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
         enemigo.recibirDanio(poderPelea);
     }

@@ -8,6 +8,7 @@ import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.EstadosGoku.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 
 public class Goku extends Personaje implements PersonajeBueno{
@@ -33,8 +34,19 @@ public class Goku extends Personaje implements PersonajeBueno{
     }
 
     @Override
+    public int calcularDistanciaDesde(Coordenada otraCoordenada){
+        return this.coordenada.obtenerDistancia(otraCoordenada);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeMalo enemigo){
+
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         estado.ataqueBasico(enemigo,this);
+
     }
 
     @Override
@@ -44,6 +56,11 @@ public class Goku extends Personaje implements PersonajeBueno{
 
 
     public void kamehameha(PersonajeMalo enemigo){
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
+
         if(ki<kiNecesario){
             throw new NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException();
         }

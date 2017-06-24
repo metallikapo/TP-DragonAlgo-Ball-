@@ -8,6 +8,7 @@ import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.EstadosGohan.EstadoNormal;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
+import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 
 public class Gohan extends Personaje implements PersonajeBueno{
@@ -24,6 +25,11 @@ public class Gohan extends Personaje implements PersonajeBueno{
         estado = new EstadoNormal();
     }
 
+    @Override
+    public int calcularDistanciaDesde(Coordenada otraCoordenada){
+        return this.coordenada.obtenerDistancia(otraCoordenada);
+    }
+
     public boolean estadoVidaCritica(){
         return (vida <= vidaCritica);
     }
@@ -35,6 +41,10 @@ public class Gohan extends Personaje implements PersonajeBueno{
 
     @Override
     public void ataqueBasico(PersonajeMalo unPersonaje) {
+        int distancia = unPersonaje.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         estado.ataqueBasico(unPersonaje,this);
     }
 
@@ -54,6 +64,10 @@ public class Gohan extends Personaje implements PersonajeBueno{
     }
 
     public void masenko(PersonajeMalo enemigo){
+        int distancia = enemigo.calcularDistanciaDesde(this.coordenada);
+        if (!estado.distanciaPermitida(distancia)){
+            throw new NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException();
+        }
         if(ki < kiNecesario){
             throw new NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException();
         }

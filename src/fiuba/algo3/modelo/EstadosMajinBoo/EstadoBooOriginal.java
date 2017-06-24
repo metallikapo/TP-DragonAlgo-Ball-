@@ -27,6 +27,11 @@ public class EstadoBooOriginal implements Estado {
     }
 
     @Override
+    public boolean distanciaPermitida(int distancia){
+        return (distanciaAtaque >= distancia);
+    }
+
+    @Override
     public void ataqueBasico(PersonajeBueno enemigo, Personaje personaje){
         enemigo.recibirDanio(poderPelea);
     }
