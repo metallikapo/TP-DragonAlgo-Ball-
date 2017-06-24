@@ -16,8 +16,8 @@ public class Freezer extends Personaje implements PersonajeMalo{
     private int kiNecesario;
 
     public Freezer() {
-
-        vida = 400;
+        maxVida = 400;
+        vida = maxVida;
         ki = 0;
         kiNecesario = 20; //para realizar el ataque especial
         estado = new EstadoNormal();

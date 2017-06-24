@@ -12,13 +12,13 @@ import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoEstarEnDistan
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
 
 public class Goku extends Personaje implements PersonajeBueno{
-
     private Estado estado;
     private int kiNecesario;
     private int porcentaje;
 
     public Goku(){
-        vida = 500;
+        maxVida = 500;
+        vida = maxVida;
         ki = 0;
         kiNecesario = 20; //para realizar el Kamehameha
         porcentaje = 50; //causa un 50% mas que el ataque basico

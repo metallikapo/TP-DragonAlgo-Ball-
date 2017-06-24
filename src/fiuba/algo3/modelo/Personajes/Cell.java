@@ -15,8 +15,8 @@ public class Cell extends Personaje implements PersonajeMalo{
     private int kiNecesario;
 
     public Cell(){
-
-        vida = 500;
+        maxVida = 500;
+        vida = maxVida;
         ki = 0;
         estado = new EstadoNormal();
         kiNecesario = 5;
@@ -34,7 +34,6 @@ public class Cell extends Personaje implements PersonajeMalo{
 
     public void transformarse(){
         estado = estado.transformarse(this.ki);
-        estado = new EstadoNormal();
     }
 
     @Override

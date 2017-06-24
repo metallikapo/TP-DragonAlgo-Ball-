@@ -18,7 +18,8 @@ public class Gohan extends Personaje implements PersonajeBueno{
     private int kiNecesario;
 
     public Gohan(){
-        vida = 300;
+        maxVida = 300;
+        vida = maxVida;
         vidaCritica = 60;//20% de la vida inicial
         ki = 0;
         kiNecesario = 10;//para poder realizar el ataque especial

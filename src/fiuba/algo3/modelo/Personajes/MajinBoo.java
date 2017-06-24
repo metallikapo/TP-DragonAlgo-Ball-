@@ -15,8 +15,8 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     private int kiNecesario;
 
     public MajinBoo() {
-
-        vida = 300;
+        maxVida = 300;
+        vida = maxVida;
         ki = 0;
         kiNecesario = 30; //para convertir en chocolate
         estado = new EstadoNormal();

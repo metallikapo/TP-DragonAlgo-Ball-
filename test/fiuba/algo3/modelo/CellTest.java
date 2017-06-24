@@ -20,7 +20,7 @@ public class CellTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void test01seUbicaPersonajeCellEnCasilleroYSeLoMueve() {
+    public void seUbicaPersonajeCellEnCasilleroYSeLoMueve() {
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada = new Coordenada(0, 2);
 
@@ -64,6 +64,7 @@ public class CellTest {
 
         Cell cell = new Cell();
         cell.naceEn(unaCoordenada);
+        cell.recibirDanio(200);
 
         Goku goku = new Goku();
         goku.naceEn(otraCoordenada1);
@@ -75,7 +76,7 @@ public class CellTest {
 
         cell.transformarse();
 
-        assertTrue(cell.poseeVida(580));
+        assertTrue(cell.poseeVida(380));
     }
 
     @Test
@@ -114,7 +115,7 @@ public class CellTest {
     }
 
     @Test
-    public void TransformarEstadoPerfectoAbsorbeVidaDeGokuVerificaSiSumoLaSuya() {
+    public void absorberVidaTeniendoLaVidaLlenaYQueNoSupereVidaDeCellMaxima(){
         Coordenada unaCoordenada = new Coordenada(0, 0);
         Coordenada otraCoordenada1 = new Coordenada(0, 1);
         Cell cell = new Cell();
@@ -127,16 +128,37 @@ public class CellTest {
             cell.mover(otraCoordenada1);
             cell.absorber(goku);
         }
+        assertEquals(500, cell.getVida());
+    }
+
+    @Test
+    public void TransformarEstadoPerfectoAbsorbeVidaDeGokuVerificaSiSumoLaSuya() {
+        Coordenada unaCoordenada = new Coordenada(0, 0);
+        Coordenada otraCoordenada1 = new Coordenada(0, 1);
+        Cell cell = new Cell();
+        cell.naceEn(unaCoordenada);
+
+        Goku goku = new Goku();
+        goku.naceEn(otraCoordenada1);
+
+
+        cell.recibirDanio(200);
+        for (int i = 0; i < 4; i++) {
+            cell.mover(otraCoordenada1);
+            cell.absorber(goku);
+        }
+        assertEquals(380, cell.getVida());
 
         cell.transformarse();
 
+        cell.recibirDanio(220);
         for (int i = 0; i < 8; i++) {
             cell.mover(otraCoordenada1);
             cell.absorber(goku);
         }
         cell.transformarse();
 
-        assertTrue(cell.poseeVida(740));
+        assertTrue(cell.poseeVida(480));
     }
 
     @Test

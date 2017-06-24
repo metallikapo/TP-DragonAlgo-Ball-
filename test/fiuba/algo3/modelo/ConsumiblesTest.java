@@ -34,4 +34,25 @@ public class ConsumiblesTest {
         assertEquals(450, goku.getVida());
         assertTrue(goku.poseeVida(450));
     }
+
+
+    @Test
+    public void gokuObtieneUnConsumibleSemillaPeroTieneVidaLLenaYNoPasaNada(){
+        Coordenada unaCoordenada = new Coordenada(2,0);
+        Coordenada otraCoordenada = new Coordenada(0,0);
+        Celda celdaConConsumible = new Celda(otraCoordenada);
+
+        Goku goku = new Goku();
+        goku.naceEn(unaCoordenada);
+
+        Semilla semilla = new Semilla();
+        semilla.posicionarEn(otraCoordenada);
+
+        celdaConConsumible.colocarConsumible(semilla);
+        goku.mover(otraCoordenada);
+
+        celdaConConsumible.colocarPersonaje(goku);
+
+        assertEquals(500, goku.getVida());
+    }
 }

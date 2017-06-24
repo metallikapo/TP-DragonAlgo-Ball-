@@ -9,7 +9,7 @@ import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.excepciones.PersonajeEstaMuerto;
 
 public abstract class Personaje{
-
+    protected int maxVida;
     protected int vida;
     protected int ki;
     protected int kiPorTurno = 5;
@@ -44,7 +44,7 @@ public abstract class Personaje{
     }
 
     public void consumir(Consumible consumible){
-        this.vida += consumible.aumentarVida();
+        this.aumentarVida(consumible.aumentarVida());
     }
 
     public boolean estadoVidaCritica(){
@@ -65,7 +65,7 @@ public abstract class Personaje{
     public abstract void volverAlEstadoAnterior(Estado estado);
 
     public void aumentarVida(int cantidad){
-        this.vida += cantidad;
+        this.vida = (maxVida < this.vida + cantidad)? maxVida : this.vida + cantidad;
     }
 
     public abstract Coordenada moverArriba();

@@ -15,8 +15,8 @@ public class Piccolo extends Personaje implements PersonajeBueno {
     private int kiNecesario;
 
     public Piccolo(){
-
-        vida = 500;
+        maxVida = 500;
+        vida = maxVida;
         ki =0;
         kiNecesario = 10; // para realizar el ataque especial
         vidaCritica = 150; //30% de la vida inicial
