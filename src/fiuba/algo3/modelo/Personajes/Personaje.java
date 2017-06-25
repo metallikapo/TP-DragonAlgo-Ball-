@@ -1,8 +1,11 @@
 package fiuba.algo3.modelo.Personajes;
 
-import fiuba.algo3.modelo.Componentes.*;
+import fiuba.algo3.modelo.Componentes.Consumible;
 import fiuba.algo3.modelo.Estados.Estado;
+import fiuba.algo3.modelo.Componentes.Celda;
+import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Personajes.Gohan;
+import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.excepciones.PersonajeEstaMuerto;
 
 public abstract class Personaje{
@@ -42,10 +45,7 @@ public abstract class Personaje{
 
     public void consumir(Consumible consumible){
         this.aumentarVida(consumible.aumentarVida());
-        this.obtenerConsumibleEsfera(consumible);
     }
-
-    protected abstract void obtenerConsumibleEsfera(Consumible esfera);
 
     public boolean estadoVidaCritica(){
         return (vida <= vidaCritica);
@@ -84,5 +84,5 @@ public abstract class Personaje{
 
     public abstract Coordenada moverAInferiorDerecha();
 
-    public abstract int getPoderPelea();
+
 }

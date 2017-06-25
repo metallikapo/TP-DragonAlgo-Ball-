@@ -1,6 +1,5 @@
 package fiuba.algo3.modelo.EstadosGohan;
 
-import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Estados.Estado;
@@ -9,7 +8,7 @@ import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
-import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
+import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaximaException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 
 public class SuperSayajinFase2 implements Estado {
@@ -55,7 +54,7 @@ public class SuperSayajinFase2 implements Estado {
 
     @Override
     public  Estado transformarse(Personaje personaje1, Personaje personaje2, int ki){
-        throw new EstadoDeTransformacionMaxima();
+        throw new EstadoDeTransformacionMaximaException();
     }
 
     @Override
@@ -71,7 +70,7 @@ public class SuperSayajinFase2 implements Estado {
 
     @Override
     public Estado transformarse(Gohan gohan, int ki){
-        throw new EstadoDeTransformacionMaxima();
+        throw new EstadoDeTransformacionMaximaException();
     }
 
     @Override

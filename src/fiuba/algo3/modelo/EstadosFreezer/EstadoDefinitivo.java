@@ -9,7 +9,7 @@ import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
-import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
+import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaximaException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 
 public class EstadoDefinitivo implements Estado {
@@ -65,7 +65,7 @@ public class EstadoDefinitivo implements Estado {
 
     @Override
     public Estado transformarse(int kiActual){
-        throw new EstadoDeTransformacionMaxima();
+        throw new EstadoDeTransformacionMaximaException();
     }
 
     @Override

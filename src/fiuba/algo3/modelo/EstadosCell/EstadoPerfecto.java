@@ -4,13 +4,11 @@ import fiuba.algo3.modelo.Componentes.Coordenada;
 import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Estados.Estado;
 import fiuba.algo3.modelo.Personajes.Gohan;
-import fiuba.algo3.modelo.Personajes.Cell;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
-import fiuba.algo3.modelo.excepciones.NoSePuedeAbsorberPersonajeException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeTransformarPersonaje;
-import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaxima;
+import fiuba.algo3.modelo.excepciones.EstadoDeTransformacionMaximaException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeMoverPersonaje;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 
@@ -60,7 +58,7 @@ public class EstadoPerfecto implements Estado {
 
     @Override
     public Estado transformarse(int vidaActual){
-        throw new EstadoDeTransformacionMaxima();
+        throw new EstadoDeTransformacionMaximaException();
     }
 
     @Override
