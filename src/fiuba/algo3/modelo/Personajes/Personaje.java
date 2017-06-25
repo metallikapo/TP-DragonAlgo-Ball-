@@ -6,7 +6,7 @@ import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Componentes.VersorDireccion;
 import fiuba.algo3.modelo.Personajes.Gohan;
 import fiuba.algo3.modelo.Componentes.Coordenada;
-import fiuba.algo3.modelo.excepciones.PersonajeEstaMuerto;
+import fiuba.algo3.modelo.excepciones.PersonajeEstaMuertoException;
 
 public abstract class Personaje{
     protected int maxVida;
@@ -45,7 +45,10 @@ public abstract class Personaje{
 
     public void consumir(Consumible consumible){
         this.aumentarVida(consumible.aumentarVida());
+        this.obtenerConsumibleEsfera(consumible);
     }
+
+    public abstract void obtenerConsumibleEsfera(Consumible esfera);
 
     public boolean estadoVidaCritica(){
         return (vida <= vidaCritica);
@@ -53,7 +56,7 @@ public abstract class Personaje{
 
     public void recibirDanio(int ataque){
         if(vida<=0){
-            throw new PersonajeEstaMuerto();
+            throw new PersonajeEstaMuertoException();
         }
         this.vida -= ataque;
     }
@@ -63,6 +66,7 @@ public abstract class Personaje{
     }
 
     public abstract void volverAlEstadoAnterior(Estado estado);
+
 
     public void aumentarVida(int cantidad){
         this.vida = (maxVida < this.vida + cantidad)? maxVida : this.vida + cantidad;
@@ -84,5 +88,6 @@ public abstract class Personaje{
 
     public abstract Coordenada moverAInferiorDerecha();
 
+    public abstract int getPoderPelea();
 
 }

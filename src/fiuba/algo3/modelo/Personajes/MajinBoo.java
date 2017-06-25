@@ -70,7 +70,7 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     }
 
     @Override
-    protected void obtenerConsumibleEsfera(Consumible esfera) {
+    public void obtenerConsumibleEsfera(Consumible esfera) {
         estado = esfera.agregarEstado(estado);
     }
 
