@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Componentes.Consumible;
+import fiuba.algo3.modelo.Componentes.EsferaDelDragon;
 import fiuba.algo3.modelo.Estados.*;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
@@ -34,6 +36,11 @@ public class Gohan extends Personaje implements PersonajeBueno{
     @Override
     public boolean poseeMayorPoderPelea(int poderPelea){
         return estado.poseeMayorPoderPelea(poderPelea);
+    }
+
+    @Override
+    protected void obtenerConsumibleEsfera(Consumible esfera) {
+        estado = esfera.agregarEstado(estado);
     }
 
     public boolean estadoVidaCritica(){
@@ -134,5 +141,10 @@ public class Gohan extends Personaje implements PersonajeBueno{
         Coordenada unaCoordenada = this.estado.moverAInferiorDerecha(this.versorPersonaje);
         this.mover(unaCoordenada);
         return unaCoordenada;
+    }
+
+    @Override
+    public int getPoderPelea() {
+        return estado.getPoderPelea();
     }
 }

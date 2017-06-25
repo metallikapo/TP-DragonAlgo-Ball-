@@ -202,5 +202,10 @@ public class EstadoNormal implements Estado {
         return unaCoordenada;
     }
 
+    @Override
+    public int getPoderPelea() {
+        return poderPelea;
+    }
+
 }
 

@@ -1,6 +1,8 @@
 package fiuba.algo3.modelo.Personajes;
 
+import fiuba.algo3.modelo.Componentes.Consumible;
 import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.EsferaDelDragon;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Componentes.Celda;
 import fiuba.algo3.modelo.Estados.Estado;
@@ -68,6 +70,11 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
     }
 
     @Override
+    protected void obtenerConsumibleEsfera(Consumible esfera) {
+        estado = esfera.agregarEstado(estado);
+    }
+
+    @Override
     public void volverAlEstadoAnterior(Estado estado){
 
     }
@@ -121,5 +128,10 @@ public class MajinBoo extends Personaje implements PersonajeMalo{
         Coordenada unaCoordenada = this.estado.moverAInferiorDerecha(this.versorPersonaje);
         this.mover(unaCoordenada);
         return unaCoordenada;
+    }
+
+    @Override
+    public int getPoderPelea() {
+        return estado.getPoderPelea();
     }
 }

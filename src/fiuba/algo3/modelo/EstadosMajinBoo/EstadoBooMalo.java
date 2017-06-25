@@ -200,5 +200,10 @@ public class EstadoBooMalo implements Estado {
         return unaCoordenada;
     }
 
+    @Override
+    public int getPoderPelea() {
+        return poderPelea;
+    }
+
 }
 

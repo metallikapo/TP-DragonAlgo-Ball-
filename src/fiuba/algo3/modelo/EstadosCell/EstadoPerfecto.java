@@ -195,4 +195,9 @@ public class EstadoPerfecto implements Estado {
         return unaCoordenada;
     }
 
+    @Override
+    public int getPoderPelea() {
+        return poderPelea;
+    }
+
 }

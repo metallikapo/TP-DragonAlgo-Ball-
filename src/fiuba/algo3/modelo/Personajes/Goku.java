@@ -1,7 +1,9 @@
 package fiuba.algo3.modelo.Personajes;
 
 import fiuba.algo3.modelo.Componentes.Celda;
+import fiuba.algo3.modelo.Componentes.Consumible;
 import fiuba.algo3.modelo.Componentes.Coordenada;
+import fiuba.algo3.modelo.Componentes.EsferaDelDragon;
 import fiuba.algo3.modelo.Personajes.Personaje;
 import fiuba.algo3.modelo.Personajes.PersonajeMalo;
 import fiuba.algo3.modelo.Personajes.PersonajeBueno;
@@ -10,6 +12,8 @@ import fiuba.algo3.modelo.EstadosGoku.*;
 import fiuba.algo3.modelo.excepciones.FuegoAmigoException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoEstarEnDistanciaDeAtaqueException;
 import fiuba.algo3.modelo.excepciones.NoSePuedeAtacarPersonajePorNoPoseerKiSuficienteException;
+
+import java.util.ConcurrentModificationException;
 
 public class Goku extends Personaje implements PersonajeBueno{
     private Estado estado;
@@ -78,6 +82,11 @@ public class Goku extends Personaje implements PersonajeBueno{
     }
 
     @Override
+    protected void obtenerConsumibleEsfera(Consumible esfera) {
+        estado = esfera.agregarEstado(estado);
+    }
+
+    @Override
     public void volverAlEstadoAnterior(Estado estado){
         this.estado = estado;
     }
@@ -137,6 +146,11 @@ public class Goku extends Personaje implements PersonajeBueno{
         Coordenada unaCoordenada = this.estado.moverAInferiorDerecha(this.versorPersonaje);
         this.mover(unaCoordenada);
         return unaCoordenada;
+    }
+
+    @Override
+    public int getPoderPelea() {
+        return estado.getPoderPelea();
     }
 
 }

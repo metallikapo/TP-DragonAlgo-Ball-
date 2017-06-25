@@ -208,5 +208,10 @@ public class SuperSayajinFase1 implements Estado {
         return unaCoordenada;
     }
 
+    @Override
+    public int getPoderPelea() {
+        return poderPelea;
+    }
+
 }
 

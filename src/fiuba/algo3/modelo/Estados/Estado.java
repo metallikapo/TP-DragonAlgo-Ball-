@@ -53,5 +53,5 @@ public interface Estado {
 
     public abstract Coordenada moverAInferiorIzquierda(VersorDireccion unVersor);
 
-
+    public abstract int getPoderPelea();
 }

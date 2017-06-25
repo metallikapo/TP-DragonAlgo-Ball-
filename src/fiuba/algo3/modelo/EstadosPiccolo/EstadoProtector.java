@@ -199,5 +199,10 @@ public class EstadoProtector implements Estado {
         return unaCoordenada;
     }
 
+    @Override
+    public int getPoderPelea() {
+        return poderPelea;
+    }
+
 }
 

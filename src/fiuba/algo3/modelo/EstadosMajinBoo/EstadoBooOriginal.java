@@ -195,5 +195,10 @@ public class EstadoBooOriginal implements Estado {
         return unaCoordenada;
     }
 
+    @Override
+    public int getPoderPelea() {
+        return poderPelea;
+    }
+
 }
 
